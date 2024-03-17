@@ -1,0 +1,113 @@
+
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Bennett Scripts | Mystic Falls", "GrapeTheme")
+local Bennett = Window:NewTab("Script")
+local BennettSection = Bennett:NewSection("Anti Ban First!")
+BennettSection:NewButton("Anti Ban", "", function()
+	local Moderator = {
+	    A = "fx3lip",
+	    B = "uvita_omg",
+	    C = "AdoreAdalyn",
+	    D = "TheDivana",
+	    E = "catfvsh",
+	    F = "jcvierr",
+	    G = "savients",
+	    H = "Vazorie",
+	    I = "Vazorio"
+	}
+	game:GetService("Players").PlayerAdded:Connect(function(player)
+	    if player == game.Players:FindFirstChild(Moderator.A) then
+		game.Players.LocalPlayer:Kick(Moderator.A.." Has Joined The Game You Were Saved")
+	    end
+	end)
+	game:GetService("Players").PlayerAdded:Connect(function(player)
+	    if player == game.Players:FindFirstChild(Moderator.B) then
+		game.Players.LocalPlayer:Kick(Moderator.B.." Has Joined The Game You Were Saved")
+	    end
+	end)
+	game:GetService("Players").PlayerAdded:Connect(function(player)
+	    if player == game.Players:FindFirstChild(Moderator.C) then
+		game.Players.LocalPlayer:Kick(Moderator.C.." Has Joined The Game You Were Saved")
+	    end
+	end)
+	game:GetService("Players").PlayerAdded:Connect(function(player)
+	    if player == game.Players:FindFirstChild(Moderator.D) then
+		game.Players.LocalPlayer:Kick(Moderator.D.." Has Joined The Game You Were Saved")
+	    end
+	end)
+	game:GetService("Players").PlayerAdded:Connect(function(player)
+	    if player == game.Players:FindFirstChild(Moderator.E) then
+		game.Players.LocalPlayer:Kick(Moderator.E.." Has Joined The Game You Were Saved")
+	    end
+	end)
+	game:GetService("Players").PlayerAdded:Connect(function(player)
+	    if player == game.Players:FindFirstChild(Moderator.F) then
+		game.Players.LocalPlayer:Kick(Moderator.F.." Has Joined The Game You Were Saved")
+	    end
+	end)
+	game:GetService("Players").PlayerAdded:Connect(function(player)
+	    if player == game.Players:FindFirstChild(Moderator.G) then
+		game.Players.LocalPlayer:Kick(Moderator.G.." Has Joined The Game You Were Saved")
+	    end
+	end)
+	game:GetService("Players").PlayerAdded:Connect(function(player)
+	    if player == game.Players:FindFirstChild(Moderator.H) then
+		game.Players.LocalPlayer:Kick(Moderator.H.." Has Joined The Game You Were Saved")
+	    end
+	end)
+	game:GetService("Players").PlayerAdded:Connect(function(player)
+	    if player == game.Players:FindFirstChild(Moderator.I) then
+		game.Players.LocalPlayer:Kick(Moderator.I.." Has Joined The Game You Were Saved")
+	    end
+	end)
+ 
+	--[[game:GetService("Players").PlayerRemoving:Connect(function(player)
+	    print(player.Name .. " left the game!")
+	end)]]
+    local Ban1 = game:GetService("ReplicatedStorage").Events:FindFirstChild("ModBan")
+    local Ban2 = game:GetService("ReplicatedStorage").Events:FindFirstChild("BanClient")
+    local Ban3 = game:GetService("ReplicatedStorage").Events:FindFirstChild("Ban")
+    local Ban4 = game:GetService("ReplicatedStorage").Events:FindFirstChild("idontexploit")
+    local Ban5 = game:GetService("ReplicatedStorage").Events:FindFirstChild("logAction")
+    local Ban6 = game:GetService("ReplicatedStorage").Events:FindFirstChild("logAction")
+    while _G.ANTIBAN == true do
+        if Ban1 then
+        Ban1:Destroy()
+        end
+        if Ban2 then
+        Ban2:Destroy()
+        end
+        if Ban3 then
+        Ban3:Destroy()
+        end
+        if Ban4 then
+        Ban4:Destroy()
+        end
+        if Ban5 then
+        Ban5:Destroy()
+        end
+        if Ban6 then
+        Ban6:Destroy()
+        end
+        wait()
+    end
+end)
+
+BennettSection:NewButton("Script", "", function()
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/xadosqw12/so/main/fxxlxxs'),true))()
+end)
+BennettSection:NewButton("Infinite Yield", "", function()
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/Omg562/Scripts/main/INF'),true))()
+end)
+BennettSection:NewButton(".", "", function()
+if game:GetService("Players").LocalPlayer.UserId == 5081150543 then
+for k,v in pairs(getgc(true)) do if pcall(function() return rawget(v,"indexInstance") end) and type(rawget(v,"indexInstance")) == "table" and (rawget(v,"indexInstance"))[1] == "kick" then v.tvk = {"kick",function() return game.Workspace:WaitForChild("") end} end end
+end
+end)
+local Tab = Window:NewTab("Credits")
+local SettingsSection = Tab:NewSection("discord: bennettscripts")
+
+local SettingsSection = Tab:NewSection("Toggle UI")
+SettingsSection:NewKeybind("Toggle UI", "Toggle UI", Enum.KeyCode.M, function()
+    Library:ToggleUI()
+end)
