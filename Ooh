@@ -94,7 +94,7 @@ BennettSection:NewButton("Anti Ban", "", function()
 end)
 
 BennettSection:NewButton("Script", "", function()
-loadstring(game:HttpGet(('https://raw.githubusercontent.com/xadosqw12/so/main/fxxlxxs'),true))()
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/ssxaa1/UntitledRev/main/vv'),true))()
 end)
 BennettSection:NewButton("Infinite Yield", "", function()
 loadstring(game:HttpGet(('https://raw.githubusercontent.com/Omg562/Scripts/main/INF'),true))()
