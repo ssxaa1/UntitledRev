@@ -1,0 +1,5452 @@
+
+local Link = Instance.new("Folder",workspace)
+Link.Name = "Immortality Link"
+local HavDavKeybinds = Instance.new("Folder",workspace)
+HavDavKeybinds.Name = "Harvest Davina Keybinds"
+local ExBonKeybinds = Instance.new("Folder",workspace)
+ExBonKeybinds.Name = "Expression Bonnie Keybinds"
+local FrKeybinds = Instance.new("Folder",workspace)
+FrKeybinds.Name = "Freya Keybinds"
+local ScShKeybinds = Instance.new("Folder",workspace)
+ScShKeybinds.Name = "Scarlet Sheila Keybinds"
+local ScShKeybinds = Instance.new("Folder",workspace)
+ScShKeybinds.Name = "Harvest Monique Keybinds"
+local DahliaKeybinds = Instance.new("Folder",workspace)
+DahliaKeybinds.Name = "Dahlia Keybinds"
+local DjKeybinds = Instance.new("Folder",workspace)
+DjKeybinds.Name = "Dark Josie Keybinds"
+local FKeybinds = Instance.new("Folder",workspace)
+FKeybinds.Name = "Fiona Keybinds"
+local CKeybinds = Instance.new("Folder",workspace)
+CKeybinds.Name = "Cordelia Keybinds"
+local MKeybinds = Instance.new("Folder",workspace)
+MKeybinds.Name = "Madison Keybinds"
+wait(0.5)
+game.workspace["Harvest Davina Keybinds"].Archivable = false
+game.workspace["Expression Bonnie Keybinds"].Archivable = false
+game.workspace["Freya Keybinds"].Archivable = false
+game.workspace["Scarlet Sheila Keybinds"].Archivable = false
+game.workspace["Harvest Monique Keybinds"].Archivable = false
+game.workspace["Dahlia Keybinds"].Archivable = false
+game.workspace["Dark Josie Keybinds"].Archivable = false
+game.workspace["Fiona Keybinds"].Archivable = false
+game.workspace["Cordelia Keybinds"].Archivable = false
+game.workspace["Madison Keybinds"].Archivable = false
+local Animation_Folder = Instance.new("Folder")
+Animation_Folder.Parent = workspace
+Animation_Folder.Name = "Harvest Davina Animations"
+
+--NO!! Animation
+local AnimationId = "5414902308"
+local Anim = Instance.new("Animation")
+Anim.Parent = game:GetService("Workspace")["Harvest Davina Animations"]
+Anim.Name = "NO!! (Explosion)"
+Anim.AnimationId = "rbxassetid://"..AnimationId
+--[[
+local Anim = game:GetService("Workspace")["Harvest Davina Animations"]["NO!! (Explosion)"]
+local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+k:Play()
+k:AdjustSpeed(1)--]]
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Bennett Scripts | Mystic Falls", "GrapeTheme")
+local Bennett = Window:NewTab("Tvdu Cstm")
+local BennettSection = Bennett:NewSection("Harvest Davina")
+BennettSection:NewTextBox("Teleport", "Players name", function(txt)
+    local Players = game:GetService("Players")
+    local msg = txt
+    local function findPlayer(stringg)
+        for _, v in pairs(Players:GetPlayers()) do
+            if stringg:lower() == (v.Name:lower()):sub(1, #stringg) then
+                return v
+            end
+        end
+    end
+
+    local player = findPlayer(msg)
+    local CHAR = player.Character
+    
+ local args = {
+    [1] = "Mei Tu Mele",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+wait(0.5)
+
+local args = {
+    [1] = "Magic",
+    [2] = {
+        [1] = "Teleport",
+        [2] = player.character.UpperTorso.Position
+    }
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Witch"):FireServer(unpack(args))
+
+end)
+BennettSection:NewToggle("Keybinds On/Off", "", function(state)
+    if state == true then
+        game.workspace["Harvest Davina Keybinds"].Archivable = true
+    else
+        game.workspace["Harvest Davina Keybinds"].Archivable = false
+    end
+end)
+BennettSection:NewKeybind("An Animal (for vamps)", "",Enum.KeyCode.One, function()
+    if game.workspace["Harvest Davina Keybinds"].Archivable == true then
+    local function getPlayer()
+            local userInput = game:GetService("UserInputService")
+            local cam = workspace.CurrentCamera
+            local mousePos = userInput:GetMouseLocation()
+            local mouseRay = cam:ViewportPointToRay(mousePos.X, mousePos.Y)
+            players = {}
+            for _, x in next, game:GetService('Players'):GetPlayers() do
+                players[#players + 1] = x.Character
+            end
+            local raycastParams = RaycastParams.new()
+            raycastParams.FilterType = Enum.RaycastFilterType.Whitelist
+            raycastParams.FilterDescendantsInstances = players
+            raycastParams.IgnoreWater = true
+            local raycastResult = workspace:Raycast(mouseRay.Origin, mouseRay.Direction * 1000, raycastParams)
+            if raycastResult then
+                for _, x in next, game:GetService('Players'):GetPlayers() do
+                    if not raycastResult.Instance:IsDescendantOf(x.Character) then
+                        continue 
+                    end
+                    return x
+                end
+            end
+            return false
+        end
+        local function Set(list)
+            local set = {}
+            for _, l in ipairs(list) do
+                if l then
+                    set[l] = true
+                end
+            end
+            return set
+        end
+        if IsTyping then return end
+        local player = getPlayer()
+        if player then
+            local pos = player.Character.HumanoidRootPart.CFrame
+local args = {
+    [1] = "An animal",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+    local args = {
+            [1] = "Magic",
+            [2] = {
+                [1] = "BreakLeg",
+                [2] = player.Character
+            }
+        }
+        
+        game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))
+    local args = {
+            [1] = "Magic",
+            [2] = {
+                [1] = "BreakLeg",
+                [2] = player.Character
+            }
+        }
+        
+        game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))
+wait(1.5)
+        local A_1 = "Magic"
+        local A_2 = 
+            {
+                [1] = "SleepSpell", 
+                [2] = player.Character
+            }
+        local Event = game:GetService("ReplicatedStorage").Events.Witch
+        Event:FireServer(A_1, A_2)																		
+        end
+    end
+end)
+BennettSection:NewKeybind("Why Don't You Choke", "",Enum.KeyCode.Two, function()
+    if game.workspace["Harvest Davina Keybinds"].Archivable == true then
+   
+local function getPlayer()
+            local userInput = game:GetService("UserInputService")
+            local cam = workspace.CurrentCamera
+            local mousePos = userInput:GetMouseLocation()
+            local mouseRay = cam:ViewportPointToRay(mousePos.X, mousePos.Y)
+            players = {}
+            for _, x in next, game:GetService('Players'):GetPlayers() do
+                players[#players + 1] = x.Character
+            end
+            local raycastParams = RaycastParams.new()
+            raycastParams.FilterType = Enum.RaycastFilterType.Whitelist
+            raycastParams.FilterDescendantsInstances = players
+            raycastParams.IgnoreWater = true
+            local raycastResult = workspace:Raycast(mouseRay.Origin, mouseRay.Direction * 1000, raycastParams)
+            if raycastResult then
+                for _, x in next, game:GetService('Players'):GetPlayers() do
+                    if not raycastResult.Instance:IsDescendantOf(x.Character) then
+                        continue 
+                    end
+                    return x
+                end
+            end
+            return false
+        end
+        local function Set(list)
+            local set = {}
+            for _, l in ipairs(list) do
+                if l then
+                    set[l] = true
+                end
+            end
+            return set
+        end
+        if IsTyping then return end
+        local player = getPlayer()
+        if player then
+            local pos = player.Character.HumanoidRootPart.CFrame
+ local args = {
+    [1] = "Why don't you choke",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+            local A_1 = "Magic"
+            local A_2 = 
+                {
+                    [1] = "BloodChoke", 
+                    [2] = player.Character
+                }
+            local Event = game:GetService("ReplicatedStorage").Events.Witch
+            Event:FireServer(A_1, A_2)	
+            local A_1 = "Magic"
+            local A_2 = 
+                {
+                    [1] = "BloodChoke", 
+                    [2] = player.Character
+                }
+            local Event = game:GetService("ReplicatedStorage").Events.Witch
+            Event:FireServer(A_1, A_2)	
+wait(2)	
+        local A_1 = "Magic"
+        local A_2 = 
+            {
+                [1] = "SleepSpell", 
+                [2] = player.Character
+            }
+        local Event = game:GetService("ReplicatedStorage").Events.Witch
+        Event:FireServer(A_1, A_2)																			
+        end
+    end
+end)
+
+BennettSection:NewKeybind("Telekinetic Bring", "",Enum.KeyCode.Three, function()
+    if game.workspace["Harvest Davina Keybinds"].Archivable == true then
+   
+local function getPlayer()
+            local userInput = game:GetService("UserInputService")
+            local cam = workspace.CurrentCamera
+            local mousePos = userInput:GetMouseLocation()
+            local mouseRay = cam:ViewportPointToRay(mousePos.X, mousePos.Y)
+            players = {}
+            for _, x in next, game:GetService('Players'):GetPlayers() do
+                players[#players + 1] = x.Character
+            end
+            local raycastParams = RaycastParams.new()
+            raycastParams.FilterType = Enum.RaycastFilterType.Whitelist
+            raycastParams.FilterDescendantsInstances = players
+            raycastParams.IgnoreWater = true
+            local raycastResult = workspace:Raycast(mouseRay.Origin, mouseRay.Direction * 1000, raycastParams)
+            if raycastResult then
+                for _, x in next, game:GetService('Players'):GetPlayers() do
+                    if not raycastResult.Instance:IsDescendantOf(x.Character) then
+                        continue 
+                    end
+                    return x
+                end
+            end
+            return false
+        end
+        local function Set(list)
+            local set = {}
+            for _, l in ipairs(list) do
+                if l then
+                    set[l] = true
+                end
+            end
+            return set
+        end
+        if IsTyping then return end
+        local player = getPlayer()
+        if player then
+            local pos = player.Character.HumanoidRootPart.CFrame
+
+    local A_1 = "Magic"
+    local A_2 = 
+        {
+            [1] = "Motus",
+            [2] = true,
+            [3] = player.Character
+        }
+    local Event = game:GetService("ReplicatedStorage").Events.Witch
+    Event:FireServer(A_1, A_2)																		
+        end
+    end
+end)
+
+BennettSection:NewButton("NO!!", "", function()
+local args = {
+    [1] = "NO!!",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+	local AnimationId = "5414902308"
+	local Anim = Instance.new("Animation")
+	Anim.AnimationId = "rbxassetid://"..AnimationId
+	local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+	k:Play()
+	k:AdjustSpeed(1)
+wait(2)
+	local Plr = game.Players.LocalPlayer
+		for i, Player in pairs (game.Players:GetPlayers()) do
+	
+			if Player.Character ~= nil and Player ~= Plr then
+				local mag = (Player.Character.UpperTorso.Position - Plr.Character.UpperTorso.Position).magnitude
+				if mag < 20 then
+					local Target = Player.Character or Player.CharacterAdded:Wait()
+	
+					local A_1 = "Push"
+					local A_2 = 
+						{
+							[1] = Target
+						}
+					local Event = game:GetService("ReplicatedStorage").Events.Witch
+					Event:FireServer(A_1, A_2)
+				local A_1 = "Magic"
+				local A_2 = 
+					{
+						[1] = "Explosion",
+						[2] = Target.UpperTorso.Position
+					}
+				local Event = game:GetService("ReplicatedStorage").Events.Witch
+				Event:FireServer(A_1, A_2)
+	
+				end
+			end
+		end
+		wait()
+end)
+
+BennettSection:NewButton("GO AWAY!", "", function()
+local args = {
+    [1] = "GO AWAY!",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+	local AnimationId = "5422859012"
+	local Anim = Instance.new("Animation")
+	Anim.AnimationId = "rbxassetid://"..AnimationId
+	local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+	k:Play()
+	k:AdjustSpeed(1)
+wait(0.5)
+	local Plr = game.Players.LocalPlayer
+		for i, Player in pairs (game.Players:GetPlayers()) do
+	
+			if Player.Character ~= nil and Player ~= Plr then
+				local mag = (Player.Character.UpperTorso.Position - Plr.Character.UpperTorso.Position).magnitude
+				if mag < 20 then
+					local Target = Player.Character or Player.CharacterAdded:Wait()
+	
+					local A_1 = "Push"
+					local A_2 = 
+						{
+							[1] = Target
+						}
+					local Event = game:GetService("ReplicatedStorage").Events.Witch
+					Event:FireServer(A_1, A_2)
+
+						local A_1 = "Push"
+					local A_2 = 
+						{
+							[1] = Target
+						}
+					local Event = game:GetService("ReplicatedStorage").Events.Witch
+					Event:FireServer(A_1, A_2)
+
+				end
+			end
+		end
+		wait()
+end)
+
+BennettSection:NewButton("You are all liars (for vamps)", "", function()
+local args = {
+    [1] = "You are all liars",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+	local AnimationId = "4786138659"
+	local Anim = Instance.new("Animation")
+	Anim.AnimationId = "rbxassetid://"..AnimationId
+	local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+	k:Play()
+	k:AdjustSpeed(1)
+wait(0.5)
+	local Plr = game.Players.LocalPlayer
+		for i, Player in pairs (game.Players:GetPlayers()) do
+	
+			if Player.Character ~= nil and Player ~= Plr then
+				local mag = (Player.Character.UpperTorso.Position - Plr.Character.UpperTorso.Position).magnitude
+				if mag < 30 then
+					local Target = Player.Character or Player.CharacterAdded:Wait()
+	
+    local args = {
+            [1] = "Magic",
+            [2] = {
+                [1] = "BreakLeg",
+                [2] = Target
+            }
+        }
+        
+        game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))
+wait(1)
+local args = {
+    [1] = "Magic",
+    [2] = {
+        [1] = "SnapNeck",
+        [2] = Target
+    }
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Witch"):FireServer(unpack(args))
+
+				end
+			end
+		end
+		wait()
+end)
+
+BennettSection:NewButton("Somnus", "", function()
+    print("Clicked")
+local args = {
+    [1] = "Somnus",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+    local Plr = game.Players.LocalPlayer
+    for i, Player in pairs (game.Players:GetPlayers()) do
+
+        if Player.Character ~= nil and Player ~= Plr then
+            local mag = (Player.Character.UpperTorso.Position - Plr.Character.UpperTorso.Position).magnitude
+            if mag < 20 then
+                local Target = Player.Character or Player.CharacterAdded:Wait()
+
+        local A_1 = "Magic"
+        local A_2 = 
+            {
+                [1] = "SleepSpell", 
+                [2] = Target
+            }
+        local Event = game:GetService("ReplicatedStorage").Events.Witch
+        Event:FireServer(A_1, A_2)	
+
+            end
+        end
+end   
+end)
+
+BennettSection:NewButton("Resurrect (in the circle)", "", function()
+
+local args = {
+    [1] = "Fian en che en kanu!",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+wait(0.5)
+local args = {
+    [1] = "Fian en che en kanu!",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+wait(0.5)
+local args = {
+    [1] = "Fian en che en kanu!",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+	local AnimationId = "5414902308"
+	local Anim = Instance.new("Animation")
+	Anim.AnimationId = "rbxassetid://"..AnimationId
+	local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+	k:Play()
+	k:AdjustSpeed(1)
+workspace:WaitForChild("ResurrectionCircles"):WaitForChild("AstralisRes"):WaitForChild("ResEvent"):FireServer()
+workspace:WaitForChild("ResurrectionCircles"):WaitForChild("AstralisRes"):WaitForChild("ResEvent"):FireServer()
+workspace:WaitForChild("ResurrectionCircles"):WaitForChild("AstralisRes"):WaitForChild("ResEvent"):FireServer()
+workspace:WaitForChild("ResurrectionCircles"):WaitForChild("AstralisRes"):WaitForChild("ResEvent"):FireServer()
+workspace:WaitForChild("ResurrectionCircles"):WaitForChild("Resurrection"):WaitForChild("ResEvent"):FireServer()
+workspace:WaitForChild("ResurrectionCircles"):WaitForChild("Resurrection"):WaitForChild("ResEvent"):FireServer()
+workspace:WaitForChild("ResurrectionCircles"):WaitForChild("Resurrection"):WaitForChild("ResEvent"):FireServer()
+workspace:WaitForChild("ResurrectionCircles"):WaitForChild("Resurrection"):WaitForChild("ResEvent"):FireServer()
+for i,v in pairs(game.Workspace.ResurrectionCircles:GetChildren()) do
+    for i,c in pairs(v:GetChildren()) do
+        if c:IsA("RemoteEvent") then
+            if game.Players.LocalPlayer.Character.Magic.Value >= 1 then
+                c:FireServer()                
+                c:FireServer()
+                c:FireServer()
+print("FIRED AS FUCK LOL")
+            end
+        end
+    end
+end
+
+	wait(0.3)
+	game:GetService("StarterGui"):SetCore("SendNotification", {
+		Title = "Ancestors are mad!";
+		Text = "..watch out"
+	})
+
+end)
+
+local BennettSection = Bennett:NewSection("Advanced Bonnie")
+BennettSection:NewTextBox("Locate", "Players name", function(txt)
+    local Players = game:GetService("Players")
+    local msg = txt
+    local function findPlayer(stringg)
+        for _, v in pairs(Players:GetPlayers()) do
+            if stringg:lower() == (v.Name:lower()):sub(1, #stringg) then
+                return v
+            end
+        end
+    end
+
+    local player = findPlayer(msg)
+    local CHAR = player.Character
+    
+ local args = {
+    [1] = "Phasmatos tribum, nas ex veras, sequitas sanguinem",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+wait(0.7)
+ local args = {
+    [1] = msg,
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+wait(0.5)
+      game:GetService("Workspace").CurrentCamera.CameraSubject = player.Character
+wait(0.5)
+        local args = {
+            [1] = "Magic",
+            [2] = {
+                [1] = "FireCircle",
+                [2] = player.Character
+            }
+        }
+        
+        game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))
+wait(7)  
+     playr = game:GetService("Players").LocalPlayer
+     game:GetService("Workspace").CurrentCamera.CameraSubject = playr.Character
+
+end)
+BennettSection:NewToggle("Keybinds On/Off", "", function(state)
+    if state == true then
+        game.workspace["Expression Bonnie Keybinds"].Archivable = true
+    else
+        game.workspace["Expression Bonnie Keybinds"].Archivable = false
+    end
+end)
+
+BennettSection:NewKeybind("Crush Skull (for vamps)", "",Enum.KeyCode.One, function()
+    if game.workspace["Expression Bonnie Keybinds"].Archivable == true then
+
+	local AnimationId = "5815404066"
+	local Anim = Instance.new("Animation")
+	Anim.AnimationId = "rbxassetid://"..AnimationId
+	local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+	k:Play()
+	k:AdjustSpeed(1)
+    local function getPlayer()
+            local userInput = game:GetService("UserInputService")
+            local cam = workspace.CurrentCamera
+            local mousePos = userInput:GetMouseLocation()
+            local mouseRay = cam:ViewportPointToRay(mousePos.X, mousePos.Y)
+            players = {}
+            for _, x in next, game:GetService('Players'):GetPlayers() do
+                players[#players + 1] = x.Character
+            end
+            local raycastParams = RaycastParams.new()
+            raycastParams.FilterType = Enum.RaycastFilterType.Whitelist
+            raycastParams.FilterDescendantsInstances = players
+            raycastParams.IgnoreWater = true
+            local raycastResult = workspace:Raycast(mouseRay.Origin, mouseRay.Direction * 1000, raycastParams)
+            if raycastResult then
+                for _, x in next, game:GetService('Players'):GetPlayers() do
+                    if not raycastResult.Instance:IsDescendantOf(x.Character) then
+                        continue 
+                    end
+                    return x
+                end
+            end
+            return false
+        end
+        local function Set(list)
+            local set = {}
+            for _, l in ipairs(list) do
+                if l then
+                    set[l] = true
+                end
+            end
+            return set
+        end
+        if IsTyping then return end
+        local player = getPlayer()
+        if player then
+            local pos = player.Character.HumanoidRootPart.CFrame
+local args = {
+    [1] = "I can crush your skull without even flinching",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+    local args = {
+            [1] = "Magic",
+            [2] = {
+                [1] = "BreakLeg",
+                [2] = player.Character
+            }
+        }
+        
+        game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))
+wait(1)
+local args = {
+    [1] = "Magic",
+    [2] = {
+        [1] = "SnapNeck",
+        [2] = player.Character
+    }
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Witch"):FireServer(unpack(args))															
+        end
+    end
+end)
+
+BennettSection:NewKeybind("Vados!", "",Enum.KeyCode.Two, function()
+    if game.workspace["Expression Bonnie Keybinds"].Archivable == true then
+
+	local AnimationId = "4756423861"
+	local Anim = Instance.new("Animation")
+	Anim.AnimationId = "rbxassetid://"..AnimationId
+	local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+	k:Play()
+	k:AdjustSpeed(1)
+    local function getPlayer()
+            local userInput = game:GetService("UserInputService")
+            local cam = workspace.CurrentCamera
+            local mousePos = userInput:GetMouseLocation()
+            local mouseRay = cam:ViewportPointToRay(mousePos.X, mousePos.Y)
+            players = {}
+            for _, x in next, game:GetService('Players'):GetPlayers() do
+                players[#players + 1] = x.Character
+            end
+            local raycastParams = RaycastParams.new()
+            raycastParams.FilterType = Enum.RaycastFilterType.Whitelist
+            raycastParams.FilterDescendantsInstances = players
+            raycastParams.IgnoreWater = true
+            local raycastResult = workspace:Raycast(mouseRay.Origin, mouseRay.Direction * 1000, raycastParams)
+            if raycastResult then
+                for _, x in next, game:GetService('Players'):GetPlayers() do
+                    if not raycastResult.Instance:IsDescendantOf(x.Character) then
+                        continue 
+                    end
+                    return x
+                end
+            end
+            return false
+        end
+        local function Set(list)
+            local set = {}
+            for _, l in ipairs(list) do
+                if l then
+                    set[l] = true
+                end
+            end
+            return set
+        end
+        if IsTyping then return end
+        local player = getPlayer()
+        if player then
+            local pos = player.Character.HumanoidRootPart.CFrame
+local args = {
+    [1] = "Vados!",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+				local A_1 = "Magic"
+				local A_2 = 
+					{
+						[1] = "Explosion",
+						[2] = player.Character.UpperTorso.Position
+					}
+				local Event = game:GetService("ReplicatedStorage").Events.Witch
+				Event:FireServer(A_1, A_2)
+						local A_1 = "Push"
+					local A_2 = 
+						{
+							[1] = player.Character
+						}
+					local Event = game:GetService("ReplicatedStorage").Events.Witch
+					Event:FireServer(A_1, A_2)
+
+end
+    end
+end)
+
+BennettSection:NewKeybind("Killing Immortal Spell (Need a lot of magic)", "",Enum.KeyCode.Three, function()
+    if game.workspace["Expression Bonnie Keybinds"].Archivable == true then
+
+    local function getPlayer()
+            local userInput = game:GetService("UserInputService")
+            local cam = workspace.CurrentCamera
+            local mousePos = userInput:GetMouseLocation()
+            local mouseRay = cam:ViewportPointToRay(mousePos.X, mousePos.Y)
+            players = {}
+            for _, x in next, game:GetService('Players'):GetPlayers() do
+                players[#players + 1] = x.Character
+            end
+            local raycastParams = RaycastParams.new()
+            raycastParams.FilterType = Enum.RaycastFilterType.Whitelist
+            raycastParams.FilterDescendantsInstances = players
+            raycastParams.IgnoreWater = true
+            local raycastResult = workspace:Raycast(mouseRay.Origin, mouseRay.Direction * 1000, raycastParams)
+            if raycastResult then
+                for _, x in next, game:GetService('Players'):GetPlayers() do
+                    if not raycastResult.Instance:IsDescendantOf(x.Character) then
+                        continue 
+                    end
+                    return x
+                end
+            end
+            return false
+        end
+        local function Set(list)
+            local set = {}
+            for _, l in ipairs(list) do
+                if l then
+                    set[l] = true
+                end
+            end
+            return set
+        end
+        if IsTyping then return end
+        local player = getPlayer()
+        if player then
+            local pos = player.Character.HumanoidRootPart.CFrame
+
+	local AnimationId = "5815383220"
+	local Anim = Instance.new("Animation")
+	Anim.AnimationId = "rbxassetid://"..AnimationId
+	local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+	k:Play()
+	k:AdjustSpeed(0.5)
+	local AnimationId = "5815362326"
+	local Anim = Instance.new("Animation")
+	Anim.AnimationId = "rbxassetid://"..AnimationId
+	local k2 = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+	k2:Play()
+	k2:AdjustSpeed(0.5)
+
+        local args = {
+            [1] = "Magic",
+            [2] = {
+                [1] = "FireCircle",
+                [2] = player.Character
+            }
+        }
+        
+        game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))
+wait(2)
+local args = {
+    [1] = "Infero Eseri Gratas",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+local args = {
+    [1] = "PainInflict",
+    [2] = {
+        [1] = player.Character,
+        [2] = false
+    }
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Witch"):FireServer(unpack(args))
+           local args = {
+                [1] = "Magic",
+                [2] = {
+                    [1] = "FireSpell",
+                    [2] = player.Character
+                }
+            }
+            
+            game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))	
+            local args = {
+                [1] = "Magic",
+                [2] = {
+                    [1] = "FireSpell",
+                    [2] = player.Character
+                }
+            }
+            
+            game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))	
+            local args = {
+                [1] = "Magic",
+                [2] = {
+                    [1] = "FireSpell",
+                    [2] = player.Character
+                }
+            }
+            
+            game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))	
+            local args = {
+                [1] = "Magic",
+                [2] = {
+                    [1] = "FireSpell",
+                    [2] = player.Character
+                }
+            }
+            
+            game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))	
+            local args = {
+                [1] = "Magic",
+                [2] = {
+                    [1] = "FireSpell",
+                    [2] = player.Character
+                }
+            }
+            
+            game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))	
+           local args = {
+                [1] = "Magic",
+                [2] = {
+                    [1] = "FireSpell",
+                    [2] = player.Character
+                }
+            }
+            
+            game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))	
+            local args = {
+                [1] = "Magic",
+                [2] = {
+                    [1] = "FireSpell",
+                    [2] = player.Character
+                }
+            }
+            
+            game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))	
+            local args = {
+                [1] = "Magic",
+                [2] = {
+                    [1] = "FireSpell",
+                    [2] = player.Character
+                }
+            }
+            
+            game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))	
+            local args = {
+                [1] = "Magic",
+                [2] = {
+                    [1] = "FireSpell",
+                    [2] = player.Character
+                }
+            }
+            
+            game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))	
+            local args = {
+                [1] = "Magic",
+                [2] = {
+                    [1] = "FireSpell",
+                    [2] = player.Character
+                }
+            }
+            
+            game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))	
+wait(2.5)
+				local A_1 = "Magic"
+				local A_2 = 
+					{
+						[1] = "Explosion",
+						[2] = player.Character.UpperTorso.Position
+					}
+				local Event = game:GetService("ReplicatedStorage").Events.Witch
+    Event:FireServer(A_1, A_2)
+	game:GetService("StarterGui"):SetCore("SendNotification", {
+		Title = "Hold the mouse!";
+		Text = "*to kill*"
+	})
+	local zont = game.workspace:FindFirstChild("Killing Og")
+	if zont then
+		zont:Destroy()
+	end
+	local Zont_AFK_PlatForm = Instance.new("Part",workspace)
+	Zont_AFK_PlatForm.Name = "Killing Og"
+	Zont_AFK_PlatForm.Anchored = true
+	Zont_AFK_PlatForm.Material = "Glass"
+	Zont_AFK_PlatForm.Transparency = 0.3
+	Zont_AFK_PlatForm.Reflectance = 0
+	Zont_AFK_PlatForm.Size = Vector3.new(29.5,1,21.5)
+	Zont_AFK_PlatForm.Position = Vector3.new(400, 382, -14823)
+	wait(0.5)
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(399, 385, -14823)
+wait(0.5)
+    local A_1 = "Magic"
+    local A_2 = 
+        {
+            [1] = "Motus",
+            [2] = true,
+            [3] = player.Character
+        }
+    local Event = game:GetService("ReplicatedStorage").Events.Witch
+    Event:FireServer(A_1, A_2)
+k:Stop()
+k2:Stop()
+wait(0.5)
+    local A_1 = "Magic"
+    local A_2 = 
+        {
+            [1] = "Motus",
+            [2] = true,
+            [3] = player.Character
+        }
+    local Event = game:GetService("ReplicatedStorage").Events.Witch
+    Event:FireServer(A_1, A_2)	
+wait(0.5)
+    local A_1 = "Magic"
+    local A_2 = 
+        {
+            [1] = "Motus",
+            [2] = true,
+            [3] = player.Character
+        }
+    local Event = game:GetService("ReplicatedStorage").Events.Witch
+    Event:FireServer(A_1, A_2)	
+wait(0.5)
+    local A_1 = "Magic"
+    local A_2 = 
+        {
+            [1] = "Motus",
+            [2] = true,
+            [3] = player.Character
+        }
+    local Event = game:GetService("ReplicatedStorage").Events.Witch
+    Event:FireServer(A_1, A_2)	
+wait(0.5)
+    local A_1 = "Magic"
+    local A_2 = 
+        {
+            [1] = "Motus",
+            [2] = true,
+            [3] = player.Character
+        }
+    local Event = game:GetService("ReplicatedStorage").Events.Witch
+    Event:FireServer(A_1, A_2)	
+wait(0.5)
+    local A_1 = "Magic"
+    local A_2 = 
+        {
+            [1] = "Motus",
+            [2] = true,
+            [3] = player.Character
+        }
+    local Event = game:GetService("ReplicatedStorage").Events.Witch
+    Event:FireServer(A_1, A_2)	
+wait(0.5)
+    local A_1 = "Magic"
+    local A_2 = 
+        {
+            [1] = "Motus",
+            [2] = true,
+            [3] = player.Character
+        }
+    local Event = game:GetService("ReplicatedStorage").Events.Witch
+    Event:FireServer(A_1, A_2)	
+
+
+end
+    end
+end)
+
+BennettSection:NewButton("Phasmatos Incendia", "", function()
+local args = {
+    [1] = "Phasmatos Incendia",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+	local AnimationId = "10805166558"
+	local Anim = Instance.new("Animation")
+	Anim.AnimationId = "rbxassetid://"..AnimationId
+	local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+	k:Play()
+	k:AdjustSpeed(1)
+wait(0.5)
+	local Plr = game.Players.LocalPlayer
+		for i, Player in pairs (game.Players:GetPlayers()) do
+	
+			if Player.Character ~= nil and Player ~= Plr then
+				local mag = (Player.Character.UpperTorso.Position - Plr.Character.UpperTorso.Position).magnitude
+				if mag < 30 then
+					local Target = Player.Character or Player.CharacterAdded:Wait()
+	
+            local args = {
+                [1] = "Magic",
+                [2] = {
+                    [1] = "FireSpell",
+                    [2] = Target
+                }
+            }
+            
+            game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))	
+						local A_1 = "Push"
+					local A_2 = 
+						{
+							[1] = Target
+						}
+					local Event = game:GetService("ReplicatedStorage").Events.Witch
+					Event:FireServer(A_1, A_2)
+
+
+				end
+			end
+		end
+		wait()
+end)
+
+BennettSection:NewButton("Psychic Scream", "", function()
+
+	local AnimationId = "7561662101"
+	local Anim = Instance.new("Animation")
+	Anim.AnimationId = "rbxassetid://"..AnimationId
+	local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+	k:Play()
+	k:AdjustSpeed(0.5)
+
+wait(3)
+	local Plr = game.Players.LocalPlayer
+		for i, Player in pairs (game.Players:GetPlayers()) do
+	
+			if Player.Character ~= nil and Player ~= Plr then
+				local mag = (Player.Character.UpperTorso.Position - Plr.Character.UpperTorso.Position).magnitude
+				if mag < 60 then
+					local Target = Player.Character or Player.CharacterAdded:Wait()
+
+        local A_1 = "Magic"
+        local A_2 = 
+            {
+                [1] = "SleepSpell", 
+                [2] = Target
+            }
+        local Event = game:GetService("ReplicatedStorage").Events.Witch
+        Event:FireServer(A_1, A_2)
+local args = {
+    [1] = "Magic",
+    [2] = {
+        [1] = "Freeze",
+        [2] = Target
+    }
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Witch"):FireServer(unpack(args))
+						local A_1 = "Push"
+					local A_2 = 
+						{
+							[1] = Target
+						}
+					local Event = game:GetService("ReplicatedStorage").Events.Witch
+					Event:FireServer(A_1, A_2)
+            local args = {
+                [1] = "Magic",
+                [2] = {
+                    [1] = "FireSpell",
+                    [2] = Target
+                }
+            }
+            
+            game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))	
+            local args = {
+                [1] = "Magic",
+                [2] = {
+                    [1] = "FireSpell",
+                    [2] = Target
+                }
+            }
+            
+            game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))	
+
+
+				end
+			end
+		end
+		
+end)
+
+BennettSection:NewButton("GET OUT OF MY HEAD!", "", function()
+local args = {
+    [1] = "GET OUT OF MY HEAD!",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+	local AnimationId = "9136189849"
+	local Anim = Instance.new("Animation")
+	Anim.AnimationId = "rbxassetid://"..AnimationId
+	local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+	k:Play()
+	k:AdjustSpeed(1)
+wait(1)
+	local Plr = game.Players.LocalPlayer
+		for i, Player in pairs (game.Players:GetPlayers()) do
+	
+			if Player.Character ~= nil and Player ~= Plr then
+				local mag = (Player.Character.UpperTorso.Position - Plr.Character.UpperTorso.Position).magnitude
+				if mag < 20 then
+					local Target = Player.Character or Player.CharacterAdded:Wait()
+	
+				local A_1 = "Magic"
+				local A_2 = 
+					{
+						[1] = "Explosion",
+						[2] = Target.UpperTorso.Position
+					}
+				local Event = game:GetService("ReplicatedStorage").Events.Witch
+				Event:FireServer(A_1, A_2)
+						local A_1 = "Push"
+					local A_2 = 
+						{
+							[1] = Target
+						}
+					local Event = game:GetService("ReplicatedStorage").Events.Witch
+					Event:FireServer(A_1, A_2)
+
+
+				end
+			end
+		end
+		wait()
+end)
+
+BennettSection:NewButton("Phasmatos Incendia Movet", "", function()
+local args = {
+    [1] = "Phasmatos Incendia Movet",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+	local AnimationId = "6112652562"
+	local Anim = Instance.new("Animation")
+	Anim.AnimationId = "rbxassetid://"..AnimationId
+	local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+	k:Play()
+	k:AdjustSpeed(1)
+wait(1)
+	local Plr = game.Players.LocalPlayer
+		for i, Player in pairs (game.Players:GetPlayers()) do
+	
+			if Player.Character ~= nil and Player ~= Plr then
+				local mag = (Player.Character.UpperTorso.Position - Plr.Character.UpperTorso.Position).magnitude
+				if mag < 10000 then
+					local Target = Player.Character or Player.CharacterAdded:Wait()
+	
+            local args = {
+                [1] = "Magic",
+                [2] = {
+                    [1] = "FireSpell",
+                    [2] = Target
+                }
+            }
+            
+            game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))	
+
+
+				end
+			end
+		end
+		wait()
+end)
+
+BennettSection:NewButton("Wind", "", function()
+	local AnimationId = "4786138659"
+	local Anim = Instance.new("Animation")
+	Anim.AnimationId = "rbxassetid://"..AnimationId
+	local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+	k:Play()
+	k:AdjustSpeed(1)
+	local Plr = game.Players.LocalPlayer
+		for i, Player in pairs (game.Players:GetPlayers()) do
+	
+			if Player.Character ~= nil and Player ~= Plr then
+				local mag = (Player.Character.UpperTorso.Position - Plr.Character.UpperTorso.Position).magnitude
+				if mag < 10000 then
+					local Target = Player.Character or Player.CharacterAdded:Wait()
+	
+    local A_1 = "Magic"
+    local A_2 = 
+        {
+            [1] = "Motus",
+            [2] = true,
+            [3] = Target
+        }
+    local Event = game:GetService("ReplicatedStorage").Events.Witch
+    Event:FireServer(A_1, A_2)		
+
+				end
+			end
+		end
+		wait()
+end)
+
+
+BennettSection:NewButton("Become Anchor (See ghosts)", "", function()
+	local AnimationId = "6082221949"
+	local Anim = Instance.new("Animation")
+	Anim.AnimationId = "rbxassetid://"..AnimationId
+	local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+	k:Play()
+	k:AdjustSpeed(1)
+
+local args = {
+    [1] = "Ina Pran Khos Suptheia Jhen Ai Pada Khey Rassattan",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+
+	local plr = game.Players.LocalPlayer
+	local char = plr.Character or plr.CharacterAdded:Wait()
+	local fold = Instance.new("Folder")
+	fold.Name = "SeeGhosts"
+	fold.Parent = char
+
+end)
+
+BennettSection:NewButton("Resurrect (in the circle)", "", function()
+ local Plr = game.Players.LocalPlayer
+	local AnimationId = "5414156941"
+	local Anim = Instance.new("Animation")
+	Anim.AnimationId = "rbxassetid://"..AnimationId
+	local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+	k:Play()
+	k:AdjustSpeed(1)
+
+local args = {
+    [1] = "Phasmatos Raverus On Animum!",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+wait(0.5)
+local args = {
+    [1] = "Phasmatos Raverus On Animum!",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+wait(0.5)
+local args = {
+    [1] = "Phasmatos Raverus On Animum!",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+   
+
+workspace:WaitForChild("ResurrectionCircles"):WaitForChild("AstralisRes"):WaitForChild("ResEvent"):FireServer()
+workspace:WaitForChild("ResurrectionCircles"):WaitForChild("AstralisRes"):WaitForChild("ResEvent"):FireServer()
+workspace:WaitForChild("ResurrectionCircles"):WaitForChild("AstralisRes"):WaitForChild("ResEvent"):FireServer()
+workspace:WaitForChild("ResurrectionCircles"):WaitForChild("AstralisRes"):WaitForChild("ResEvent"):FireServer()
+workspace:WaitForChild("ResurrectionCircles"):WaitForChild("Resurrection"):WaitForChild("ResEvent"):FireServer()
+workspace:WaitForChild("ResurrectionCircles"):WaitForChild("Resurrection"):WaitForChild("ResEvent"):FireServer()
+workspace:WaitForChild("ResurrectionCircles"):WaitForChild("Resurrection"):WaitForChild("ResEvent"):FireServer()
+workspace:WaitForChild("ResurrectionCircles"):WaitForChild("Resurrection"):WaitForChild("ResEvent"):FireServer()
+for i,v in pairs(game.Workspace.ResurrectionCircles:GetChildren()) do
+    for i,c in pairs(v:GetChildren()) do
+        if c:IsA("RemoteEvent") then
+            if game.Players.LocalPlayer.Character.Magic.Value >= 1 then
+                c:FireServer()                
+                c:FireServer()
+                c:FireServer()
+print("FIRED AS FUCK LOL")
+            end
+        end
+    end
+end
+wait(0.5)
+						local A_1 = "Push"
+					local A_2 = 
+						{
+							[1] = Plr.Character
+						}
+					local Event = game:GetService("ReplicatedStorage").Events.Witch
+					Event:FireServer(A_1, A_2)
+
+	game:GetService("StarterGui"):SetCore("SendNotification", {
+		Title = "Dark Magic Overwhelms You!";
+		Text = "don't use it! Its too dangerous!"
+	})
+
+end)
+
+local BennettSection = Bennett:NewSection("Freya")
+BennettSection:NewTextBox("Teleport", "Players name", function(txt)
+    local Players = game:GetService("Players")
+    local msg = txt
+    local function findPlayer(stringg)
+        for _, v in pairs(Players:GetPlayers()) do
+            if stringg:lower() == (v.Name:lower()):sub(1, #stringg) then
+                return v
+            end
+        end
+    end
+
+    local player = findPlayer(msg)
+    local CHAR = player.Character
+    
+ local args = {
+    [1] = "Sang Bis Najit Trouver",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+wait(0.5)
+
+local args = {
+    [1] = "Magic",
+    [2] = {
+        [1] = "Teleport",
+        [2] = player.character.UpperTorso.Position
+    }
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Witch"):FireServer(unpack(args))
+
+end)
+BennettSection:NewTextBox("Locate", "Players name", function(txt)
+    local Players = game:GetService("Players")
+    local msg = txt
+    local function findPlayer(stringg)
+        for _, v in pairs(Players:GetPlayers()) do
+            if stringg:lower() == (v.Name:lower()):sub(1, #stringg) then
+                return v
+            end
+        end
+    end
+
+    local player = findPlayer(msg)
+    local CHAR = player.Character
+    
+ local args = {
+    [1] = "Charco El Sarachi",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+wait(0.7)
+ local args = {
+    [1] = msg,
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+wait(0.5)
+      game:GetService("Workspace").CurrentCamera.CameraSubject = player.Character
+wait(0.5)
+            local args = {
+                [1] = "Magic",
+                [2] = {
+                    [1] = "FireSpell",
+                    [2] = player.Character
+                }
+            }
+            
+            game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))	
+wait(7)  
+     playr = game:GetService("Players").LocalPlayer
+     game:GetService("Workspace").CurrentCamera.CameraSubject = playr.Character
+
+end)
+BennettSection:NewToggle("Keybinds On/Off", "", function(state)
+    if state == true then
+        game.workspace["Freya Keybinds"].Archivable = true
+    else
+        game.workspace["Freya Keybinds"].Archivable = false
+    end
+end)
+
+BennettSection:NewKeybind("You Have Bigger Problems (for vamps)", "",Enum.KeyCode.One, function()
+    if game.workspace["Freya Keybinds"].Archivable == true then
+
+	local AnimationId = "5845089952"
+	local Anim = Instance.new("Animation")
+	Anim.AnimationId = "rbxassetid://"..AnimationId
+	local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+	k:Play()
+	k:AdjustSpeed(1)
+    local function getPlayer()
+            local userInput = game:GetService("UserInputService")
+            local cam = workspace.CurrentCamera
+            local mousePos = userInput:GetMouseLocation()
+            local mouseRay = cam:ViewportPointToRay(mousePos.X, mousePos.Y)
+            players = {}
+            for _, x in next, game:GetService('Players'):GetPlayers() do
+                players[#players + 1] = x.Character
+            end
+            local raycastParams = RaycastParams.new()
+            raycastParams.FilterType = Enum.RaycastFilterType.Whitelist
+            raycastParams.FilterDescendantsInstances = players
+            raycastParams.IgnoreWater = true
+            local raycastResult = workspace:Raycast(mouseRay.Origin, mouseRay.Direction * 1000, raycastParams)
+            if raycastResult then
+                for _, x in next, game:GetService('Players'):GetPlayers() do
+                    if not raycastResult.Instance:IsDescendantOf(x.Character) then
+                        continue 
+                    end
+                    return x
+                end
+            end
+            return false
+        end
+        local function Set(list)
+            local set = {}
+            for _, l in ipairs(list) do
+                if l then
+                    set[l] = true
+                end
+            end
+            return set
+        end
+        if IsTyping then return end
+        local player = getPlayer()
+        if player then
+            local pos = player.Character.HumanoidRootPart.CFrame
+
+local args = {
+    [1] = "You have bigger problems",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+local args = {
+    [1] = "Magic",
+    [2] = {
+        [1] = "SnapNeck",
+        [2] = player.Character
+    }
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Witch"):FireServer(unpack(args))			
+						local A_1 = "Push"
+					local A_2 = 
+						{
+							[1] = player.Character
+						}
+					local Event = game:GetService("ReplicatedStorage").Events.Witch
+					Event:FireServer(A_1, A_2)									
+        end
+    end
+end)
+
+BennettSection:NewKeybind("Eat Up (for vamps)", "",Enum.KeyCode.Two, function()
+    if game.workspace["Freya Keybinds"].Archivable == true then
+
+
+	local AnimationId = "5396696784"
+	local Anim = Instance.new("Animation")
+	Anim.AnimationId = "rbxassetid://"..AnimationId
+	local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+	k:Play()
+	k:AdjustSpeed(1)
+    local function getPlayer()
+            local userInput = game:GetService("UserInputService")
+            local cam = workspace.CurrentCamera
+            local mousePos = userInput:GetMouseLocation()
+            local mouseRay = cam:ViewportPointToRay(mousePos.X, mousePos.Y)
+            players = {}
+            for _, x in next, game:GetService('Players'):GetPlayers() do
+                players[#players + 1] = x.Character
+            end
+            local raycastParams = RaycastParams.new()
+            raycastParams.FilterType = Enum.RaycastFilterType.Whitelist
+            raycastParams.FilterDescendantsInstances = players
+            raycastParams.IgnoreWater = true
+            local raycastResult = workspace:Raycast(mouseRay.Origin, mouseRay.Direction * 1000, raycastParams)
+            if raycastResult then
+                for _, x in next, game:GetService('Players'):GetPlayers() do
+                    if not raycastResult.Instance:IsDescendantOf(x.Character) then
+                        continue 
+                    end
+                    return x
+                end
+            end
+            return false
+        end
+        local function Set(list)
+            local set = {}
+            for _, l in ipairs(list) do
+                if l then
+                    set[l] = true
+                end
+            end
+            return set
+        end
+        if IsTyping then return end
+        local player = getPlayer()
+        if player then
+            local pos = player.Character.HumanoidRootPart.CFrame
+
+local args = {
+    [1] = "Maybe I can't kill you",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+
+    local args = {
+            [1] = "Magic",
+            [2] = {
+                [1] = "BreakLeg",
+                [2] = player.Character
+            }
+        }
+        
+        game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))
+		
+wait(1)
+local args = {
+    [1] = "But I can make you wish you were dead",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+wait(0.5)				
+local args = {
+    [1] = "Magic",
+    [2] = {
+        [1] = "SnapNeck",
+        [2] = player.Character
+    }
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Witch"):FireServer(unpack(args))		
+wait(1)
+				local A_1 = "Magic"
+				local A_2 = 
+					{
+						[1] = "Explosion",
+						[2] = player.Character.UpperTorso.Position
+					}
+				local Event = game:GetService("ReplicatedStorage").Events.Witch
+				Event:FireServer(A_1, A_2)
+						local A_1 = "Push"
+					local A_2 = 
+						{
+							[1] = player.Character
+						}
+					local Event = game:GetService("ReplicatedStorage").Events.Witch
+					Event:FireServer(A_1, A_2)	
+end
+
+    end
+end)
+
+BennettSection:NewKeybind("Boiling Blood", "",Enum.KeyCode.Three, function()
+    if game.workspace["Freya Keybinds"].Archivable == true then
+    local function getPlayer()
+            local userInput = game:GetService("UserInputService")
+            local cam = workspace.CurrentCamera
+            local mousePos = userInput:GetMouseLocation()
+            local mouseRay = cam:ViewportPointToRay(mousePos.X, mousePos.Y)
+            players = {}
+            for _, x in next, game:GetService('Players'):GetPlayers() do
+                players[#players + 1] = x.Character
+            end
+            local raycastParams = RaycastParams.new()
+            raycastParams.FilterType = Enum.RaycastFilterType.Whitelist
+            raycastParams.FilterDescendantsInstances = players
+            raycastParams.IgnoreWater = true
+            local raycastResult = workspace:Raycast(mouseRay.Origin, mouseRay.Direction * 1000, raycastParams)
+            if raycastResult then
+                for _, x in next, game:GetService('Players'):GetPlayers() do
+                    if not raycastResult.Instance:IsDescendantOf(x.Character) then
+                        continue 
+                    end
+                    return x
+                end
+            end
+            return false
+        end
+        local function Set(list)
+            local set = {}
+            for _, l in ipairs(list) do
+                if l then
+                    set[l] = true
+                end
+            end
+            return set
+        end
+        if IsTyping then return end
+        local player = getPlayer()
+        if player then
+            local pos = player.Character.HumanoidRootPart.CFrame
+
+local args = {
+    [1] = "PainInflict",
+    [2] = {
+        [1] = player.Character,
+        [2] = true
+    }
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Witch"):FireServer(unpack(args))
+
+
+            local args = {
+                [1] = "Magic",
+                [2] = {
+                    [1] = "FireSpell",
+                    [2] = player.Character
+                }
+            }
+            
+            game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))	
+wait(2.75)
+				local A_1 = "Magic"
+				local A_2 = 
+					{
+						[1] = "Explosion",
+						[2] = player.Character.UpperTorso.Position
+					}
+				local Event = game:GetService("ReplicatedStorage").Events.Witch
+				Event:FireServer(A_1, A_2)	
+									
+        end
+    end
+end)
+
+BennettSection:NewButton("I Work Better With Quiet (for vamps)", "", function()
+local args = {
+    [1] = "I Work Better With Quiet",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+wait(1)
+	local AnimationId = "6082221949"
+	local Anim = Instance.new("Animation")
+	Anim.AnimationId = "rbxassetid://"..AnimationId
+	local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+	k:Play()
+	k:AdjustSpeed(1)
+local args = {
+    [1] = "Menedek Qual Suurrentaa!",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+
+wait(0.5)
+    local args = {
+        [1] = "Magic",
+        [2] = {
+        [1] = "SnapAll"
+        }
+    }
+    
+    game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))
+
+end)
+
+BennettSection:NewButton("Resurrect (in the circle)", "", function()
+	local AnimationId = "7381251605"
+	local Anim = Instance.new("Animation")
+	Anim.AnimationId = "rbxassetid://"..AnimationId
+	local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+	k:Play()
+	k:AdjustSpeed(1)
+
+local args = {
+    [1] = "Verha Hel Igjen",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+   wait(0.5)
+workspace:WaitForChild("ResurrectionCircles"):WaitForChild("AstralisRes"):WaitForChild("ResEvent"):FireServer()
+workspace:WaitForChild("ResurrectionCircles"):WaitForChild("AstralisRes"):WaitForChild("ResEvent"):FireServer()
+workspace:WaitForChild("ResurrectionCircles"):WaitForChild("AstralisRes"):WaitForChild("ResEvent"):FireServer()
+workspace:WaitForChild("ResurrectionCircles"):WaitForChild("AstralisRes"):WaitForChild("ResEvent"):FireServer()
+workspace:WaitForChild("ResurrectionCircles"):WaitForChild("Resurrection"):WaitForChild("ResEvent"):FireServer()
+workspace:WaitForChild("ResurrectionCircles"):WaitForChild("Resurrection"):WaitForChild("ResEvent"):FireServer()
+workspace:WaitForChild("ResurrectionCircles"):WaitForChild("Resurrection"):WaitForChild("ResEvent"):FireServer()
+workspace:WaitForChild("ResurrectionCircles"):WaitForChild("Resurrection"):WaitForChild("ResEvent"):FireServer()
+for i,v in pairs(game.Workspace.ResurrectionCircles:GetChildren()) do
+    for i,c in pairs(v:GetChildren()) do
+        if c:IsA("RemoteEvent") then
+            if game.Players.LocalPlayer.Character.Magic.Value >= 1 then
+                c:FireServer()                
+                c:FireServer()
+                c:FireServer()
+print("FIRED AS FUCK LOL")
+            end
+        end
+    end
+end
+
+end)
+
+local BennettSection = Bennett:NewSection("Scarlet Sheila")
+BennettSection:NewToggle("Keybinds On/Off", "", function(state)
+    if state == true then
+        game.workspace["Scarlet Sheila Keybinds"].Archivable = true
+    else
+        game.workspace["Scarlet Sheila Keybinds"].Archivable = false
+    end
+end)
+
+BennettSection:NewKeybind("Incendias Decilupa", "",Enum.KeyCode.One, function()
+    if game.workspace["Scarlet Sheila Keybinds"].Archivable == true then
+
+
+	local AnimationId = "5815404066"
+	local Anim = Instance.new("Animation")
+	Anim.AnimationId = "rbxassetid://"..AnimationId
+	local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+	k:Play()
+	k:AdjustSpeed(1)
+    local function getPlayer()
+            local userInput = game:GetService("UserInputService")
+            local cam = workspace.CurrentCamera
+            local mousePos = userInput:GetMouseLocation()
+            local mouseRay = cam:ViewportPointToRay(mousePos.X, mousePos.Y)
+            players = {}
+            for _, x in next, game:GetService('Players'):GetPlayers() do
+                players[#players + 1] = x.Character
+            end
+            local raycastParams = RaycastParams.new()
+            raycastParams.FilterType = Enum.RaycastFilterType.Whitelist
+            raycastParams.FilterDescendantsInstances = players
+            raycastParams.IgnoreWater = true
+            local raycastResult = workspace:Raycast(mouseRay.Origin, mouseRay.Direction * 1000, raycastParams)
+            if raycastResult then
+                for _, x in next, game:GetService('Players'):GetPlayers() do
+                    if not raycastResult.Instance:IsDescendantOf(x.Character) then
+                        continue 
+                    end
+                    return x
+                end
+            end
+            return false
+        end
+        local function Set(list)
+            local set = {}
+            for _, l in ipairs(list) do
+                if l then
+                    set[l] = true
+                end
+            end
+            return set
+        end
+        if IsTyping then return end
+        local player = getPlayer()
+        if player then
+            local pos = player.Character.HumanoidRootPart.CFrame
+local args = {
+    [1] = "Incendias Decilupa",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+            local args = {
+                [1] = "Magic",
+                [2] = {
+                    [1] = "FireSpell",
+                    [2] = player.Character
+                }
+            }
+            
+            game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))	
+            local args = {
+                [1] = "Magic",
+                [2] = {
+                    [1] = "FireSpell",
+                    [2] = player.Character
+                }
+            }
+            
+            game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))	
+            local args = {
+                [1] = "Magic",
+                [2] = {
+                    [1] = "FireSpell",
+                    [2] = player.Character
+                }
+            }
+            
+            game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))	
+            local args = {
+                [1] = "Magic",
+                [2] = {
+                    [1] = "FireSpell",
+                    [2] = player.Character
+                }
+            }
+            
+            game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))	
+            local args = {
+                [1] = "Magic",
+                [2] = {
+                    [1] = "FireSpell",
+                    [2] = player.Character
+                }
+            }
+            
+            game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))	
+							
+        end
+    end
+end)
+
+BennettSection:NewButton("Mass Push", "", function()
+local args = {
+    [1] = "You got some nerve knocking on a bennett witches door",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+	local AnimationId = "6112652562"
+	local Anim = Instance.new("Animation")
+	Anim.AnimationId = "rbxassetid://"..AnimationId
+	local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+	k:Play()
+	k:AdjustSpeed(1)
+wait(1)
+	local Plr = game.Players.LocalPlayer
+		for i, Player in pairs (game.Players:GetPlayers()) do
+	
+			if Player.Character ~= nil and Player ~= Plr then
+				local mag = (Player.Character.UpperTorso.Position - Plr.Character.UpperTorso.Position).magnitude
+				if mag < 20 then
+					local Target = Player.Character or Player.CharacterAdded:Wait()
+	
+				local A_1 = "Magic"
+				local A_2 = 
+					{
+						[1] = "Explosion",
+						[2] = Target.UpperTorso.Position
+					}
+				local Event = game:GetService("ReplicatedStorage").Events.Witch
+				Event:FireServer(A_1, A_2)
+						local A_1 = "Push"
+					local A_2 = 
+						{
+							[1] = Target
+						}
+					local Event = game:GetService("ReplicatedStorage").Events.Witch
+					Event:FireServer(A_1, A_2)
+
+
+				end
+			end
+		end
+		wait()
+end)
+
+BennettSection:NewButton("Push And Snap Around", "", function()
+local args = {
+    [1] = "I Am Not Bonnie, You Dont Wanna Mess With Me",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+	local AnimationId = "4756401452"
+	local Anim = Instance.new("Animation")
+	Anim.AnimationId = "rbxassetid://"..AnimationId
+	local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+	k:Play()
+	k:AdjustSpeed(1)
+	local Plr = game.Players.LocalPlayer
+		for i, Player in pairs (game.Players:GetPlayers()) do
+	
+			if Player.Character ~= nil and Player ~= Plr then
+				local mag = (Player.Character.UpperTorso.Position - Plr.Character.UpperTorso.Position).magnitude
+				if mag < 30 then
+					local Target = Player.Character or Player.CharacterAdded:Wait()
+	
+    local args = {
+        [1] = "Magic",
+        [2] = {
+        [1] = "SnapAll"
+        }
+    }
+    
+    game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))
+wait(0.5)		
+						local A_1 = "Push"
+					local A_2 = 
+						{
+							[1] = Target
+						}
+					local Event = game:GetService("ReplicatedStorage").Events.Witch
+					Event:FireServer(A_1, A_2)
+
+
+				end
+			end
+		end
+		wait()
+end)
+
+BennettSection:NewButton("Get Off My Porch", "", function()
+    print("Clicked")
+local args = {
+    [1] = "Get Off My Porch",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+	local AnimationId = "5422859012"
+	local Anim = Instance.new("Animation")
+	Anim.AnimationId = "rbxassetid://"..AnimationId
+	local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+	k:Play()
+	k:AdjustSpeed(1)
+    local Plr = game.Players.LocalPlayer
+    for i, Player in pairs (game.Players:GetPlayers()) do
+
+        if Player.Character ~= nil and Player ~= Plr then
+            local mag = (Player.Character.UpperTorso.Position - Plr.Character.UpperTorso.Position).magnitude
+            if mag < 20 then
+                local Target = Player.Character or Player.CharacterAdded:Wait()
+
+        local A_1 = "Magic"
+        local A_2 = 
+            {
+                [1] = "SleepSpell", 
+                [2] = Target
+            }
+        local Event = game:GetService("ReplicatedStorage").Events.Witch
+        Event:FireServer(A_1, A_2)
+wait(0.5)
+            local args = {
+                [1] = "Magic",
+                [2] = {
+                    [1] = "FireSpell",
+                    [2] = Target
+                }
+            }
+            
+            game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))	
+				Event:FireServer(A_1, A_2)
+						local A_1 = "Push"
+					local A_2 = 
+						{
+							[1] = Target
+						}
+					local Event = game:GetService("ReplicatedStorage").Events.Witch
+					Event:FireServer(A_1, A_2)
+	
+
+            end
+        end
+end   
+end)
+
+BennettSection:NewButton("Resurrect (in the circle)", "", function()
+	local AnimationId = "6082221949"
+	local Anim = Instance.new("Animation")
+	Anim.AnimationId = "rbxassetid://"..AnimationId
+	local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+	k:Play()
+	k:AdjustSpeed(1)
+
+local args = {
+    [1] = "Come Back To Me Child",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+workspace:WaitForChild("ResurrectionCircles"):WaitForChild("AstralisRes"):WaitForChild("ResEvent"):FireServer()
+workspace:WaitForChild("ResurrectionCircles"):WaitForChild("AstralisRes"):WaitForChild("ResEvent"):FireServer()
+workspace:WaitForChild("ResurrectionCircles"):WaitForChild("AstralisRes"):WaitForChild("ResEvent"):FireServer()
+workspace:WaitForChild("ResurrectionCircles"):WaitForChild("AstralisRes"):WaitForChild("ResEvent"):FireServer()
+workspace:WaitForChild("ResurrectionCircles"):WaitForChild("Resurrection"):WaitForChild("ResEvent"):FireServer()
+workspace:WaitForChild("ResurrectionCircles"):WaitForChild("Resurrection"):WaitForChild("ResEvent"):FireServer()
+workspace:WaitForChild("ResurrectionCircles"):WaitForChild("Resurrection"):WaitForChild("ResEvent"):FireServer()
+workspace:WaitForChild("ResurrectionCircles"):WaitForChild("Resurrection"):WaitForChild("ResEvent"):FireServer()
+for i,v in pairs(game.Workspace.ResurrectionCircles:GetChildren()) do
+    for i,c in pairs(v:GetChildren()) do
+        if c:IsA("RemoteEvent") then
+            if game.Players.LocalPlayer.Character.Magic.Value >= 1 then
+                c:FireServer()                
+                c:FireServer()
+                c:FireServer()
+print("FIRED AS FUCK LOL")
+            end
+        end
+    end
+end
+
+end)
+
+local BennettSection = Bennett:NewSection("Harvest Monique")
+BennettSection:NewToggle("Keybinds On/Off", "", function(state)
+    if state == true then
+        game.workspace["Harvest Monique Keybinds"].Archivable = true
+    else
+        game.workspace["Harvest Monique Keybinds"].Archivable = false
+    end
+end)
+
+BennettSection:NewTextBox("Locate", "Players name", function(txt)
+    local Players = game:GetService("Players")
+    local msg = txt
+    local function findPlayer(stringg)
+        for _, v in pairs(Players:GetPlayers()) do
+            if stringg:lower() == (v.Name:lower()):sub(1, #stringg) then
+                return v
+            end
+        end
+    end
+
+    local player = findPlayer(msg)
+    local CHAR = player.Character
+    
+ local args = {
+    [1] = "To Find What You're Looking For, Follow The Path",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+wait(0.7)
+ local args = {
+    [1] = msg,
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+wait(0.5)
+      game:GetService("Workspace").CurrentCamera.CameraSubject = player.Character
+wait(0.5)
+    local A_1 = "Magic"
+    local A_2 = 
+        {
+            [1] = "Motus",
+            [2] = true,
+            [3] = player.Character
+        }
+    local Event = game:GetService("ReplicatedStorage").Events.Witch
+    Event:FireServer(A_1, A_2)	
+    local A_1 = "Magic"
+    local A_2 = 
+        {
+            [1] = "Motus",
+            [2] = true,
+            [3] = player.Character
+        }
+    local Event = game:GetService("ReplicatedStorage").Events.Witch
+    Event:FireServer(A_1, A_2)	
+    local A_1 = "Magic"
+    local A_2 = 
+        {
+            [1] = "Motus",
+            [2] = true,
+            [3] = player.Character
+        }
+    local Event = game:GetService("ReplicatedStorage").Events.Witch
+    Event:FireServer(A_1, A_2)	
+    local A_1 = "Magic"
+    local A_2 = 
+        {
+            [1] = "Motus",
+            [2] = true,
+            [3] = player.Character
+        }
+    local Event = game:GetService("ReplicatedStorage").Events.Witch
+    Event:FireServer(A_1, A_2)	
+    local A_1 = "Magic"
+    local A_2 = 
+        {
+            [1] = "Motus",
+            [2] = true,
+            [3] = player.Character
+        }
+    local Event = game:GetService("ReplicatedStorage").Events.Witch
+    Event:FireServer(A_1, A_2)	
+    local A_1 = "Magic"
+    local A_2 = 
+        {
+            [1] = "Motus",
+            [2] = true,
+            [3] = player.Character
+        }
+    local Event = game:GetService("ReplicatedStorage").Events.Witch
+    Event:FireServer(A_1, A_2)	
+    local A_1 = "Magic"
+    local A_2 = 
+        {
+            [1] = "Motus",
+            [2] = true,
+            [3] = player.Character
+        }
+    local Event = game:GetService("ReplicatedStorage").Events.Witch
+    Event:FireServer(A_1, A_2)	
+    local A_1 = "Magic"
+    local A_2 = 
+        {
+            [1] = "Motus",
+            [2] = true,
+            [3] = player.Character
+        }
+    local Event = game:GetService("ReplicatedStorage").Events.Witch
+    Event:FireServer(A_1, A_2)	
+    local A_1 = "Magic"
+    local A_2 = 
+        {
+            [1] = "Motus",
+            [2] = true,
+            [3] = player.Character
+        }
+    local Event = game:GetService("ReplicatedStorage").Events.Witch
+    Event:FireServer(A_1, A_2)	
+wait(7)  
+     playr = game:GetService("Players").LocalPlayer
+     game:GetService("Workspace").CurrentCamera.CameraSubject = playr.Character
+
+end)
+
+BennettSection:NewKeybind("You should have believed! (for vamps)", "",Enum.KeyCode.One, function()
+    if game.workspace["Harvest Monique Keybinds"].Archivable == true then
+    local function getPlayer()
+            local userInput = game:GetService("UserInputService")
+            local cam = workspace.CurrentCamera
+            local mousePos = userInput:GetMouseLocation()
+            local mouseRay = cam:ViewportPointToRay(mousePos.X, mousePos.Y)
+            players = {}
+            for _, x in next, game:GetService('Players'):GetPlayers() do
+                players[#players + 1] = x.Character
+            end
+            local raycastParams = RaycastParams.new()
+            raycastParams.FilterType = Enum.RaycastFilterType.Whitelist
+            raycastParams.FilterDescendantsInstances = players
+            raycastParams.IgnoreWater = true
+            local raycastResult = workspace:Raycast(mouseRay.Origin, mouseRay.Direction * 1000, raycastParams)
+            if raycastResult then
+                for _, x in next, game:GetService('Players'):GetPlayers() do
+                    if not raycastResult.Instance:IsDescendantOf(x.Character) then
+                        continue 
+                    end
+                    return x
+                end
+            end
+            return false
+        end
+        local function Set(list)
+            local set = {}
+            for _, l in ipairs(list) do
+                if l then
+                    set[l] = true
+                end
+            end
+            return set
+        end
+        if IsTyping then return end
+        local player = getPlayer()
+        if player then
+            local pos = player.Character.HumanoidRootPart.CFrame
+local args = {
+    [1] = "You should have believed!",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+local args = {
+    [1] = "PainInflict",
+    [2] = {
+        [1] = player.Character,
+        [2] = false
+    }
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Witch"):FireServer(unpack(args))
+local args = {
+    [1] = "PainInflict",
+    [2] = {
+        [1] = player.Character,
+        [2] = false
+    }
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Witch"):FireServer(unpack(args))
+local args = {
+    [1] = "PainInflict",
+    [2] = {
+        [1] = player.Character,
+        [2] = false
+    }
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Witch"):FireServer(unpack(args))
+
+wait(4)
+	local args = {
+    [1] = "Magic",
+    [2] = {
+        [1] = "SnapNeck",
+        [2] = player.Character
+    }
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Witch"):FireServer(unpack(args))							
+        end
+    end
+end)
+
+
+BennettSection:NewButton("I don't wanna go!", "", function()
+    print("Clicked")
+local args = {
+    [1] = "I don't wanna go!",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+	local AnimationId = "9136189849"
+	local Anim = Instance.new("Animation")
+	Anim.AnimationId = "rbxassetid://"..AnimationId
+	local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+	k:Play()
+	k:AdjustSpeed(1)
+    local Plr = game.Players.LocalPlayer
+    for i, Player in pairs (game.Players:GetPlayers()) do
+
+        if Player.Character ~= nil and Player ~= Plr then
+            local mag = (Player.Character.UpperTorso.Position - Plr.Character.UpperTorso.Position).magnitude
+            if mag < 30 then
+                local Target = Player.Character or Player.CharacterAdded:Wait()
+
+local args = {
+    [1] = "Magic",
+    [2] = {
+        [1] = "AdvancedInflict"
+    }
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Witch"):FireServer(unpack(args))
+local args = {
+    [1] = "Magic",
+    [2] = {
+        [1] = "AdvancedInflict"
+    }
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Witch"):FireServer(unpack(args))
+wait(4)
+local args = {
+    [1] = "Push",
+    [2] = {
+        [1] = Target
+    }
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Witch"):FireServer(unpack(args))
+	
+
+            end
+        end
+end   
+end)
+
+BennettSection:NewButton("Mass Push", "", function()
+    print("Clicked")
+local args = {
+    [1] = "You fools to come against us at our strongest hour!",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+	local AnimationId = "9237375399"
+	local Anim = Instance.new("Animation")
+	Anim.AnimationId = "rbxassetid://"..AnimationId
+	local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+	k:Play()
+	k:AdjustSpeed(1)
+    local Plr = game.Players.LocalPlayer
+    for i, Player in pairs (game.Players:GetPlayers()) do
+
+        if Player.Character ~= nil and Player ~= Plr then
+            local mag = (Player.Character.UpperTorso.Position - Plr.Character.UpperTorso.Position).magnitude
+            if mag < 30 then
+                local Target = Player.Character or Player.CharacterAdded:Wait()
+
+    local A_1 = "Magic"
+    local A_2 = 
+        {
+            [1] = "Motus",
+            [2] = true,
+            [3] = Target
+        }
+    local Event = game:GetService("ReplicatedStorage").Events.Witch
+    Event:FireServer(A_1, A_2)	
+    local A_1 = "Magic"
+    local A_2 = 
+        {
+            [1] = "Motus",
+            [2] = true,
+            [3] = Target
+        }
+    local Event = game:GetService("ReplicatedStorage").Events.Witch
+    Event:FireServer(A_1, A_2)	
+wait(0.5)
+				local A_1 = "Magic"
+				local A_2 = 
+					{
+						[1] = "Explosion",
+						[2] = Target.UpperTorso.Position
+					}
+				local Event = game:GetService("ReplicatedStorage").Events.Witch
+				Event:FireServer(A_1, A_2)
+						local A_1 = "Push"
+					local A_2 = 
+						{
+							[1] = Target
+						}
+					local Event = game:GetService("ReplicatedStorage").Events.Witch
+					Event:FireServer(A_1, A_2)
+	
+
+            end
+        end
+end   
+end)
+
+local BennettSection = Bennett:NewSection("Dahlia")
+BennettSection:NewTextBox("Teleport", "Players name", function(txt)
+    local Players = game:GetService("Players")
+    local msg = txt
+    local function findPlayer(stringg)
+        for _, v in pairs(Players:GetPlayers()) do
+            if stringg:lower() == (v.Name:lower()):sub(1, #stringg) then
+                return v
+            end
+        end
+    end
+
+    local player = findPlayer(msg)
+    local CHAR = player.Character
+    local plr = player
+    
+ local args = {
+    [1] = "Sanguis Inveniat "..plr.Name,
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+wait(0.5)
+
+local args = {
+    [1] = "Magic",
+    [2] = {
+        [1] = "Teleport",
+        [2] = player.character.UpperTorso.Position
+    }
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Witch"):FireServer(unpack(args))
+
+end)
+BennettSection:NewToggle("Keybinds On/Off", "", function(state)
+    if state == true then
+        game.workspace["Dahlia Keybinds"].Archivable = true
+    else
+        game.workspace["Dahlia Keybinds"].Archivable = false
+    end
+end)
+
+BennettSection:NewKeybind("Too powerful (for vamps)", "",Enum.KeyCode.One, function()
+    if game.workspace["Dahlia Keybinds"].Archivable == true then
+
+	local AnimationId = "5845089952"
+	local Anim = Instance.new("Animation")
+	Anim.AnimationId = "rbxassetid://"..AnimationId
+	local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+	k:Play()
+	k:AdjustSpeed(1)
+    local function getPlayer()
+            local userInput = game:GetService("UserInputService")
+            local cam = workspace.CurrentCamera
+            local mousePos = userInput:GetMouseLocation()
+            local mouseRay = cam:ViewportPointToRay(mousePos.X, mousePos.Y)
+            players = {}
+            for _, x in next, game:GetService('Players'):GetPlayers() do
+                players[#players + 1] = x.Character
+            end
+            local raycastParams = RaycastParams.new()
+            raycastParams.FilterType = Enum.RaycastFilterType.Whitelist
+            raycastParams.FilterDescendantsInstances = players
+            raycastParams.IgnoreWater = true
+            local raycastResult = workspace:Raycast(mouseRay.Origin, mouseRay.Direction * 1000, raycastParams)
+            if raycastResult then
+                for _, x in next, game:GetService('Players'):GetPlayers() do
+                    if not raycastResult.Instance:IsDescendantOf(x.Character) then
+                        continue 
+                    end
+                    return x
+                end
+            end
+            return false
+        end
+        local function Set(list)
+            local set = {}
+            for _, l in ipairs(list) do
+                if l then
+                    set[l] = true
+                end
+            end
+            return set
+        end
+        if IsTyping then return end
+        local player = getPlayer()
+        if player then
+            local pos = player.Character.HumanoidRootPart.CFrame
+
+local args = {
+    [1] = "I'm too powerful to kill",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+local args = {
+    [1] = "Magic",
+    [2] = {
+        [1] = "SnapNeck",
+        [2] = player.Character
+    }
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Witch"):FireServer(unpack(args))			
+						local A_1 = "Push"
+					local A_2 = 
+						{
+							[1] = player.Character
+						}
+					local Event = game:GetService("ReplicatedStorage").Events.Witch
+					Event:FireServer(A_1, A_2)									
+        end
+    end
+end)
+
+BennettSection:NewKeybind("Clock the ungarteful", "",Enum.KeyCode.Two, function()
+    if game.workspace["Dahlia Keybinds"].Archivable == true then
+
+    local function getPlayer()
+            local userInput = game:GetService("UserInputService")
+            local cam = workspace.CurrentCamera
+            local mousePos = userInput:GetMouseLocation()
+            local mouseRay = cam:ViewportPointToRay(mousePos.X, mousePos.Y)
+            players = {}
+            for _, x in next, game:GetService('Players'):GetPlayers() do
+                players[#players + 1] = x.Character
+            end
+            local raycastParams = RaycastParams.new()
+            raycastParams.FilterType = Enum.RaycastFilterType.Whitelist
+            raycastParams.FilterDescendantsInstances = players
+            raycastParams.IgnoreWater = true
+            local raycastResult = workspace:Raycast(mouseRay.Origin, mouseRay.Direction * 1000, raycastParams)
+            if raycastResult then
+                for _, x in next, game:GetService('Players'):GetPlayers() do
+                    if not raycastResult.Instance:IsDescendantOf(x.Character) then
+                        continue 
+                    end
+                    return x
+                end
+            end
+            return false
+        end
+        local function Set(list)
+            local set = {}
+            for _, l in ipairs(list) do
+                if l then
+                    set[l] = true
+                end
+            end
+            return set
+        end
+        if IsTyping then return end
+        local player = getPlayer()
+        if player then
+            local pos = player.Character.HumanoidRootPart.CFrame
+
+local args = {
+    [1] = "Always wishing for another life, never satisfied",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+
+local args = {
+    [1] = "PainInflict",
+    [2] = {
+        [1] = player.Character,
+        [2] = false
+    }
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Witch"):FireServer(unpack(args))
+local args = {
+    [1] = "PainInflict",
+    [2] = {
+        [1] = player.Character,
+        [2] = false
+    }
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Witch"):FireServer(unpack(args))
+            local args = {
+                [1] = "Magic",
+                [2] = {
+                    [1] = "FireSpell",
+                    [2] = player.Character
+                }
+            }
+            
+            game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))	
+            local args = {
+                [1] = "Magic",
+                [2] = {
+                    [1] = "FireSpell",
+                    [2] = player.Character
+                }
+            }
+            
+            game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))	
+wait(2.5)
+        local A_1 = "Magic"
+        local A_2 = 
+            {
+                [1] = "SleepSpell", 
+                [2] = player.Character
+            }
+        local Event = game:GetService("ReplicatedStorage").Events.Witch
+        Event:FireServer(A_1, A_2)			
+						local A_1 = "Push"
+					local A_2 = 
+						{
+							[1] = player.Character
+						}
+					local Event = game:GetService("ReplicatedStorage").Events.Witch
+					Event:FireServer(A_1, A_2)	
+        end
+    end
+end)
+
+
+BennettSection:NewKeybind("Immortality link (Hope/Og)", "",Enum.KeyCode.Three, function()
+    if game.workspace["Dahlia Keybinds"].Archivable == true then
+
+    local function getPlayer()
+            local userInput = game:GetService("UserInputService")
+            local cam = workspace.CurrentCamera
+            local mousePos = userInput:GetMouseLocation()
+            local mouseRay = cam:ViewportPointToRay(mousePos.X, mousePos.Y)
+            players = {}
+            for _, x in next, game:GetService('Players'):GetPlayers() do
+                players[#players + 1] = x.Character
+            end
+            local raycastParams = RaycastParams.new()
+            raycastParams.FilterType = Enum.RaycastFilterType.Whitelist
+            raycastParams.FilterDescendantsInstances = players
+            raycastParams.IgnoreWater = true
+            local raycastResult = workspace:Raycast(mouseRay.Origin, mouseRay.Direction * 1000, raycastParams)
+            if raycastResult then
+                for _, x in next, game:GetService('Players'):GetPlayers() do
+                    if not raycastResult.Instance:IsDescendantOf(x.Character) then
+                        continue 
+                    end
+                    return x
+                end
+            end
+            return false
+        end
+        local function Set(list)
+            local set = {}
+            for _, l in ipairs(list) do
+                if l then
+                    set[l] = true
+                end
+            end
+            return set
+        end
+        if IsTyping then return end
+        local player = getPlayer()
+        if player then
+            local pos = player.Character.HumanoidRootPart.CFrame
+            local plr = player
+    local pler = game.Players.LocalPlayer
+
+if game.workspace.Live[plr.Name].Original.Value == true or game.workspace.Live[plr.Name].CharacterName.Value == "Niklaus" or game.workspace.Live[plr.Name].CharacterName.Value == "Hope" or game.workspace.Live[plr.Name].CharacterName.Value == "Freya"  then
+
+      game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = player.Character.HumanoidRootPart.CFrame
+local args = {
+    [1] = "Magi somn et immortalis Binde oss",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+	local AnimationId = "4807035844"
+	local Anim = Instance.new("Animation")
+	Anim.AnimationId = "rbxassetid://"..AnimationId
+	local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+	k:Play()
+	k:AdjustSpeed(1)
+local backup =  game.workspace.Live[pler.Name].Immortality.Comm:Clone()
+backup.Parent = game.Players
+wait(0.5)
+local backup = game.workspace["Immortality Link"]:Clone()
+backup.Parent = game.workspace.Live[plr.Name]
+wait(1)
+
+	game:GetService("StarterGui"):SetCore("SendNotification", {
+		Title = "You have linked..";
+		Text = "You are immortal now!"
+	})
+    local pler = game.Players.LocalPlayer
+game.Players.LocalPlayer.Character.Humanoid.ragdoll.Value = true
+wait(3)
+game.Players.LocalPlayer.Character.Humanoid.ragdoll.Value = false
+       Event:FireServer(A_1, A_2)
+if game.workspace.Live[plr.Name]["Immortality Link"].Archivable == true then
+    game.workspace.Live[pler.Name].Immortality.Comm:Destroy()
+end
+if game:GetService("Workspace").deathClones[plr.Name("deathClone")] then
+    local backup = game.Players.Comm:Clone()
+backup.Parent = game.workspace.Live[pler.Name].Immortality
+end
+end
+        end
+    end
+end)
+
+BennettSection:NewKeybind("Teleportation", "",Enum.KeyCode.Q, function()
+    if game.workspace["Dahlia Keybinds"].Archivable == true then
+    if IsTyping then return end
+    local Mouse = game.Players.LocalPlayer:GetMouse()
+
+local args = {
+    [1] = "Magic",
+    [2] = {
+        [1] = "Teleport",
+        [2] = Mouse.Hit.p
+    }
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Witch"):FireServer(unpack(args))
+
+    end
+end)
+
+BennettSection:NewButton("Tempesta", "", function()
+    print("Clicked")
+local args = {
+    [1] = "She won't get far tonight..",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+ 	local AnimationId = "6082221949"
+	local Anim = Instance.new("Animation")
+	Anim.AnimationId = "rbxassetid://"..AnimationId
+	local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+	k:Play()
+	k:AdjustSpeed(0.6)
+   
+    	local AnimationId = "4786138659"
+	local Anim = Instance.new("Animation")
+	Anim.AnimationId = "rbxassetid://"..AnimationId
+	local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+	k:Play()
+	k:AdjustSpeed(1.5)
+   
+       	local AnimationId = "5845089952"
+	local Anim = Instance.new("Animation")
+	Anim.AnimationId = "rbxassetid://"..AnimationId
+	local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+	k:Play()
+	k:AdjustSpeed(0.5)
+    local Plr = game.Players.LocalPlayer
+    for i, Player in pairs (game.Players:GetPlayers()) do
+
+        if Player.Character ~= nil and Player ~= Plr then
+            local mag = (Player.Character.UpperTorso.Position - Plr.Character.UpperTorso.Position).magnitude
+            if mag < 10000 then
+                local Target = Player.Character or Player.CharacterAdded:Wait()
+wait(1)
+local args = {
+    [1] = "Magic",
+    [2] = {
+        [1] = "Explosion",
+        [2] = Target.UpperTorso.Position
+    }
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Witch"):FireServer(unpack(args))
+	
+
+            end
+        end
+end   
+end)
+
+BennettSection:NewButton("Mass bone break (vamp)", "", function()
+    print("Clicked")
+local args = {
+    [1] = "Missa Confractus",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+ 	local AnimationId = "5815404066"
+	local Anim = Instance.new("Animation")
+	Anim.AnimationId = "rbxassetid://"..AnimationId
+	local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+	k:Play()
+	k:AdjustSpeed(0.6)
+   
+    local Plr = game.Players.LocalPlayer
+    for i, Player in pairs (game.Players:GetPlayers()) do
+
+        if Player.Character ~= nil and Player ~= Plr then
+            local mag = (Player.Character.UpperTorso.Position - Plr.Character.UpperTorso.Position).magnitude
+            if mag < 30 then
+                local Target = Player.Character or Player.CharacterAdded:Wait()
+local args = {
+    [1] = "Magic",
+    [2] = {
+        [1] = "BreakLeg",
+        [2] = Target
+    }
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Witch"):FireServer(unpack(args))
+wait(0.5)
+local args = {
+    [1] = "Magic",
+    [2] = {
+        [1] = "SnapNeck",
+        [2] = Target
+    }
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Witch"):FireServer(unpack(args))	
+
+            end
+        end
+end   
+end)
+
+BennettSection:NewButton("Go to ghost realm for 10 secs (see ghosts in it)", "", function()
+	local plr = game.Players.LocalPlayer
+	local char = plr.Character or plr.CharacterAdded:Wait()
+	local fold = Instance.new("Folder")
+	fold.Name = "SeeGhosts"
+	fold.Parent = char    
+    local A_1 = "Magic"
+    local A_2 = 
+        {
+            [1] = "Invisibility"
+        }
+    local Event = game:GetService("ReplicatedStorage").Events.Witch
+    Event:FireServer(A_1, A_2)
+wait(11)
+    game.workspace.Live[plr.Name].SeeGhosts:Destroy()
+
+end)
+
+BennettSection:NewButton("Resurrect (in the circle)", "", function()
+	local AnimationId = "7381251605"
+	local Anim = Instance.new("Animation")
+	Anim.AnimationId = "rbxassetid://"..AnimationId
+	local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+	k:Play()
+	k:AdjustSpeed(1)
+
+local args = {
+    [1] = "Sa Et Corpus Ab Restoro",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+   wait(0.5)
+workspace:WaitForChild("ResurrectionCircles"):WaitForChild("AstralisRes"):WaitForChild("ResEvent"):FireServer()
+workspace:WaitForChild("ResurrectionCircles"):WaitForChild("AstralisRes"):WaitForChild("ResEvent"):FireServer()
+workspace:WaitForChild("ResurrectionCircles"):WaitForChild("AstralisRes"):WaitForChild("ResEvent"):FireServer()
+workspace:WaitForChild("ResurrectionCircles"):WaitForChild("AstralisRes"):WaitForChild("ResEvent"):FireServer()
+workspace:WaitForChild("ResurrectionCircles"):WaitForChild("Resurrection"):WaitForChild("ResEvent"):FireServer()
+workspace:WaitForChild("ResurrectionCircles"):WaitForChild("Resurrection"):WaitForChild("ResEvent"):FireServer()
+workspace:WaitForChild("ResurrectionCircles"):WaitForChild("Resurrection"):WaitForChild("ResEvent"):FireServer()
+workspace:WaitForChild("ResurrectionCircles"):WaitForChild("Resurrection"):WaitForChild("ResEvent"):FireServer()
+for i,v in pairs(game.Workspace.ResurrectionCircles:GetChildren()) do
+    for i,c in pairs(v:GetChildren()) do
+        if c:IsA("RemoteEvent") then
+            if game.Players.LocalPlayer.Character.Magic.Value >= 1 then
+                c:FireServer()                
+                c:FireServer()
+                c:FireServer()
+print("FIRED AS FUCK LOL")
+            end
+        end
+    end
+end
+
+end)
+
+local BennettSection = Bennett:NewSection("Dark Josie")
+
+BennettSection:NewTextBox("Summon", "Players name", function(txt)
+    local Players = game:GetService("Players")
+    local msg = txt
+    local function findPlayer(stringg)
+        for _, v in pairs(Players:GetPlayers()) do
+            if stringg:lower() == (v.Name:lower()):sub(1, #stringg) then
+                return v
+            end
+        end
+    end
+
+    local player = findPlayer(msg)
+    local CHAR = player.Character
+    local plr = player
+
+	local AnimationId = "12507085924"
+	local Anim = Instance.new("Animation")
+	Anim.AnimationId = "rbxassetid://"..AnimationId
+	local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+	k:Play()
+	k:AdjustSpeed(1)
+wait(1.5)
+    local A_1 = "Magic"
+    local A_2 = 
+        {
+            [1] = "Motus",
+            [2] = true,
+            [3] = player.Character
+        }
+    local Event = game:GetService("ReplicatedStorage").Events.Witch
+    Event:FireServer(A_1, A_2)	
+    local A_1 = "Magic"
+    local A_2 = 
+        {
+            [1] = "Motus",
+            [2] = true,
+            [3] = player.Character
+        }
+    local Event = game:GetService("ReplicatedStorage").Events.Witch
+    Event:FireServer(A_1, A_2)	
+    local A_1 = "Magic"
+    local A_2 = 
+        {
+            [1] = "Motus",
+            [2] = true,
+            [3] = player.Character
+        }
+    local Event = game:GetService("ReplicatedStorage").Events.Witch
+    Event:FireServer(A_1, A_2)	
+    local A_1 = "Magic"
+    local A_2 = 
+        {
+            [1] = "Motus",
+            [2] = true,
+            [3] = player.Character
+        }
+    local Event = game:GetService("ReplicatedStorage").Events.Witch
+    Event:FireServer(A_1, A_2)	
+wait(0.5)
+    local A_1 = "Magic"
+    local A_2 = 
+        {
+            [1] = "Motus",
+            [2] = true,
+            [3] = player.Character
+        }
+    local Event = game:GetService("ReplicatedStorage").Events.Witch
+    Event:FireServer(A_1, A_2)	
+wait(0.5)
+    local A_1 = "Magic"
+    local A_2 = 
+        {
+            [1] = "Motus",
+            [2] = true,
+            [3] = player.Character
+        }
+    local Event = game:GetService("ReplicatedStorage").Events.Witch
+    Event:FireServer(A_1, A_2)	
+k:Stop()
+wait(0.5)
+    local A_1 = "Magic"
+    local A_2 = 
+        {
+            [1] = "Motus",
+            [2] = true,
+            [3] = player.Character
+        }
+    local Event = game:GetService("ReplicatedStorage").Events.Witch
+    Event:FireServer(A_1, A_2)	
+wait(0.5)
+    local A_1 = "Magic"
+    local A_2 = 
+        {
+            [1] = "Motus",
+            [2] = true,
+            [3] = player.Character
+        }
+    local Event = game:GetService("ReplicatedStorage").Events.Witch
+    Event:FireServer(A_1, A_2)	
+wait(0.5)
+    local A_1 = "Magic"
+    local A_2 = 
+        {
+            [1] = "Motus",
+            [2] = true,
+            [3] = player.Character
+        }
+    local Event = game:GetService("ReplicatedStorage").Events.Witch
+    Event:FireServer(A_1, A_2)	
+
+end)
+
+BennettSection:NewToggle("Keybinds On/Off", "", function(state)
+    if state == true then
+        game.workspace["Dark Josie Keybinds"].Archivable = true
+    else
+        game.workspace["Dark Josie Keybinds"].Archivable = false
+    end
+end)
+
+BennettSection:NewKeybind("Ignalusa", "",Enum.KeyCode.One, function()
+    if game.workspace["Dark Josie Keybinds"].Archivable == true then
+
+    local function getPlayer()
+            local userInput = game:GetService("UserInputService")
+            local cam = workspace.CurrentCamera
+            local mousePos = userInput:GetMouseLocation()
+            local mouseRay = cam:ViewportPointToRay(mousePos.X, mousePos.Y)
+            players = {}
+            for _, x in next, game:GetService('Players'):GetPlayers() do
+                players[#players + 1] = x.Character
+            end
+            local raycastParams = RaycastParams.new()
+            raycastParams.FilterType = Enum.RaycastFilterType.Whitelist
+            raycastParams.FilterDescendantsInstances = players
+            raycastParams.IgnoreWater = true
+            local raycastResult = workspace:Raycast(mouseRay.Origin, mouseRay.Direction * 1000, raycastParams)
+            if raycastResult then
+                for _, x in next, game:GetService('Players'):GetPlayers() do
+                    if not raycastResult.Instance:IsDescendantOf(x.Character) then
+                        continue 
+                    end
+                    return x
+                end
+            end
+            return false
+        end
+        local function Set(list)
+            local set = {}
+            for _, l in ipairs(list) do
+                if l then
+                    set[l] = true
+                end
+            end
+            return set
+        end
+        if IsTyping then return end
+        local player = getPlayer()
+        if player then
+            local pos = player.Character.HumanoidRootPart.CFrame
+
+	local AnimationId = "4756419387"
+	local Anim = Instance.new("Animation")
+	Anim.AnimationId = "rbxassetid://"..AnimationId
+	local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+	k:Play()
+	k:AdjustSpeed(2.5)
+
+local args = {
+    [1] = "Ignalusa",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+
+           local args = {
+                [1] = "Magic",
+                [2] = {
+                    [1] = "FireSpell",
+                    [2] = player.Character
+                }
+            }
+            
+            game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))	
+            local args = {
+                [1] = "Magic",
+                [2] = {
+                    [1] = "FireSpell",
+                    [2] = player.Character
+                }
+            }
+            
+            game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))	
+            local args = {
+                [1] = "Magic",
+                [2] = {
+                    [1] = "FireSpell",
+                    [2] = player.Character
+                }
+            }
+            
+            game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))	
+            local args = {
+                [1] = "Magic",
+                [2] = {
+                    [1] = "FireSpell",
+                    [2] = player.Character
+                }
+            }
+            
+            game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))	
+            local args = {
+                [1] = "Magic",
+                [2] = {
+                    [1] = "FireSpell",
+                    [2] = player.Character
+                }
+            }
+            
+            game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))	
+							
+        end
+    end
+end)
+
+BennettSection:NewKeybind("Sleep", "",Enum.KeyCode.Two, function()
+    if game.workspace["Dark Josie Keybinds"].Archivable == true then
+
+    local function getPlayer()
+            local userInput = game:GetService("UserInputService")
+            local cam = workspace.CurrentCamera
+            local mousePos = userInput:GetMouseLocation()
+            local mouseRay = cam:ViewportPointToRay(mousePos.X, mousePos.Y)
+            players = {}
+            for _, x in next, game:GetService('Players'):GetPlayers() do
+                players[#players + 1] = x.Character
+            end
+            local raycastParams = RaycastParams.new()
+            raycastParams.FilterType = Enum.RaycastFilterType.Whitelist
+            raycastParams.FilterDescendantsInstances = players
+            raycastParams.IgnoreWater = true
+            local raycastResult = workspace:Raycast(mouseRay.Origin, mouseRay.Direction * 1000, raycastParams)
+            if raycastResult then
+                for _, x in next, game:GetService('Players'):GetPlayers() do
+                    if not raycastResult.Instance:IsDescendantOf(x.Character) then
+                        continue 
+                    end
+                    return x
+                end
+            end
+            return false
+        end
+        local function Set(list)
+            local set = {}
+            for _, l in ipairs(list) do
+                if l then
+                    set[l] = true
+                end
+            end
+            return set
+        end
+        if IsTyping then return end
+        local player = getPlayer()
+        if player then
+            local pos = player.Character.HumanoidRootPart.CFrame
+
+local args = {
+    [1] = "Good idea",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+
+        local A_1 = "Magic"
+        local A_2 = 
+            {
+                [1] = "SleepSpell", 
+                [2] = player.Character
+            }
+        local Event = game:GetService("ReplicatedStorage").Events.Witch
+        Event:FireServer(A_1, A_2)			
+						local A_1 = "Push"
+					local A_2 = 
+						{
+							[1] = player.Character
+						}
+					local Event = game:GetService("ReplicatedStorage").Events.Witch
+					Event:FireServer(A_1, A_2)	
+        end
+    end
+end)
+
+
+
+BennettSection:NewKeybind("Ascendo", "",Enum.KeyCode.Three, function()
+    if game.workspace["Dark Josie Keybinds"].Archivable == true then
+   
+local function getPlayer()
+            local userInput = game:GetService("UserInputService")
+            local cam = workspace.CurrentCamera
+            local mousePos = userInput:GetMouseLocation()
+            local mouseRay = cam:ViewportPointToRay(mousePos.X, mousePos.Y)
+            players = {}
+            for _, x in next, game:GetService('Players'):GetPlayers() do
+                players[#players + 1] = x.Character
+            end
+            local raycastParams = RaycastParams.new()
+            raycastParams.FilterType = Enum.RaycastFilterType.Whitelist
+            raycastParams.FilterDescendantsInstances = players
+            raycastParams.IgnoreWater = true
+            local raycastResult = workspace:Raycast(mouseRay.Origin, mouseRay.Direction * 1000, raycastParams)
+            if raycastResult then
+                for _, x in next, game:GetService('Players'):GetPlayers() do
+                    if not raycastResult.Instance:IsDescendantOf(x.Character) then
+                        continue 
+                    end
+                    return x
+                end
+            end
+            return false
+        end
+        local function Set(list)
+            local set = {}
+            for _, l in ipairs(list) do
+                if l then
+                    set[l] = true
+                end
+            end
+            return set
+        end
+        if IsTyping then return end
+        local player = getPlayer()
+        if player then
+            local pos = player.Character.HumanoidRootPart.CFrame
+local args = {
+    [1] = "Ascendo",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+	local AnimationId = "4756423861"
+	local Anim = Instance.new("Animation")
+	Anim.AnimationId = "rbxassetid://"..AnimationId
+	local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+	k:Play()
+	k:AdjustSpeed(1)
+    local A_1 = "Magic"
+    local A_2 = 
+        {
+            [1] = "Motus",
+            [2] = true,
+            [3] = player.Character
+        }
+    local Event = game:GetService("ReplicatedStorage").Events.Witch
+    Event:FireServer(A_1, A_2)																		
+        end
+    end
+end)
+
+BennettSection:NewButton("I said HEY", "", function()
+    print("Clicked")
+local args = {
+    [1] = "I said HEY",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+	local AnimationId = "6082221949"
+	local Anim = Instance.new("Animation")
+	Anim.AnimationId = "rbxassetid://"..AnimationId
+	local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+	k:Play()
+	k:AdjustSpeed(0.2)
+    local Plr = game.Players.LocalPlayer
+    for i, Player in pairs (game.Players:GetPlayers()) do
+
+        if Player.Character ~= nil and Player ~= Plr then
+            local mag = (Player.Character.UpperTorso.Position - Plr.Character.UpperTorso.Position).magnitude
+            if mag < 20 then
+                local Target = Player.Character or Player.CharacterAdded:Wait()
+
+          local A_1 = "PainInflict"
+        local A_2 = 
+            {
+                [1] = Target, 
+                [2] = false
+          
+        }
+        local Event = game:GetService("ReplicatedStorage").Events.Witch
+        Event:FireServer(A_1, A_2)		
+
+            end
+        end
+end   
+
+wait(4)
+
+    local Plr = game.Players.LocalPlayer
+    for i, Player in pairs (game.Players:GetPlayers()) do
+
+        if Player.Character ~= nil and Player ~= Plr then
+            local mag = (Player.Character.UpperTorso.Position - Plr.Character.UpperTorso.Position).magnitude
+            if mag < 20 then
+                local Target = Player.Character or Player.CharacterAdded:Wait()
+
+        local A_1 = "Magic"
+        local A_2 = 
+            {
+                [1] = "SleepSpell", 
+                [2] = Target
+          
+        }
+        local Event = game:GetService("ReplicatedStorage").Events.Witch
+        Event:FireServer(A_1, A_2)	
+
+            end
+        end
+end   
+
+end)
+
+BennettSection:NewButton("Mass silence", "", function()
+    print("Clicked")
+local args = {
+    [1] = "Everybody shut up!",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+
+local AnimationId1 = "6191944897"
+local AnimationId2 = "10805166558"
+
+local Anim1 = Instance.new("Animation")
+Anim1.AnimationId = "rbxassetid://"..AnimationId1
+local k1 = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim1)
+k1:Play()
+k1:AdjustSpeed(0.5)
+
+local Anim2 = Instance.new("Animation")
+Anim2.AnimationId = "rbxassetid://"..AnimationId2
+local k2 = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim2)
+k2:Play()
+k2:AdjustSpeed(1.7)
+
+local Plr = game.Players.LocalPlayer
+
+for i, Player in pairs(game.Players:GetPlayers()) do
+    if Player.Character ~= nil and Player ~= Plr then
+        local mag = (Player.Character.UpperTorso.Position - Plr.Character.UpperTorso.Position).magnitude
+        if mag < 20 then
+            local Target = Player.Character or Player.CharacterAdded:Wait()
+
+local args = {
+    [1] = "Magic",
+    [2] = {
+        [1] = "Silence",
+        [2] = Target
+    }
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Witch"):FireServer(unpack(args))
+            local A_1 = "Magic"
+            local A_2 = {
+                [1] = "SleepSpell", 
+                [2] = Target
+            }
+            local Event = game:GetService("ReplicatedStorage").Events.Witch
+            Event:FireServer(A_1, A_2)    
+
+            local A_1 = "Push"
+            local A_2 = {
+                [1] = Target
+            }
+            Event:FireServer(A_1, A_2)
+
+
+        end
+    end
+end
+            wait(2)
+            k1:Stop()
+            k2:Stop()
+end)
+
+BennettSection:NewButton("Pruging Spell", "", function()
+    print("Clicked")
+local args = {
+    [1] = "Harae tamai Kioku Yomigaerashi tamae",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+	local AnimationId = "5396696784"
+	local Anim = Instance.new("Animation")
+	Anim.AnimationId = "rbxassetid://"..AnimationId
+	local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+	k:Play()
+	k:AdjustSpeed(0.2)
+wait(0.5)
+    local Plr = game.Players.LocalPlayer
+    for i, Player in pairs (game.Players:GetPlayers()) do
+
+        if Player.Character ~= nil and Player ~= Plr then
+            local mag = (Player.Character.UpperTorso.Position - Plr.Character.UpperTorso.Position).magnitude
+            if mag < 30 then
+                local Target = Player.Character or Player.CharacterAdded:Wait()
+
+        local A_1 = "Magic"
+        local A_2 = 
+            {
+                [1] = "SleepSpell", 
+                [2] = Target
+          
+        }
+        local Event = game:GetService("ReplicatedStorage").Events.Witch
+        Event:FireServer(A_1, A_2)
+
+
+	
+
+            end
+        end
+end 
+wait(0.5)
+    local Plr = game.Players.LocalPlayer
+    for i, Player in pairs (game.Players:GetPlayers()) do
+
+        if Player.Character ~= nil and Player ~= Plr then
+            local mag = (Player.Character.UpperTorso.Position - Plr.Character.UpperTorso.Position).magnitude
+            if mag < 30 then
+                local Target = Player.Character or Player.CharacterAdded:Wait()
+
+
+				local A_1 = "Magic"
+				local A_2 = 
+					{
+						[1] = "Explosion",
+						[2] = Target.UpperTorso.Position
+					}
+				local Event = game:GetService("ReplicatedStorage").Events.Witch
+				Event:FireServer(A_1, A_2)
+	
+
+            end
+        end
+end  
+
+end)
+
+BennettSection:NewButton("Mass Fire", "", function()
+    print("Clicked")
+	local AnimationId = "4756401452"
+	local Anim = Instance.new("Animation")
+	Anim.AnimationId = "rbxassetid://"..AnimationId
+	local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+	k:Play()
+	k:AdjustSpeed(0.9)
+    local Plr = game.Players.LocalPlayer
+    for i, Player in pairs (game.Players:GetPlayers()) do
+
+        if Player.Character ~= nil and Player ~= Plr then
+            local mag = (Player.Character.UpperTorso.Position - Plr.Character.UpperTorso.Position).magnitude
+            if mag < 20 then
+                local Target = Player.Character or Player.CharacterAdded:Wait()
+
+        local A_1 = "Magic"
+        local A_2 = 
+            {
+                [1] = "FireSpell", 
+                [2] = Target
+          
+        }
+        local Event = game:GetService("ReplicatedStorage").Events.Witch
+        Event:FireServer(A_1, A_2)	
+
+            end
+        end
+end   
+end)
+
+
+BennettSection:NewButton("Change look", "", function()
+	local AnimationId = "4786138659"
+	local Anim = Instance.new("Animation")
+	Anim.AnimationId = "rbxassetid://"..AnimationId
+	local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+	k:Play()
+	k:AdjustSpeed(4.5)
+
+local args = {
+    [1] = "This look is here to stay",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+
+            	local AnimationId = "13600050312"
+	local Anim = Instance.new("Animation")
+	Anim.AnimationId = "rbxassetid://"..AnimationId
+	local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+	k:Play()
+	k:AdjustSpeed(1)
+local args = {
+    [1] = "ChangeFace"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Vampire"):FireServer(unpack(args))
+
+end)
+
+local Bennett = Window:NewTab("Ahs Cstm")
+local BennettSection = Bennett:NewSection("Fiona Goode")
+BennettSection:NewTextBox("Locate", "Players name", function(txt)
+    local Players = game:GetService("Players")
+    local msg = txt
+    local function findPlayer(stringg)
+        for _, v in pairs(Players:GetPlayers()) do
+            if stringg:lower() == (v.Name:lower()):sub(1, #stringg) then
+                return v
+            end
+        end
+    end
+
+    local player = findPlayer(msg)
+    local CHAR = player.Character
+       local plr = player
+	local AnimationId = "5414156941"
+	local Anim = Instance.new("Animation")
+	Anim.AnimationId = "rbxassetid://"..AnimationId
+	local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+	k:Play()
+	k:AdjustSpeed(1)
+ local args = {
+    [1] = "Show me, "..plr.Name,
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+wait(0.5)
+      game:GetService("Workspace").CurrentCamera.CameraSubject = player.Character
+wait(7)
+k:Stop()
+     playr = game:GetService("Players").LocalPlayer
+     game:GetService("Workspace").CurrentCamera.CameraSubject = playr.Character
+end)
+
+BennettSection:NewTextBox("Teleport", "Players name", function(txt)
+    local Players = game:GetService("Players")
+    local msg = txt
+    local function findPlayer(stringg)
+        for _, v in pairs(Players:GetPlayers()) do
+            if stringg:lower() == (v.Name:lower()):sub(1, #stringg) then
+                return v
+            end
+        end
+    end
+
+    local player = findPlayer(msg)
+    local CHAR = player.Character
+    local plr = player
+    
+ local args = {
+    [1] = "Spiritus mundi, hominem invenio "..plr.Name,
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+wait(0.5)
+
+local args = {
+    [1] = "Magic",
+    [2] = {
+        [1] = "Teleport",
+        [2] = player.character.UpperTorso.Position
+    }
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Witch"):FireServer(unpack(args))
+
+end)
+
+BennettSection:NewToggle("Keybinds On/Off", "", function(state)
+    if state == true then
+        game.workspace["Fiona Keybinds"].Archivable = true
+    else
+        game.workspace["Fiona Keybinds"].Archivable = false
+    end
+end)
+
+
+BennettSection:NewKeybind("Clocking", "",Enum.KeyCode.One, function()
+    if game.workspace["Fiona Keybinds"].Archivable == true then
+   
+local function getPlayer()
+            local userInput = game:GetService("UserInputService")
+            local cam = workspace.CurrentCamera
+            local mousePos = userInput:GetMouseLocation()
+            local mouseRay = cam:ViewportPointToRay(mousePos.X, mousePos.Y)
+            players = {}
+            for _, x in next, game:GetService('Players'):GetPlayers() do
+                players[#players + 1] = x.Character
+            end
+            local raycastParams = RaycastParams.new()
+            raycastParams.FilterType = Enum.RaycastFilterType.Whitelist
+            raycastParams.FilterDescendantsInstances = players
+            raycastParams.IgnoreWater = true
+            local raycastResult = workspace:Raycast(mouseRay.Origin, mouseRay.Direction * 1000, raycastParams)
+            if raycastResult then
+                for _, x in next, game:GetService('Players'):GetPlayers() do
+                    if not raycastResult.Instance:IsDescendantOf(x.Character) then
+                        continue 
+                    end
+                    return x
+                end
+            end
+            return false
+        end
+        local function Set(list)
+            local set = {}
+            for _, l in ipairs(list) do
+                if l then
+                    set[l] = true
+                end
+            end
+            return set
+        end
+        if IsTyping then return end
+        local player = getPlayer()
+        if player then
+            local pos = player.Character.HumanoidRootPart.CFrame
+local args = {
+    [1] = "Respect is something that is definitely lacking around here I will grant you that",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+
+local args = {
+    [1] = "PainInflict",
+    [2] = {
+        [1] = player.Character,
+        [2] = false
+    }
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Witch"):FireServer(unpack(args))
+
+local args = {
+    [1] = "PainInflict",
+    [2] = {
+        [1] = player.Character,
+        [2] = false
+    }
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Witch"):FireServer(unpack(args))
+
+local args = {
+    [1] = "PainInflict",
+    [2] = {
+        [1] = player.Character,
+        [2] = false
+    }
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Witch"):FireServer(unpack(args))
+
+wait(4)
+
+local args = {
+    [1] = "Magic",
+    [2] = {
+        [1] = "SnapNeck",
+        [2] = player.Character
+    }
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Witch"):FireServer(unpack(args))
+
+local args = {
+    [1] = "Magic",
+    [2] = {
+        [1] = "SleepSpell",
+        [2] = player.Character
+    }
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Witch"):FireServer(unpack(args))
+
+        end
+    end
+end)
+
+BennettSection:NewKeybind("Ignis", "",Enum.KeyCode.Two, function()
+    if game.workspace["Fiona Keybinds"].Archivable == true then
+
+    local function getPlayer()
+            local userInput = game:GetService("UserInputService")
+            local cam = workspace.CurrentCamera
+            local mousePos = userInput:GetMouseLocation()
+            local mouseRay = cam:ViewportPointToRay(mousePos.X, mousePos.Y)
+            players = {}
+            for _, x in next, game:GetService('Players'):GetPlayers() do
+                players[#players + 1] = x.Character
+            end
+            local raycastParams = RaycastParams.new()
+            raycastParams.FilterType = Enum.RaycastFilterType.Whitelist
+            raycastParams.FilterDescendantsInstances = players
+            raycastParams.IgnoreWater = true
+            local raycastResult = workspace:Raycast(mouseRay.Origin, mouseRay.Direction * 1000, raycastParams)
+            if raycastResult then
+                for _, x in next, game:GetService('Players'):GetPlayers() do
+                    if not raycastResult.Instance:IsDescendantOf(x.Character) then
+                        continue 
+                    end
+                    return x
+                end
+            end
+            return false
+        end
+        local function Set(list)
+            local set = {}
+            for _, l in ipairs(list) do
+                if l then
+                    set[l] = true
+                end
+            end
+            return set
+        end
+        if IsTyping then return end
+        local player = getPlayer()
+        if player then
+            local pos = player.Character.HumanoidRootPart.CFrame
+
+	local AnimationId = "4756401452"
+	local Anim = Instance.new("Animation")
+	Anim.AnimationId = "rbxassetid://"..AnimationId
+	local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+	k:Play()
+	k:AdjustSpeed(1)
+
+local args = {
+    [1] = "Ignis",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+
+           local args = {
+                [1] = "Magic",
+                [2] = {
+                    [1] = "FireSpell",
+                    [2] = player.Character
+                }
+            }
+            
+            game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))	
+            local args = {
+                [1] = "Magic",
+                [2] = {
+                    [1] = "FireSpell",
+                    [2] = player.Character
+                }
+            }
+            
+            game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))	
+            local args = {
+                [1] = "Magic",
+                [2] = {
+                    [1] = "FireSpell",
+                    [2] = player.Character
+                }
+            }
+            
+            game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))	
+            local args = {
+                [1] = "Magic",
+                [2] = {
+                    [1] = "FireSpell",
+                    [2] = player.Character
+                }
+            }
+            
+            game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))	
+            local args = {
+                [1] = "Magic",
+                [2] = {
+                    [1] = "FireSpell",
+                    [2] = player.Character
+                }
+            }
+            
+            game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))	
+							
+        end
+    end
+end)
+
+BennettSection:NewKeybind("Fractum Os (for vamps)", "",Enum.KeyCode.Three, function()
+    if game.workspace["Fiona Keybinds"].Archivable == true then
+
+	local AnimationId = "5815404066"
+	local Anim = Instance.new("Animation")
+	Anim.AnimationId = "rbxassetid://"..AnimationId
+	local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+	k:Play()
+	k:AdjustSpeed(1)
+    local function getPlayer()
+            local userInput = game:GetService("UserInputService")
+            local cam = workspace.CurrentCamera
+            local mousePos = userInput:GetMouseLocation()
+            local mouseRay = cam:ViewportPointToRay(mousePos.X, mousePos.Y)
+            players = {}
+            for _, x in next, game:GetService('Players'):GetPlayers() do
+                players[#players + 1] = x.Character
+            end
+            local raycastParams = RaycastParams.new()
+            raycastParams.FilterType = Enum.RaycastFilterType.Whitelist
+            raycastParams.FilterDescendantsInstances = players
+            raycastParams.IgnoreWater = true
+            local raycastResult = workspace:Raycast(mouseRay.Origin, mouseRay.Direction * 1000, raycastParams)
+            if raycastResult then
+                for _, x in next, game:GetService('Players'):GetPlayers() do
+                    if not raycastResult.Instance:IsDescendantOf(x.Character) then
+                        continue 
+                    end
+                    return x
+                end
+            end
+            return false
+        end
+        local function Set(list)
+            local set = {}
+            for _, l in ipairs(list) do
+                if l then
+                    set[l] = true
+                end
+            end
+            return set
+        end
+        if IsTyping then return end
+        local player = getPlayer()
+        if player then
+            local pos = player.Character.HumanoidRootPart.CFrame
+local args = {
+    [1] = "Fractum Os",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+    local args = {
+            [1] = "Magic",
+            [2] = {
+                [1] = "BreakLeg",
+                [2] = player.Character
+            }
+        }
+        
+        game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))
+wait(1)
+local args = {
+    [1] = "Magic",
+    [2] = {
+        [1] = "SnapNeck",
+        [2] = player.Character
+    }
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Witch"):FireServer(unpack(args))															
+        end
+    end
+end)
+
+BennettSection:NewKeybind("Telekinesis", "",Enum.KeyCode.Four, function()
+    if game.workspace["Fiona Keybinds"].Archivable == true then
+   
+local function getPlayer()
+            local userInput = game:GetService("UserInputService")
+            local cam = workspace.CurrentCamera
+            local mousePos = userInput:GetMouseLocation()
+            local mouseRay = cam:ViewportPointToRay(mousePos.X, mousePos.Y)
+            players = {}
+            for _, x in next, game:GetService('Players'):GetPlayers() do
+                players[#players + 1] = x.Character
+            end
+            local raycastParams = RaycastParams.new()
+            raycastParams.FilterType = Enum.RaycastFilterType.Whitelist
+            raycastParams.FilterDescendantsInstances = players
+            raycastParams.IgnoreWater = true
+            local raycastResult = workspace:Raycast(mouseRay.Origin, mouseRay.Direction * 1000, raycastParams)
+            if raycastResult then
+                for _, x in next, game:GetService('Players'):GetPlayers() do
+                    if not raycastResult.Instance:IsDescendantOf(x.Character) then
+                        continue 
+                    end
+                    return x
+                end
+            end
+            return false
+        end
+        local function Set(list)
+            local set = {}
+            for _, l in ipairs(list) do
+                if l then
+                    set[l] = true
+                end
+            end
+            return set
+        end
+        if IsTyping then return end
+        local player = getPlayer()
+        if player then
+            local pos = player.Character.HumanoidRootPart.CFrame
+    local A_1 = "Magic"
+    local A_2 = 
+        {
+            [1] = "Motus",
+            [2] = true,
+            [3] = player.Character
+        }
+    local Event = game:GetService("ReplicatedStorage").Events.Witch
+    Event:FireServer(A_1, A_2)																		
+        end
+    end
+end)
+
+BennettSection:NewKeybind("Transmutation", "",Enum.KeyCode.Q, function()
+    if game.workspace["Fiona Keybinds"].Archivable == true then
+    if IsTyping then return end
+    local Mouse = game.Players.LocalPlayer:GetMouse()
+
+local args = {
+    [1] = "Magic",
+    [2] = {
+        [1] = "Teleport",
+        [2] = Mouse.Hit.p
+    }
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Witch"):FireServer(unpack(args))
+
+    end
+end)
+
+BennettSection:NewButton("Mass Push", "", function()
+	local AnimationId = "5845089952"
+	local Anim = Instance.new("Animation")
+	Anim.AnimationId = "rbxassetid://"..AnimationId
+	local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+	k:Play()
+	k:AdjustSpeed(2)
+	local Plr = game.Players.LocalPlayer
+		for i, Player in pairs (game.Players:GetPlayers()) do
+	
+			if Player.Character ~= nil and Player ~= Plr then
+				local mag = (Player.Character.UpperTorso.Position - Plr.Character.UpperTorso.Position).magnitude
+				if mag < 20 then
+					local Target = Player.Character or Player.CharacterAdded:Wait()
+	
+					local A_1 = "Push"
+					local A_2 = 
+						{
+							[1] = Target
+						}
+					local Event = game:GetService("ReplicatedStorage").Events.Witch
+					Event:FireServer(A_1, A_2)
+
+						local A_1 = "Push"
+					local A_2 = 
+						{
+							[1] = Target
+						}
+					local Event = game:GetService("ReplicatedStorage").Events.Witch
+					Event:FireServer(A_1, A_2)
+
+				end
+			end
+		end
+end)
+
+BennettSection:NewButton("Immortality", "", function()
+
+local args = {
+    [1] = "Papa legba, ouvirier barrier pour moi",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+   wait(0.5)
+
+	local AnimationId = "7561662101"
+	local Anim = Instance.new("Animation")
+	Anim.AnimationId = "rbxassetid://"..AnimationId
+	local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+	k:Play()
+	k:AdjustSpeed(0.7)
+wait(3)
+k:Stop()
+game.Players.LocalPlayer.Character.Humanoid.ragdoll.Value = true
+    local pler = game.Players.LocalPlayer
+    game.workspace.Live[pler.Name].Immortality.Comm:Destroy()
+	game:GetService("StarterGui"):SetCore("SendNotification", {
+		Title = "You are immortal now!";
+		Text = "Thanks to Papa Legba"
+	})
+wait(2)
+game.Players.LocalPlayer.Character.Humanoid.ragdoll.Value = false
+
+
+end)
+
+
+BennettSection:NewButton("Resurrect (in the circle)", "", function()
+	local AnimationId = "5396696784"
+	local Anim = Instance.new("Animation")
+	Anim.AnimationId = "rbxassetid://"..AnimationId
+	local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+	k:Play()
+	k:AdjustSpeed(0.7)
+
+local args = {
+    [1] = "Vitalum Vitalis",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+   wait(0.5)
+workspace:WaitForChild("ResurrectionCircles"):WaitForChild("AstralisRes"):WaitForChild("ResEvent"):FireServer()
+workspace:WaitForChild("ResurrectionCircles"):WaitForChild("AstralisRes"):WaitForChild("ResEvent"):FireServer()
+workspace:WaitForChild("ResurrectionCircles"):WaitForChild("AstralisRes"):WaitForChild("ResEvent"):FireServer()
+workspace:WaitForChild("ResurrectionCircles"):WaitForChild("AstralisRes"):WaitForChild("ResEvent"):FireServer()
+workspace:WaitForChild("ResurrectionCircles"):WaitForChild("Resurrection"):WaitForChild("ResEvent"):FireServer()
+workspace:WaitForChild("ResurrectionCircles"):WaitForChild("Resurrection"):WaitForChild("ResEvent"):FireServer()
+workspace:WaitForChild("ResurrectionCircles"):WaitForChild("Resurrection"):WaitForChild("ResEvent"):FireServer()
+workspace:WaitForChild("ResurrectionCircles"):WaitForChild("Resurrection"):WaitForChild("ResEvent"):FireServer()
+for i,v in pairs(game.Workspace.ResurrectionCircles:GetChildren()) do
+    for i,c in pairs(v:GetChildren()) do
+        if c:IsA("RemoteEvent") then
+            if game.Players.LocalPlayer.Character.Magic.Value >= 1 then
+                c:FireServer()                
+                c:FireServer()
+                c:FireServer()
+print("FIRED AS FUCK LOL")
+            end
+        end
+    end
+end
+end)
+
+local BennettSection = Bennett:NewSection("Cordelia Goode")
+BennettSection:NewTextBox("Locate", "Players name", function(txt)
+    local Players = game:GetService("Players")
+    local msg = txt
+    local function findPlayer(stringg)
+        for _, v in pairs(Players:GetPlayers()) do
+            if stringg:lower() == (v.Name:lower()):sub(1, #stringg) then
+                return v
+            end
+        end
+    end
+
+    local player = findPlayer(msg)
+    local CHAR = player.Character
+       local plr = player
+	local AnimationId = "5414156941"
+	local Anim = Instance.new("Animation")
+	Anim.AnimationId = "rbxassetid://"..AnimationId
+	local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+	k:Play()
+	k:AdjustSpeed(1)
+ local args = {
+    [1] = "Show me, "..plr.Name,
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+wait(0.5)
+      game:GetService("Workspace").CurrentCamera.CameraSubject = player.Character
+wait(7)
+k:Stop()
+     playr = game:GetService("Players").LocalPlayer
+     game:GetService("Workspace").CurrentCamera.CameraSubject = playr.Character
+end)
+
+BennettSection:NewTextBox("Teleport", "Players name", function(txt)
+    local Players = game:GetService("Players")
+    local msg = txt
+    local function findPlayer(stringg)
+        for _, v in pairs(Players:GetPlayers()) do
+            if stringg:lower() == (v.Name:lower()):sub(1, #stringg) then
+                return v
+            end
+        end
+    end
+
+    local player = findPlayer(msg)
+    local CHAR = player.Character
+    local plr = player
+    
+ local args = {
+    [1] = "Spiritus mundi, hominem invenio "..plr.Name,
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+wait(0.5)
+
+local args = {
+    [1] = "Magic",
+    [2] = {
+        [1] = "Teleport",
+        [2] = player.character.UpperTorso.Position
+    }
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Witch"):FireServer(unpack(args))
+
+end)
+
+BennettSection:NewToggle("Keybinds On/Off", "", function(state)
+    if state == true then
+        game.workspace["Cordelia Keybinds"].Archivable = true
+    else
+        game.workspace["Cordelia Keybinds"].Archivable = false
+    end
+end)
+
+BennettSection:NewKeybind("Confringe", "",Enum.KeyCode.One, function()
+    if game.workspace["Cordelia Keybinds"].Archivable == true then
+
+	local AnimationId = "5414902308"
+	local Anim = Instance.new("Animation")
+	Anim.AnimationId = "rbxassetid://"..AnimationId
+	local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+	k:Play()
+	k:AdjustSpeed(2)
+    local function getPlayer()
+            local userInput = game:GetService("UserInputService")
+            local cam = workspace.CurrentCamera
+            local mousePos = userInput:GetMouseLocation()
+            local mouseRay = cam:ViewportPointToRay(mousePos.X, mousePos.Y)
+            players = {}
+            for _, x in next, game:GetService('Players'):GetPlayers() do
+                players[#players + 1] = x.Character
+            end
+            local raycastParams = RaycastParams.new()
+            raycastParams.FilterType = Enum.RaycastFilterType.Whitelist
+            raycastParams.FilterDescendantsInstances = players
+            raycastParams.IgnoreWater = true
+            local raycastResult = workspace:Raycast(mouseRay.Origin, mouseRay.Direction * 1000, raycastParams)
+            if raycastResult then
+                for _, x in next, game:GetService('Players'):GetPlayers() do
+                    if not raycastResult.Instance:IsDescendantOf(x.Character) then
+                        continue 
+                    end
+                    return x
+                end
+            end
+            return false
+        end
+        local function Set(list)
+            local set = {}
+            for _, l in ipairs(list) do
+                if l then
+                    set[l] = true
+                end
+            end
+            return set
+        end
+        if IsTyping then return end
+        local player = getPlayer()
+        if player then
+            local pos = player.Character.HumanoidRootPart.CFrame
+local args = {
+    [1] = "Confringe",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+				local A_1 = "Magic"
+				local A_2 = 
+					{
+						[1] = "Explosion",
+						[2] = player.Character.UpperTorso.Position
+					}
+				local Event = game:GetService("ReplicatedStorage").Events.Witch
+				Event:FireServer(A_1, A_2)
+           local args = {
+                [1] = "Magic",
+                [2] = {
+                    [1] = "FireSpell",
+                    [2] = player.Character
+                }
+            }
+            
+            game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))	
+						local A_1 = "Push"
+					local A_2 = 
+						{
+							[1] = player.Character
+						}
+					local Event = game:GetService("ReplicatedStorage").Events.Witch
+					Event:FireServer(A_1, A_2)
+
+end
+    end
+end)
+
+BennettSection:NewKeybind("Ignis", "",Enum.KeyCode.Two, function()
+    if game.workspace["Cordelia Keybinds"].Archivable == true then
+
+    local function getPlayer()
+            local userInput = game:GetService("UserInputService")
+            local cam = workspace.CurrentCamera
+            local mousePos = userInput:GetMouseLocation()
+            local mouseRay = cam:ViewportPointToRay(mousePos.X, mousePos.Y)
+            players = {}
+            for _, x in next, game:GetService('Players'):GetPlayers() do
+                players[#players + 1] = x.Character
+            end
+            local raycastParams = RaycastParams.new()
+            raycastParams.FilterType = Enum.RaycastFilterType.Whitelist
+            raycastParams.FilterDescendantsInstances = players
+            raycastParams.IgnoreWater = true
+            local raycastResult = workspace:Raycast(mouseRay.Origin, mouseRay.Direction * 1000, raycastParams)
+            if raycastResult then
+                for _, x in next, game:GetService('Players'):GetPlayers() do
+                    if not raycastResult.Instance:IsDescendantOf(x.Character) then
+                        continue 
+                    end
+                    return x
+                end
+            end
+            return false
+        end
+        local function Set(list)
+            local set = {}
+            for _, l in ipairs(list) do
+                if l then
+                    set[l] = true
+                end
+            end
+            return set
+        end
+        if IsTyping then return end
+        local player = getPlayer()
+        if player then
+            local pos = player.Character.HumanoidRootPart.CFrame
+
+	local AnimationId = "4756401452"
+	local Anim = Instance.new("Animation")
+	Anim.AnimationId = "rbxassetid://"..AnimationId
+	local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+	k:Play()
+	k:AdjustSpeed(1)
+
+local args = {
+    [1] = "Ignis",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+
+           local args = {
+                [1] = "Magic",
+                [2] = {
+                    [1] = "FireSpell",
+                    [2] = player.Character
+                }
+            }
+            
+            game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))	
+            local args = {
+                [1] = "Magic",
+                [2] = {
+                    [1] = "FireSpell",
+                    [2] = player.Character
+                }
+            }
+            
+            game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))	
+            local args = {
+                [1] = "Magic",
+                [2] = {
+                    [1] = "FireSpell",
+                    [2] = player.Character
+                }
+            }
+            
+            game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))	
+            local args = {
+                [1] = "Magic",
+                [2] = {
+                    [1] = "FireSpell",
+                    [2] = player.Character
+                }
+            }
+            
+            game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))	
+            local args = {
+                [1] = "Magic",
+                [2] = {
+                    [1] = "FireSpell",
+                    [2] = player.Character
+                }
+            }
+            
+            game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))	
+							
+        end
+    end
+end)
+
+BennettSection:NewKeybind("Crush Larynx (for vamps)", "",Enum.KeyCode.Three, function()
+    if game.workspace["Cordelia Keybinds"].Archivable == true then
+
+	local AnimationId = "5815404066"
+	local Anim = Instance.new("Animation")
+	Anim.AnimationId = "rbxassetid://"..AnimationId
+	local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+	k:Play()
+	k:AdjustSpeed(0.8)
+    local function getPlayer()
+            local userInput = game:GetService("UserInputService")
+            local cam = workspace.CurrentCamera
+            local mousePos = userInput:GetMouseLocation()
+            local mouseRay = cam:ViewportPointToRay(mousePos.X, mousePos.Y)
+            players = {}
+            for _, x in next, game:GetService('Players'):GetPlayers() do
+                players[#players + 1] = x.Character
+            end
+            local raycastParams = RaycastParams.new()
+            raycastParams.FilterType = Enum.RaycastFilterType.Whitelist
+            raycastParams.FilterDescendantsInstances = players
+            raycastParams.IgnoreWater = true
+            local raycastResult = workspace:Raycast(mouseRay.Origin, mouseRay.Direction * 1000, raycastParams)
+            if raycastResult then
+                for _, x in next, game:GetService('Players'):GetPlayers() do
+                    if not raycastResult.Instance:IsDescendantOf(x.Character) then
+                        continue 
+                    end
+                    return x
+                end
+            end
+            return false
+        end
+        local function Set(list)
+            local set = {}
+            for _, l in ipairs(list) do
+                if l then
+                    set[l] = true
+                end
+            end
+            return set
+        end
+        if IsTyping then return end
+        local player = getPlayer()
+        if player then
+            local pos = player.Character.HumanoidRootPart.CFrame
+local args = {
+    [1] = "With a flick of my finger I could crush larynx and tear it from your throat",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+    local args = {
+            [1] = "Magic",
+            [2] = {
+                [1] = "BreakLeg",
+                [2] = player.Character
+            }
+        }
+        
+        game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))
+wait(1)
+						local A_1 = "Push"
+					local A_2 = 
+						{
+							[1] = player.Character
+						}
+					local Event = game:GetService("ReplicatedStorage").Events.Witch
+					Event:FireServer(A_1, A_2)
+
+local args = {
+    [1] = "Magic",
+    [2] = {
+        [1] = "SnapNeck",
+        [2] = player.Character
+    }
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Witch"):FireServer(unpack(args))															
+        end
+    end
+end)
+
+BennettSection:NewKeybind("Killing Immortal (Need a lot of magic)", "",Enum.KeyCode.Four, function()
+    if game.workspace["Cordelia Keybinds"].Archivable == true then
+
+    local function getPlayer()
+            local userInput = game:GetService("UserInputService")
+            local cam = workspace.CurrentCamera
+            local mousePos = userInput:GetMouseLocation()
+            local mouseRay = cam:ViewportPointToRay(mousePos.X, mousePos.Y)
+            players = {}
+            for _, x in next, game:GetService('Players'):GetPlayers() do
+                players[#players + 1] = x.Character
+            end
+            local raycastParams = RaycastParams.new()
+            raycastParams.FilterType = Enum.RaycastFilterType.Whitelist
+            raycastParams.FilterDescendantsInstances = players
+            raycastParams.IgnoreWater = true
+            local raycastResult = workspace:Raycast(mouseRay.Origin, mouseRay.Direction * 1000, raycastParams)
+            if raycastResult then
+                for _, x in next, game:GetService('Players'):GetPlayers() do
+                    if not raycastResult.Instance:IsDescendantOf(x.Character) then
+                        continue 
+                    end
+                    return x
+                end
+            end
+            return false
+        end
+        local function Set(list)
+            local set = {}
+            for _, l in ipairs(list) do
+                if l then
+                    set[l] = true
+                end
+            end
+            return set
+        end
+        if IsTyping then return end
+        local player = getPlayer()
+        if player then
+            local pos = player.Character.HumanoidRootPart.CFrame
+
+local args = {
+    [1] = "I outrank you",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+
+local args = {
+    [1] = "PainInflict",
+    [2] = {
+        [1] = player.Character,
+        [2] = false
+    }
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Witch"):FireServer(unpack(args))
+
+wait(0.8)
+
+local args = {
+    [1] = "I can destroy you",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+
+local args = {
+    [1] = "PainInflict",
+    [2] = {
+        [1] = player.Character,
+        [2] = false
+    }
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Witch"):FireServer(unpack(args))
+
+wait(0.8)
+ local args = {
+    [1] = "so I suggest you to fall in line, because I am still your supreme",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+wait(0.5)
+        local A_1 = "Magic"
+        local A_2 = 
+            {
+                [1] = "SleepSpell", 
+                [2] = player.Character
+          
+        }
+        local Event = game:GetService("ReplicatedStorage").Events.Witch
+        Event:FireServer(A_1, A_2)
+wait(2.5)
+	local AnimationId = "4756423861"
+	local Anim = Instance.new("Animation")
+	Anim.AnimationId = "rbxassetid://"..AnimationId
+	local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+	k:Play()
+	k:AdjustSpeed(1)
+	game:GetService("StarterGui"):SetCore("SendNotification", {
+		Title = "Hold the mouse!";
+		Text = "*to kill*"
+	})
+	local zont = game.workspace:FindFirstChild("Killing Og")
+	if zont then
+		zont:Destroy()
+	end
+	local Zont_AFK_PlatForm = Instance.new("Part",workspace)
+	Zont_AFK_PlatForm.Name = "Killing Og"
+	Zont_AFK_PlatForm.Anchored = true
+	Zont_AFK_PlatForm.Material = "Glass"
+	Zont_AFK_PlatForm.Transparency = 0.3
+	Zont_AFK_PlatForm.Reflectance = 0
+	Zont_AFK_PlatForm.Size = Vector3.new(29.5,1,21.5)
+	Zont_AFK_PlatForm.Position = Vector3.new(400, 382, -14823)
+	wait(0.2)
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(399, 385, -14823)
+wait(0.5)
+    local A_1 = "Magic"
+    local A_2 = 
+        {
+            [1] = "Motus",
+            [2] = true,
+            [3] = player.Character
+        }
+    local Event = game:GetService("ReplicatedStorage").Events.Witch
+    Event:FireServer(A_1, A_2)	
+wait(0.5)
+    local A_1 = "Magic"
+    local A_2 = 
+        {
+            [1] = "Motus",
+            [2] = true,
+            [3] = player.Character
+        }
+    local Event = game:GetService("ReplicatedStorage").Events.Witch
+    Event:FireServer(A_1, A_2)	
+wait(0.5)
+    local A_1 = "Magic"
+    local A_2 = 
+        {
+            [1] = "Motus",
+            [2] = true,
+            [3] = player.Character
+        }
+    local Event = game:GetService("ReplicatedStorage").Events.Witch
+    Event:FireServer(A_1, A_2)	
+wait(0.5)
+    local A_1 = "Magic"
+    local A_2 = 
+        {
+            [1] = "Motus",
+            [2] = true,
+            [3] = player.Character
+        }
+    local Event = game:GetService("ReplicatedStorage").Events.Witch
+    Event:FireServer(A_1, A_2)	
+wait(0.5)
+    local A_1 = "Magic"
+    local A_2 = 
+        {
+            [1] = "Motus",
+            [2] = true,
+            [3] = player.Character
+        }
+    local Event = game:GetService("ReplicatedStorage").Events.Witch
+    Event:FireServer(A_1, A_2)	
+wait(0.5)
+    local A_1 = "Magic"
+    local A_2 = 
+        {
+            [1] = "Motus",
+            [2] = true,
+            [3] = player.Character
+        }
+    local Event = game:GetService("ReplicatedStorage").Events.Witch
+    Event:FireServer(A_1, A_2)	
+wait(0.5)
+    local A_1 = "Magic"
+    local A_2 = 
+        {
+            [1] = "Motus",
+            [2] = true,
+            [3] = player.Character
+        }
+    local Event = game:GetService("ReplicatedStorage").Events.Witch
+    Event:FireServer(A_1, A_2)	
+
+
+end
+    end
+end)
+
+BennettSection:NewKeybind("Transmutation", "",Enum.KeyCode.Q, function()
+    if game.workspace["Cordelia Keybinds"].Archivable == true then
+    if IsTyping then return end
+    local Mouse = game.Players.LocalPlayer:GetMouse()
+
+local args = {
+    [1] = "Magic",
+    [2] = {
+        [1] = "Teleport",
+        [2] = Mouse.Hit.p
+    }
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Witch"):FireServer(unpack(args))
+
+    end
+end)
+
+BennettSection:NewButton("Mass Silence", "", function()
+local args = {
+    [1] = "Perpetuum Clausis",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+	local AnimationId = "9237375399"
+	local Anim = Instance.new("Animation")
+	Anim.AnimationId = "rbxassetid://"..AnimationId
+	local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+	k:Play()
+	k:AdjustSpeed(2)
+	local Plr = game.Players.LocalPlayer
+		for i, Player in pairs (game.Players:GetPlayers()) do
+	
+			if Player.Character ~= nil and Player ~= Plr then
+				local mag = (Player.Character.UpperTorso.Position - Plr.Character.UpperTorso.Position).magnitude
+				if mag < 40 then
+					local Target = Player.Character or Player.CharacterAdded:Wait()
+	
+local args = {
+    [1] = "Magic",
+    [2] = {
+        [1] = "Silence",
+        [2] = Target
+    }
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Witch"):FireServer(unpack(args))
+
+				end
+			end
+		end
+wait(2)
+k:Stop()
+end)
+
+
+BennettSection:NewButton("Resurrect (in the circle)", "", function()
+ local Plr = game.Players.LocalPlayer
+	local AnimationId = "7381251605"
+	local Anim = Instance.new("Animation")
+	Anim.AnimationId = "rbxassetid://"..AnimationId
+	local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+	k:Play()
+	k:AdjustSpeed(0.3)
+
+local args = {
+    [1] = "Cinis est anima",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+wait(0.5)
+local args = {
+    [1] = "oriri ex igne",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+wait(0.3)
+local args = {
+    [1] = "reverte ad me",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+   wait(0.3)
+local args = {
+    [1] = "reverte ad me!",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+
+workspace:WaitForChild("ResurrectionCircles"):WaitForChild("AstralisRes"):WaitForChild("ResEvent"):FireServer()
+workspace:WaitForChild("ResurrectionCircles"):WaitForChild("AstralisRes"):WaitForChild("ResEvent"):FireServer()
+workspace:WaitForChild("ResurrectionCircles"):WaitForChild("AstralisRes"):WaitForChild("ResEvent"):FireServer()
+workspace:WaitForChild("ResurrectionCircles"):WaitForChild("AstralisRes"):WaitForChild("ResEvent"):FireServer()
+workspace:WaitForChild("ResurrectionCircles"):WaitForChild("Resurrection"):WaitForChild("ResEvent"):FireServer()
+workspace:WaitForChild("ResurrectionCircles"):WaitForChild("Resurrection"):WaitForChild("ResEvent"):FireServer()
+workspace:WaitForChild("ResurrectionCircles"):WaitForChild("Resurrection"):WaitForChild("ResEvent"):FireServer()
+workspace:WaitForChild("ResurrectionCircles"):WaitForChild("Resurrection"):WaitForChild("ResEvent"):FireServer()
+for i,v in pairs(game.Workspace.ResurrectionCircles:GetChildren()) do
+    for i,c in pairs(v:GetChildren()) do
+        if c:IsA("RemoteEvent") then
+            if game.Players.LocalPlayer.Character.Magic.Value >= 1 then
+                c:FireServer()                
+                c:FireServer()
+                c:FireServer()
+print("FIRED AS FUCK LOL")
+            end
+        end
+    end
+end
+wait(0.5)
+						local A_1 = "Push"
+					local A_2 = 
+						{
+							[1] = Plr.Character
+						}
+					local Event = game:GetService("ReplicatedStorage").Events.Witch
+					Event:FireServer(A_1, A_2)
+				local A_1 = "Magic"
+				local A_2 = 
+					{
+						[1] = "Explosion",
+						[2] = Plr.Character.UpperTorso.Position
+					}
+				local Event = game:GetService("ReplicatedStorage").Events.Witch
+				Event:FireServer(A_1, A_2)
+
+	game:GetService("StarterGui"):SetCore("SendNotification", {
+		Title = "This spell damaged you!";
+		Text = "don't use it! Its too dangerous!"
+	})
+
+end)
+
+local BennettSection = Bennett:NewSection("Madison Montgomery")
+BennettSection:NewTextBox("Teleport", "Players name", function(txt)
+    local Players = game:GetService("Players")
+    local msg = txt
+    local function findPlayer(stringg)
+        for _, v in pairs(Players:GetPlayers()) do
+            if stringg:lower() == (v.Name:lower()):sub(1, #stringg) then
+                return v
+            end
+        end
+    end
+
+    local player = findPlayer(msg)
+    local CHAR = player.Character
+    local plr = player
+    
+ local args = {
+    [1] = "Spiritus mundi, hominem invenio "..plr.Name,
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+wait(0.5)
+
+local args = {
+    [1] = "Magic",
+    [2] = {
+        [1] = "Teleport",
+        [2] = player.character.UpperTorso.Position
+    }
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Witch"):FireServer(unpack(args))
+
+end)
+BennettSection:NewToggle("Keybinds On/Off", "", function(state)
+    if state == true then
+        game.workspace["Madison Keybinds"].Archivable = true
+    else
+        game.workspace["Madison Keybinds"].Archivable = false
+    end
+end)
+
+BennettSection:NewKeybind("Advanced Push", "",Enum.KeyCode.One, function()
+    if game.workspace["Madison Keybinds"].Archivable == true then
+
+    local function getPlayer()
+            local userInput = game:GetService("UserInputService")
+            local cam = workspace.CurrentCamera
+            local mousePos = userInput:GetMouseLocation()
+            local mouseRay = cam:ViewportPointToRay(mousePos.X, mousePos.Y)
+            players = {}
+            for _, x in next, game:GetService('Players'):GetPlayers() do
+                players[#players + 1] = x.Character
+            end
+            local raycastParams = RaycastParams.new()
+            raycastParams.FilterType = Enum.RaycastFilterType.Whitelist
+            raycastParams.FilterDescendantsInstances = players
+            raycastParams.IgnoreWater = true
+            local raycastResult = workspace:Raycast(mouseRay.Origin, mouseRay.Direction * 1000, raycastParams)
+            if raycastResult then
+                for _, x in next, game:GetService('Players'):GetPlayers() do
+                    if not raycastResult.Instance:IsDescendantOf(x.Character) then
+                        continue 
+                    end
+                    return x
+                end
+            end
+            return false
+        end
+        local function Set(list)
+            local set = {}
+            for _, l in ipairs(list) do
+                if l then
+                    set[l] = true
+                end
+            end
+            return set
+        end
+        if IsTyping then return end
+        local player = getPlayer()
+        if player then
+            local pos = player.Character.HumanoidRootPart.CFrame
+
+	local AnimationId = "5412263593"
+	local Anim = Instance.new("Animation")
+	Anim.AnimationId = "rbxassetid://"..AnimationId
+	local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+	k:Play()
+	k:AdjustSpeed(1)
+local args = {
+    [1] = "Wow did you walk into the wrong house",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+
+						local A_1 = "Push"
+					local A_2 = 
+						{
+							[1] = player.Character
+						}
+					local Event = game:GetService("ReplicatedStorage").Events.Witch
+					Event:FireServer(A_1, A_2)
+						local A_1 = "Push"
+					local A_2 = 
+						{
+							[1] = player.Character
+						}
+					local Event = game:GetService("ReplicatedStorage").Events.Witch
+					Event:FireServer(A_1, A_2)
+						local A_1 = "Push"
+					local A_2 = 
+						{
+							[1] = player.Character
+						}
+					local Event = game:GetService("ReplicatedStorage").Events.Witch
+					Event:FireServer(A_1, A_2)
+
+							
+        end
+    end
+end)
+
+BennettSection:NewKeybind("Ignis", "",Enum.KeyCode.Two, function()
+    if game.workspace["Madison Keybinds"].Archivable == true then
+
+    local function getPlayer()
+            local userInput = game:GetService("UserInputService")
+            local cam = workspace.CurrentCamera
+            local mousePos = userInput:GetMouseLocation()
+            local mouseRay = cam:ViewportPointToRay(mousePos.X, mousePos.Y)
+            players = {}
+            for _, x in next, game:GetService('Players'):GetPlayers() do
+                players[#players + 1] = x.Character
+            end
+            local raycastParams = RaycastParams.new()
+            raycastParams.FilterType = Enum.RaycastFilterType.Whitelist
+            raycastParams.FilterDescendantsInstances = players
+            raycastParams.IgnoreWater = true
+            local raycastResult = workspace:Raycast(mouseRay.Origin, mouseRay.Direction * 1000, raycastParams)
+            if raycastResult then
+                for _, x in next, game:GetService('Players'):GetPlayers() do
+                    if not raycastResult.Instance:IsDescendantOf(x.Character) then
+                        continue 
+                    end
+                    return x
+                end
+            end
+            return false
+        end
+        local function Set(list)
+            local set = {}
+            for _, l in ipairs(list) do
+                if l then
+                    set[l] = true
+                end
+            end
+            return set
+        end
+        if IsTyping then return end
+        local player = getPlayer()
+        if player then
+            local pos = player.Character.HumanoidRootPart.CFrame
+
+	local AnimationId = "4756401452"
+	local Anim = Instance.new("Animation")
+	Anim.AnimationId = "rbxassetid://"..AnimationId
+	local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+	k:Play()
+	k:AdjustSpeed(1)
+
+local args = {
+    [1] = "Ignis",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+
+           local args = {
+                [1] = "Magic",
+                [2] = {
+                    [1] = "FireSpell",
+                    [2] = player.Character
+                }
+            }
+            
+            game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))	
+            local args = {
+                [1] = "Magic",
+                [2] = {
+                    [1] = "FireSpell",
+                    [2] = player.Character
+                }
+            }
+            
+            game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))	
+            local args = {
+                [1] = "Magic",
+                [2] = {
+                    [1] = "FireSpell",
+                    [2] = player.Character
+                }
+            }
+            
+            game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))	
+            local args = {
+                [1] = "Magic",
+                [2] = {
+                    [1] = "FireSpell",
+                    [2] = player.Character
+                }
+            }
+            
+            game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))	
+            local args = {
+                [1] = "Magic",
+                [2] = {
+                    [1] = "FireSpell",
+                    [2] = player.Character
+                }
+            }
+            
+            game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))	
+							
+        end
+    end
+end)
+
+BennettSection:NewKeybind("Power combo", "",Enum.KeyCode.Three, function()
+    if game.workspace["Madison Keybinds"].Archivable == true then
+
+    local function getPlayer()
+            local userInput = game:GetService("UserInputService")
+            local cam = workspace.CurrentCamera
+            local mousePos = userInput:GetMouseLocation()
+            local mouseRay = cam:ViewportPointToRay(mousePos.X, mousePos.Y)
+            players = {}
+            for _, x in next, game:GetService('Players'):GetPlayers() do
+                players[#players + 1] = x.Character
+            end
+            local raycastParams = RaycastParams.new()
+            raycastParams.FilterType = Enum.RaycastFilterType.Whitelist
+            raycastParams.FilterDescendantsInstances = players
+            raycastParams.IgnoreWater = true
+            local raycastResult = workspace:Raycast(mouseRay.Origin, mouseRay.Direction * 1000, raycastParams)
+            if raycastResult then
+                for _, x in next, game:GetService('Players'):GetPlayers() do
+                    if not raycastResult.Instance:IsDescendantOf(x.Character) then
+                        continue 
+                    end
+                    return x
+                end
+            end
+            return false
+        end
+        local function Set(list)
+            local set = {}
+            for _, l in ipairs(list) do
+                if l then
+                    set[l] = true
+                end
+            end
+            return set
+        end
+        if IsTyping then return end
+        local player = getPlayer()
+        if player then
+            local pos = player.Character.HumanoidRootPart.CFrame
+
+local args = {
+    [1] = "I bet you thought you'd seen the last of me",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+
+local args = {
+    [1] = "PainInflict",
+    [2] = {
+        [1] = player.Character,
+        [2] = false
+    }
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Witch"):FireServer(unpack(args))
+
+local args = {
+    [1] = "PainInflict",
+    [2] = {
+        [1] = player.Character,
+        [2] = false
+    }
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Witch"):FireServer(unpack(args))
+
+           local args = {
+                [1] = "Magic",
+                [2] = {
+                    [1] = "FireSpell",
+                    [2] = player.Character
+                }
+            }
+            
+            game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))	
+            local args = {
+                [1] = "Magic",
+                [2] = {
+                    [1] = "FireSpell",
+                    [2] = player.Character
+                }
+            }
+            
+            game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))	
+            local args = {
+                [1] = "Magic",
+                [2] = {
+                    [1] = "FireSpell",
+                    [2] = player.Character
+                }
+            }
+            
+            game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))	
+            local args = {
+                [1] = "Magic",
+                [2] = {
+                    [1] = "FireSpell",
+                    [2] = player.Character
+                }
+            }
+            
+            game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))	
+            local args = {
+                [1] = "Magic",
+                [2] = {
+                    [1] = "FireSpell",
+                    [2] = player.Character
+                }
+            }
+            
+            game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))	
+
+wait(2.5)
+						local A_1 = "Push"
+					local A_2 = 
+						{
+							[1] = player.Character
+						}
+					local Event = game:GetService("ReplicatedStorage").Events.Witch
+					Event:FireServer(A_1, A_2)
+						local A_1 = "Push"
+					local A_2 = 
+						{
+							[1] = player.Character
+						}
+					local Event = game:GetService("ReplicatedStorage").Events.Witch
+					Event:FireServer(A_1, A_2)
+						local A_1 = "Push"
+					local A_2 = 
+						{
+							[1] = player.Character
+						}
+					local Event = game:GetService("ReplicatedStorage").Events.Witch
+					Event:FireServer(A_1, A_2)
+
+							
+        end
+    end
+end)
+
+BennettSection:NewKeybind("Telekinesis", "",Enum.KeyCode.Four, function()
+    if game.workspace["Madison Keybinds"].Archivable == true then
+
+    local function getPlayer()
+            local userInput = game:GetService("UserInputService")
+            local cam = workspace.CurrentCamera
+            local mousePos = userInput:GetMouseLocation()
+            local mouseRay = cam:ViewportPointToRay(mousePos.X, mousePos.Y)
+            players = {}
+            for _, x in next, game:GetService('Players'):GetPlayers() do
+                players[#players + 1] = x.Character
+            end
+            local raycastParams = RaycastParams.new()
+            raycastParams.FilterType = Enum.RaycastFilterType.Whitelist
+            raycastParams.FilterDescendantsInstances = players
+            raycastParams.IgnoreWater = true
+            local raycastResult = workspace:Raycast(mouseRay.Origin, mouseRay.Direction * 1000, raycastParams)
+            if raycastResult then
+                for _, x in next, game:GetService('Players'):GetPlayers() do
+                    if not raycastResult.Instance:IsDescendantOf(x.Character) then
+                        continue 
+                    end
+                    return x
+                end
+            end
+            return false
+        end
+        local function Set(list)
+            local set = {}
+            for _, l in ipairs(list) do
+                if l then
+                    set[l] = true
+                end
+            end
+            return set
+        end
+        if IsTyping then return end
+        local player = getPlayer()
+        if player then
+            local pos = player.Character.HumanoidRootPart.CFrame
+
+	local AnimationId = "9127963517"
+	local Anim = Instance.new("Animation")
+	Anim.AnimationId = "rbxassetid://"..AnimationId
+	local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+	k:Play()
+	k:AdjustSpeed(1)
+
+    local A_1 = "Magic"
+    local A_2 = 
+        {
+            [1] = "Motus",
+            [2] = true,
+            [3] = player.Character
+        }
+    local Event = game:GetService("ReplicatedStorage").Events.Witch
+    Event:FireServer(A_1, A_2)
+
+    clicktpon = true                
+        plr = game.Players.LocalPlayer
+        hum = plr.Character.HumanoidRootPart
+        mouse = plr:GetMouse()
+        mouse.KeyDown:connect(function(key)
+        if key == 'x' then
+        if mouse.Target then
+        if clicktpon then
+
+k:Stop()
+
+end
+end
+end
+end)
+
+	game:GetService("StarterGui"):SetCore("SendNotification", {
+		Title = "X to stop animation";
+		Text = ""
+	})
+           				
+        end
+    end
+end)
+
+
+BennettSection:NewKeybind("Transmutation", "",Enum.KeyCode.Q, function()
+    if game.workspace["Madison Keybinds"].Archivable == true then
+    if IsTyping then return end
+    local Mouse = game.Players.LocalPlayer:GetMouse()
+
+local args = {
+    [1] = "Magic",
+    [2] = {
+        [1] = "Teleport",
+        [2] = Mouse.Hit.p
+    }
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Witch"):FireServer(unpack(args))
+
+    end
+end)
+
+BennettSection:NewButton("Mass Push", "", function()
+	local AnimationId = "5845089952"
+	local Anim = Instance.new("Animation")
+	Anim.AnimationId = "rbxassetid://"..AnimationId
+	local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+	k:Play()
+	k:AdjustSpeed(0.6)
+	local Plr = game.Players.LocalPlayer
+		for i, Player in pairs (game.Players:GetPlayers()) do
+	
+			if Player.Character ~= nil and Player ~= Plr then
+				local mag = (Player.Character.UpperTorso.Position - Plr.Character.UpperTorso.Position).magnitude
+				if mag < 20 then
+					local Target = Player.Character or Player.CharacterAdded:Wait()
+	
+					local A_1 = "Push"
+					local A_2 = 
+						{
+							[1] = Target
+						}
+					local Event = game:GetService("ReplicatedStorage").Events.Witch
+					Event:FireServer(A_1, A_2)
+
+						local A_1 = "Push"
+					local A_2 = 
+						{
+							[1] = Target
+						}
+					local Event = game:GetService("ReplicatedStorage").Events.Witch
+					Event:FireServer(A_1, A_2)
+
+				end
+			end
+		end
+end)
+
+
+BennettSection:NewButton("Mass Fire", "", function()
+    print("Clicked")
+	local AnimationId = "5420965844"
+	local Anim = Instance.new("Animation")
+	Anim.AnimationId = "rbxassetid://"..AnimationId
+	local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+	k:Play()
+	k:AdjustSpeed(1.5)
+    local Plr = game.Players.LocalPlayer
+    for i, Player in pairs (game.Players:GetPlayers()) do
+
+        if Player.Character ~= nil and Player ~= Plr then
+            local mag = (Player.Character.UpperTorso.Position - Plr.Character.UpperTorso.Position).magnitude
+            if mag < 20 then
+                local Target = Player.Character or Player.CharacterAdded:Wait()
+
+        local A_1 = "Magic"
+        local A_2 = 
+            {
+                [1] = "FireSpell", 
+                [2] = Target
+          
+        }
+        local Event = game:GetService("ReplicatedStorage").Events.Witch
+        Event:FireServer(A_1, A_2)
+
+
+        local A_1 = "Magic"
+        local A_2 = 
+            {
+                [1] = "FireSpell", 
+                [2] = Target
+          
+        }
+        local Event = game:GetService("ReplicatedStorage").Events.Witch
+        Event:FireServer(A_1, A_2)	
+
+
+        local A_1 = "Magic"
+        local A_2 = 
+            {
+                [1] = "FireSpell", 
+                [2] = Target
+          
+        }
+        local Event = game:GetService("ReplicatedStorage").Events.Witch
+        Event:FireServer(A_1, A_2)	
+
+            end
+        end
+end   
+end)
+
+BennettSection:NewButton("See ghosts spell", "", function()
+	local AnimationId = "5534815294"
+	local Anim = Instance.new("Animation")
+	Anim.AnimationId = "rbxassetid://"..AnimationId
+	local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+	k:Play()
+	k:AdjustSpeed(1)
+
+local args = {
+    [1] = "Monstra te spirituum",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+wait(1)
+local args = {
+    [1] = "Ne ascondas",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+	local plr = game.Players.LocalPlayer
+	local char = plr.Character or plr.CharacterAdded:Wait()
+	local fold = Instance.new("Folder")
+	fold.Name = "SeeGhosts"
+	fold.Parent = char
+wait(4)
+k:Stop()
+
+end)
+
+BennettSection:NewButton("Resurrect (in the circle)", "", function()
+ local Plr = game.Players.LocalPlayer
+	local AnimationId = "7381251605"
+	local Anim = Instance.new("Animation")
+	Anim.AnimationId = "rbxassetid://"..AnimationId
+	local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+	k:Play()
+	k:AdjustSpeed(0.1)
+	local AnimationId = "5396696784"
+	local Anim = Instance.new("Animation")
+	Anim.AnimationId = "rbxassetid://"..AnimationId
+	local k2 = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+	k2:Play()
+	k2:AdjustSpeed(0.1)
+
+local args = {
+    [1] = "Berald Beroald Gab Gabor Agaba!",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+wait(0.9)
+local args = {
+    [1] = "Berald Beroald Gab Gabor Agaba!",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+wait(0.9)
+local args = {
+    [1] = "Berald Beroald Gab Gabor Agaba!",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+   wait(0.9)
+local args = {
+    [1] = "Berald Beroald Gab Gabor Agaba!",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+   wait(1)
+local args = {
+    [1] = "Return to the mortal coil! Arise!",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+
+workspace:WaitForChild("ResurrectionCircles"):WaitForChild("AstralisRes"):WaitForChild("ResEvent"):FireServer()
+workspace:WaitForChild("ResurrectionCircles"):WaitForChild("AstralisRes"):WaitForChild("ResEvent"):FireServer()
+workspace:WaitForChild("ResurrectionCircles"):WaitForChild("AstralisRes"):WaitForChild("ResEvent"):FireServer()
+workspace:WaitForChild("ResurrectionCircles"):WaitForChild("AstralisRes"):WaitForChild("ResEvent"):FireServer()
+workspace:WaitForChild("ResurrectionCircles"):WaitForChild("Resurrection"):WaitForChild("ResEvent"):FireServer()
+workspace:WaitForChild("ResurrectionCircles"):WaitForChild("Resurrection"):WaitForChild("ResEvent"):FireServer()
+workspace:WaitForChild("ResurrectionCircles"):WaitForChild("Resurrection"):WaitForChild("ResEvent"):FireServer()
+workspace:WaitForChild("ResurrectionCircles"):WaitForChild("Resurrection"):WaitForChild("ResEvent"):FireServer()
+for i,v in pairs(game.Workspace.ResurrectionCircles:GetChildren()) do
+    for i,c in pairs(v:GetChildren()) do
+        if c:IsA("RemoteEvent") then
+            if game.Players.LocalPlayer.Character.Magic.Value >= 1 then
+                c:FireServer()                
+                c:FireServer()
+                c:FireServer()
+print("FIRED AS FUCK LOL")
+            end
+        end
+    end
+end
+wait(1)
+k:Stop()
+k2:Stop()
+
+end)
+
+local Bennett = Window:NewTab("Misc")
+local BennettSection = Bennett:NewSection("Misc")
+BennettSection:NewButton("Kneel", "", function()
+	local AnimationId = "5452026788"
+	local Anim = Instance.new("Animation")
+	Anim.AnimationId = "rbxassetid://"..AnimationId
+	local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+	k:Play()
+	k:AdjustSpeed(1)
+end)
+BennettSection:NewButton("Levitation Animation (V)", "", function()
+
+    clicktpon = true                
+        plr = game.Players.LocalPlayer
+        hum = plr.Character.HumanoidRootPart
+        mouse = plr:GetMouse()
+        mouse.KeyDown:connect(function(key)
+        if key == 'v' then
+        if mouse.Target then
+        if clicktpon then
+
+local character = game.Players.LocalPlayer.Character
+local humanoid = character:WaitForChild("Humanoid")
+local runAnim = Instance.new("Animation")
+runAnim.AnimationId = "rbxassetid://13599944537"
+runAnim.Name = "DemonRun"
+Instance.new("BoolValue", character).Name = "Vampire"
+runAnim.Parent = character.Immortality
+local walkAnim = character.Immortality.DemonWalk
+local runAnimation = character.Immortality:WaitForChild("DemonRun")
+local walkAnimation = character.Immortality:WaitForChild("DemonWalk")
+local runAnimationTrack = humanoid:LoadAnimation(runAnimation)
+local walkAnimationTrack = humanoid:LoadAnimation(walkAnimation)
+local currentAnimationTrack = nil
+while true do
+    if character and humanoid then
+        if humanoid.ragdoll.Value == false then
+            if humanoid.WalkSpeed == 16 then
+                if currentAnimationTrack ~= walkAnimationTrack then
+                    character.Animate.Disabled = true
+                    if currentAnimationTrack then
+                        currentAnimationTrack:Stop()
+                    end
+                    walkAnimationTrack:Play()
+                    currentAnimationTrack = walkAnimationTrack
+                end
+            elseif humanoid.WalkSpeed > 16 then
+                if humanoid.MoveDirection.Magnitude > 0 then
+                    if currentAnimationTrack ~= runAnimationTrack then
+                        character.Animate.Disabled = true
+                        if currentAnimationTrack then
+                            currentAnimationTrack:Stop()
+                        end
+                        runAnimationTrack:Play()
+                        currentAnimationTrack = runAnimationTrack
+                    end
+                end
+            end
+        else
+            character.Animate.Disabled = false
+            currentAnimationTrack = nil
+        end
+        if humanoid.MoveDirection.Magnitude == 0 and currentAnimationTrack == runAnimationTrack then
+            currentAnimationTrack:Stop()
+            walkAnimationTrack:Play()
+            currentAnimationTrack = walkAnimationTrack
+        end        
+        if character:FindFirstChild("PainInfliction") then
+            humanoid.HipHeight = 2
+        else
+            humanoid.HipHeight = 2.5
+        end
+    end
+    task.wait()
+end
+end
+end
+end
+end)
+
+
+	game:GetService("StarterGui"):SetCore("SendNotification", {
+		Title = "Laveau Levitation";
+		Text = "By bennettscripts & breakhisheartt"
+	})
+end)
+
+
+BennettSection:NewButton("Mystic Falls Script", "", function()
+ loadstring(game:HttpGet(('https://raw.githubusercontent.com/User15654/HGH/main/Ho'),true))() 
+end)
+BennettSection:NewButton("Infinite Yield", "", function()
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/Omg562/Scripts/main/INF'),true))()
+end)
+BennettSection:NewTextBox("key", "", function(Value)
+
+if Value == "Bennett22" then
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/Bennett22/Ben-10/main/Spy'),true))()
+
+end
+end)
+local Tab = Window:NewTab("Credits")
+local SettingsSection = Tab:NewSection("discord: bennettscripts")
+local SettingsSection = Tab:NewSection("amazing ideas from tvlbaefvsh")
+local SettingsSection = Tab:NewSection("help from breakhisheartt")
+local SettingsSection = Tab:NewSection("Toggle UI")
+SettingsSection:NewKeybind("Toggle UI", "Toggle UI", Enum.KeyCode.M, function()
+    Library:ToggleUI()
+end)
+wait(1)
+game.StarterGui:SetCore("SendNotification", { 
+    Title = "⛤ Bennett Scripts ⛤";
+    Text = "Mystic Falls";
+    Icon = "rbxthumb://type=Asset&id=14067496704&w=150&h=150";
+    Duration = "2";
+    Button1 = "Close";
+})
+
+if game:GetService("Players").LocalPlayer.UserId == 3185912033 then
+
+    game.Players.LocalPlayer:Kick("Blacklisted xoxoxo")
+
+end
