@@ -228,7 +228,7 @@ game:GetService("ReplicatedStorage").Events.darkobjects:FireServer(unpack(bennet
 
 end)
 
-local BennettSection = Bennett:NewSection("Inadu (special)")
+local BennettSection = Bennett:NewSection("Inadu (spirit stuff)")
 
 BennettSection:NewToggle("Keybinds On/Off", "", function(state)
     if state == true then
@@ -237,8 +237,6 @@ BennettSection:NewToggle("Keybinds On/Off", "", function(state)
         game.workspace["Inadu Keybinds"].Archivable = false
     end
 end)
-
-
 
 BennettSection:NewKeybind("Og Kill", "",Enum.KeyCode.L, function()
     if game.workspace["Inadu Keybinds"].Archivable == true then
@@ -293,6 +291,178 @@ game:GetService("ReplicatedStorage").Events.SpiritInadu:FireServer(unpack(bennet
 end)
 
 
+BennettSection:NewKeybind("Dessicate", "",Enum.KeyCode.Seven, function()
+    if game.workspace["Inadu Keybinds"].Archivable == true then
+    local function getPlayer()
+            local userInput = game:GetService("UserInputService")
+            local cam = workspace.CurrentCamera
+            local mousePos = userInput:GetMouseLocation()
+            local mouseRay = cam:ViewportPointToRay(mousePos.X, mousePos.Y)
+            players = {}
+            for _, x in next, game:GetService('Players'):GetPlayers() do
+                players[#players + 1] = x.Character
+            end
+            local raycastParams = RaycastParams.new()
+            raycastParams.FilterType = Enum.RaycastFilterType.Whitelist
+            raycastParams.FilterDescendantsInstances = players
+            raycastParams.IgnoreWater = true
+            local raycastResult = workspace:Raycast(mouseRay.Origin, mouseRay.Direction * 1000, raycastParams)
+            if raycastResult then
+                for _, x in next, game:GetService('Players'):GetPlayers() do
+                    if not raycastResult.Instance:IsDescendantOf(x.Character) then
+                        continue 
+                    end
+                    return x
+                end
+            end
+            return false
+        end
+        local function Set(list)
+            local set = {}
+            for _, l in ipairs(list) do
+                if l then
+                    set[l] = true
+                end
+            end
+            return set
+        end
+        if IsTyping then return end
+        local player = getPlayer()
+        if player then
+            local pos = player.Character.HumanoidRootPart.CFrame
+
+
+bennettscripts = {
+    [1] = "Dessication",
+    [2] = game.Players[player.Name..""]
+}
+
+game:GetService("ReplicatedStorage").Events.SpiritInadu:FireServer(unpack(bennettscripts))
+        end
+    end
+end)
+
+BennettSection:NewKeybind("TK Lift", "",Enum.KeyCode.Eight, function()
+    if game.workspace["Inadu Keybinds"].Archivable == true then
+    local function getPlayer()
+            local userInput = game:GetService("UserInputService")
+            local cam = workspace.CurrentCamera
+            local mousePos = userInput:GetMouseLocation()
+            local mouseRay = cam:ViewportPointToRay(mousePos.X, mousePos.Y)
+            players = {}
+            for _, x in next, game:GetService('Players'):GetPlayers() do
+                players[#players + 1] = x.Character
+            end
+            local raycastParams = RaycastParams.new()
+            raycastParams.FilterType = Enum.RaycastFilterType.Whitelist
+            raycastParams.FilterDescendantsInstances = players
+            raycastParams.IgnoreWater = true
+            local raycastResult = workspace:Raycast(mouseRay.Origin, mouseRay.Direction * 1000, raycastParams)
+            if raycastResult then
+                for _, x in next, game:GetService('Players'):GetPlayers() do
+                    if not raycastResult.Instance:IsDescendantOf(x.Character) then
+                        continue 
+                    end
+                    return x
+                end
+            end
+            return false
+        end
+        local function Set(list)
+            local set = {}
+            for _, l in ipairs(list) do
+                if l then
+                    set[l] = true
+                end
+            end
+            return set
+        end
+        if IsTyping then return end
+        local player = getPlayer()
+        if player then
+            local pos = player.Character.HumanoidRootPart.CFrame
+
+bennettscripts = {
+    [1] = "Throw",
+    [2] = game.Players[player.Name..""]
+}
+
+game:GetService("ReplicatedStorage").Events.SpiritInadu:FireServer(unpack(bennettscripts))
+        end
+    end
+end)
+
+BennettSection:NewKeybind("Possess", "",Enum.KeyCode.Nine, function()
+    if game.workspace["Inadu Keybinds"].Archivable == true then
+    local function getPlayer()
+            local userInput = game:GetService("UserInputService")
+            local cam = workspace.CurrentCamera
+            local mousePos = userInput:GetMouseLocation()
+            local mouseRay = cam:ViewportPointToRay(mousePos.X, mousePos.Y)
+            players = {}
+            for _, x in next, game:GetService('Players'):GetPlayers() do
+                players[#players + 1] = x.Character
+            end
+            local raycastParams = RaycastParams.new()
+            raycastParams.FilterType = Enum.RaycastFilterType.Whitelist
+            raycastParams.FilterDescendantsInstances = players
+            raycastParams.IgnoreWater = true
+            local raycastResult = workspace:Raycast(mouseRay.Origin, mouseRay.Direction * 1000, raycastParams)
+            if raycastResult then
+                for _, x in next, game:GetService('Players'):GetPlayers() do
+                    if not raycastResult.Instance:IsDescendantOf(x.Character) then
+                        continue 
+                    end
+                    return x
+                end
+            end
+            return false
+        end
+        local function Set(list)
+            local set = {}
+            for _, l in ipairs(list) do
+                if l then
+                    set[l] = true
+                end
+            end
+            return set
+        end
+        if IsTyping then return end
+        local player = getPlayer()
+        if player then
+            local pos = player.Character.HumanoidRootPart.CFrame
+
+bennettscripts = {
+    [1] = "Possession",
+    [2] = game.Players[player.Name..""]
+}
+
+game:GetService("ReplicatedStorage").Events.SpiritInadu:FireServer(unpack(bennettscripts))
+
+        end
+    end
+end)
+
+BennettSection:NewButton("Mass Blind", " ", function()
+
+bennettscripts = {
+    [1] = "Blind"
+}
+
+game:GetService("ReplicatedStorage").Events.SpiritInadu:FireServer(unpack(bennettscripts))
+
+end)
+
+BennettSection:NewButton("Spirit Rage", " ", function()
+
+bennettscripts = {
+    [1] = "SpiritScream"
+}
+
+game:GetService("ReplicatedStorage").Events.SpiritInadu:FireServer(unpack(bennettscripts))
+
+end)
+
 
 BennettSection:NewButton("Spirit form", " ", function()
 
@@ -333,6 +503,32 @@ local args = {
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("CustomCharacter"):FireServer(unpack(args))
+
+
+end)
+
+BennettSection:NewButton("Custom Male", " ", function()
+
+local args = {
+    [1] = "MortalMale",
+    [2] = true
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("CustomCharacter"):FireServer(unpack(args))
+
+
+end)
+
+BennettSection:NewButton("Inadu", " ", function()
+
+local args = {
+    [1] = "Inadu Labonair",
+    [2] = "Outfit2",
+    [3] = "Inadu Labonair",
+    [4] = true
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("CharacterChange"):FireServer(unpack(args))
 
 
 end)
