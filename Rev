@@ -241,7 +241,7 @@ end)
 
 
 BennettSection:NewKeybind("Og Kill", "",Enum.KeyCode.L, function()
-    if game.workspace["local Keybinds"].Archivable == true then
+    if game.workspace["Inadu Keybinds"].Archivable == true then
     local function getPlayer()
             local userInput = game:GetService("UserInputService")
             local cam = workspace.CurrentCamera
