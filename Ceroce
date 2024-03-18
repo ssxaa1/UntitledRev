@@ -328,7 +328,7 @@ BennettSection:NewKeybind("Break arm", "",Enum.KeyCode.Two, function()
 	Anim.AnimationId = "rbxassetid://"..AnimationId
 	local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
 	k:Play()
-	k:AdjustSpeed(1.5)
+	k:AdjustSpeed(1)
                                     local args = {
     [1] = "Errox Femus!",
     [2] = "All"
@@ -411,7 +411,7 @@ game:GetService("ReplicatedStorage").System_Remotes.Tool:FireServer(unpack(benne
     end
 end)
 
-BennettSection:NewKeybind("Disable powers", "",Enum.KeyCode.Four, function()
+BennettSection:NewKeybind("Crush skull", "",Enum.KeyCode.Four, function()
     if game.workspace["Cstm Keybinds"].Archivable == true then
     local function getPlayer()
             local userInput = game:GetService("UserInputService")
@@ -456,7 +456,7 @@ BennettSection:NewKeybind("Disable powers", "",Enum.KeyCode.Four, function()
 	Anim.AnimationId = "rbxassetid://"..AnimationId
 	local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
 	k:Play()
-	k:AdjustSpeed(1)
+	k:AdjustSpeed(0.5)
                                     local args = {
     [1] = "I can crush your skull without even flinching",
     [2] = "All"
@@ -478,7 +478,7 @@ game:GetService("ReplicatedStorage").System_Remotes.Tool:FireServer(unpack(benne
     end
 end)
 
-BennettSection:NewKeybind("Disable powers", "",Enum.KeyCode.Five, function()
+BennettSection:NewKeybind("Kill", "",Enum.KeyCode.Five, function()
     if game.workspace["Cstm Keybinds"].Archivable == true then
     local function getPlayer()
             local userInput = game:GetService("UserInputService")
@@ -523,7 +523,7 @@ BennettSection:NewKeybind("Disable powers", "",Enum.KeyCode.Five, function()
 	Anim.AnimationId = "rbxassetid://"..AnimationId
 	local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
 	k:Play()
-	k:AdjustSpeed(1)
+	k:AdjustSpeed(0.5)
                                     local args = {
     [1] = "We don't need them",
     [2] = "All"
@@ -552,9 +552,9 @@ BennettSection:NewButton("Mass snap", "", function()
 	Anim.AnimationId = "rbxassetid://"..AnimationId
 	local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
 	k:Play()
-	k:AdjustSpeed(1)
+	k:AdjustSpeed(0.5)
 local args = {
-    [1] = "Menedek Qual Surrenta!",
+    [1] = "Menedek Qual Surenta!",
     [2] = "All"
 }
 
