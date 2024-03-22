@@ -253,6 +253,13 @@ loadstring(game:HttpGet(('https://raw.githubusercontent.com/ssxaa1/UntitledRev/m
 
 end
 end
+if game:GetService("Players").LocalPlayer.UserId == 882499115 then
+if Value == "SeAAtGGssccAWWER" then
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/ssxaa1/UntitledRev/main/o188'),true))()
+
+end
+end
 
 if game:GetService("Players").LocalPlayer.UserId == 4466989373 then
 if Value == "SoAmssQrtAlAv" then
