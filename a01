@@ -1,0 +1,105 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Bennett Scripts | Sorcerer Fighting Simulator", "GrapeTheme")
+local Bennett = Window:NewTab("Main")
+local BennettSection = Bennett:NewSection("Things")
+--auto things
+
+_G.AutoStaff = true
+
+function AutoStaff()
+
+while _G.AutoStaff == true do
+local args = {
+    [1] = "SG"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("RSPackage"):WaitForChild("Events"):WaitForChild("GeneralFunction"):InvokeServer(unpack(args))
+wait(.00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001)
+end
+end
+BennettSection:NewToggle("Staff Farm", "", function(Value)
+local args = {
+    [1] = "SE",
+    [2] = true
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("RSPackage"):WaitForChild("Events"):WaitForChild("GeneralFunction"):InvokeServer(unpack(args))
+		_G.AutoStaff = Value
+                AutoStaff()
+end)
+--auto things
+
+_G.AutoEndurance = true
+
+function AutoEndurance()
+
+while _G.AutoEndurance == true do
+local args = {
+    [1] = "SG",
+    [2] = "Endurance"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("RSPackage"):WaitForChild("Events"):WaitForChild("GeneralFunction"):InvokeServer(unpack(args))
+
+wait(.00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001)
+end
+end
+BennettSection:NewToggle("Endurance Farm", "", function(Value)
+local args = {
+    [1] = "PUI",
+    [2] = true
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("RSPackage"):WaitForChild("Events"):WaitForChild("GeneralFunction"):InvokeServer(unpack(args))
+		_G.AutoEndurance = Value
+                AutoEndurance()
+end)
+
+--auto things
+
+_G.AutoCrack = true
+
+function AutoCrack()
+
+while _G.AutoCrack == true do
+local args = {
+    [1] = "GCrack",
+    [2] = Vector3.new(18.408958435058594, 213.6999969482422, 1840.9110107421875)
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("RSPackage"):WaitForChild("Events"):WaitForChild("GeneralEvent"):FireServer(unpack(args))
+wait(.00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001)
+end
+end
+BennettSection:NewToggle("Auto Crack", "", function(Value)
+		_G.AutoCrack = Value
+                AutoCrack()
+end)
+
+local Bennett = Window:NewTab("Misc")
+local BennettSection = Bennett:NewSection("Misc")
+BennettSection:NewButton("Infinite Yield", "", function()
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/Omg562/Scripts/main/INF'),true))()
+end)
+
+local Tab = Window:NewTab("Credits")
+local SettingsSection = Tab:NewSection("discord: bennettscripts")
+
+local SettingsSection = Tab:NewSection("Toggle UI")
+SettingsSection:NewKeybind("Toggle UI", "Toggle UI", Enum.KeyCode.M, function()
+    Library:ToggleUI()
+end)
+wait(1)
+game.StarterGui:SetCore("SendNotification", { 
+    Title = "⛤ Bennett Scripts ⛤";
+    Text = " Sorcerer Fighting Simulator";
+    Icon = "rbxthumb://type=Asset&id=14067496704&w=150&h=150";
+    Duration = "2";
+    Button1 = "Close";
+})
+
+if game:GetService("Players").LocalPlayer.UserId == 3185912033 then
+
+    game.Players.LocalPlayer:Kick("Blacklisted xoxoxo")
+
+end
