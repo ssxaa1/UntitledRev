@@ -1,0 +1,612 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "Bennett Scripts | Paid", HidePremium = false, IntroText = "Bennett Scripts", SaveConfig = true, ConfigFolder = "OrionTest"})
+
+local BennettTab = Window:MakeTab({
+	Name = "Scripts",
+	Icon = "rbxassetid://14458282849",
+	PremiumOnly = false
+})
+
+BennettTab:AddTextbox({
+	Name = "Magic Simulator",
+	Default = "",
+	TextDisappear = true,
+	Callback = function(Value)
+
+
+if Value == "DsTrWvvcSfg" then
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/Bennett22/Ben-10/main/sim1'),true))()
+
+end
+
+if game:GetService("Players").LocalPlayer.UserId == 5309246842 then
+if Value == "SkQssAdVVxCoQw" then
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/Bennett22/Ben-10/main/sim1'),true))()
+
+end
+end
+
+
+if game:GetService("Players").LocalPlayer.UserId == 1825043267 then
+if Value == "QQdfavvxseRRSaW" then
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/Bennett22/Ben-10/main/sim1'),true))()
+
+end
+end
+
+if game:GetService("Players").LocalPlayer.UserId == 3828414415 then
+if Value == "AllScripts" then
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/Bennett22/Ben-10/main/sim1'),true))()
+
+end
+end
+
+if game:GetService("Players").LocalPlayer.UserId == 2500994313 then
+if Value == "sorryxx!" then
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/Bennett22/Ben-10/main/sim1'),true))()
+
+end
+end
+
+if game:GetService("Players").LocalPlayer.UserId == 5288687479 then
+if Value == "sorryxx!" then
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/Bennett22/Ben-10/main/sim1'),true))()
+
+end
+end
+
+	end	  
+})
+
+BennettTab:AddTextbox({
+	Name = "The Witches Prophecies",
+	Default = "",
+	TextDisappear = true,
+	Callback = function(Value)
+
+
+if Value == "OdPeRaSmHfDD" then
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/ssxaa1/UntitledRev/main/ss032'),true))()
+
+end
+
+if game:GetService("Players").LocalPlayer.UserId == 3828414415 then
+if Value == "AllScripts" then
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/ssxaa1/UntitledRev/main/ss032'),true))()
+
+end
+end
+
+
+
+if game:GetService("Players").LocalPlayer.UserId == 5227978471 then
+if Value == "SoaweVVXaaweddQQ" then
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/ssxaa1/UntitledRev/main/ss032'),true))()
+
+end
+end
+
+if game:GetService("Players").LocalPlayer.UserId == 4466989373 then
+if Value == "OAScAweqFGGca" then
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/ssxaa1/UntitledRev/main/ss032'),true))()
+
+end
+end
+if game:GetService("Players").LocalPlayer.UserId == 2391761519 then
+if Value == "SaERCmaQrAgevoaA" then
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/ssxaa1/UntitledRev/main/ss032'),true))()
+
+end
+end
+
+if game:GetService("Players").LocalPlayer.UserId == 2239980076 then
+if Value == "PsAlOdUqIImNa" then
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/ssxaa1/UntitledRev/main/ss032'),true))()
+
+end
+end
+
+if game:GetService("Players").LocalPlayer.UserId == 348138607 then
+if Value == "SaERCmaQrAgevoaA" then
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/ssxaa1/UntitledRev/main/ss032'),true))()
+
+end
+end
+
+if game:GetService("Players").LocalPlayer.UserId == 3481386076 then
+if Value == "SaERCmaQrAgevoaA" then
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/ssxaa1/UntitledRev/main/ss032'),true))()
+
+end
+end
+
+
+if game:GetService("Players").LocalPlayer.UserId == 2239980076 then
+if Value == "OaCkkLaRfYHsB" then
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/ssxaa1/UntitledRev/main/ss032'),true))()
+
+end
+end
+
+if game:GetService("Players").LocalPlayer.UserId == 2608914508 then
+if Value == "xAwFAeeSfMaT" then
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/ssxaa1/UntitledRev/main/ss032'),true))()
+
+end
+end
+
+if game:GetService("Players").LocalPlayer.UserId == 5288687479 then
+if Value == "sorryxx!" then
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/ssxaa1/UntitledRev/main/ss032'),true))()
+
+end
+end
+
+	end	  
+})
+
+BennettTab:AddTextbox({
+	Name = "Every Witch Way Reborn",
+	Default = "",
+	TextDisappear = true,
+	Callback = function(Value)
+
+
+if Value == "PeFcVsRRehHkD" then
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/Bennett22/Ben-10/main/Reborn%20Spells'),true))()
+
+end
+if game:GetService("Players").LocalPlayer.UserId == 3828414415 then
+if Value == "AllScripts" then
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/Bennett22/Ben-10/main/Reborn%20Spells'),true))()
+
+end
+end
+
+
+if game:GetService("Players").LocalPlayer.UserId == 2239980076 then
+if Value == "XeAsPlKKeWfSgMfns" then
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/Bennett22/Ben-10/main/Reborn%20Spells'),true))()
+
+end
+end
+
+	end	  
+})
+
+BennettTab:AddTextbox({
+	Name = "Marvel Infinity",
+	Default = "",
+	TextDisappear = true,
+	Callback = function(Value)
+
+if game:GetService("Players").LocalPlayer.UserId == 4160193213 then
+if Value == "OgBuyer" then
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/ssxaa1/UntitledRev/main/o188'),true))()
+
+end
+end
+
+
+if game:GetService("Players").LocalPlayer.UserId == 2391761519 then
+if Value == "SaERCmaQrAgevoaA" then
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/ssxaa1/UntitledRev/main/o188'),true))()
+
+end
+end
+
+
+if game:GetService("Players").LocalPlayer.UserId == 3828414415 then
+if Value == "AllScripts" then
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/ssxaa1/UntitledRev/main/o188'),true))()
+end
+end
+
+if game:GetService("Players").LocalPlayer.UserId == 2290894517 then
+if Value == "GdVSppWrAmE" then
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/ssxaa1/UntitledRev/main/o188'),true))()
+end
+end
+
+if game:GetService("Players").LocalPlayer.UserId == 1406389940 then
+if Value == "Claimed2" then
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/ssxaa1/UntitledRev/main/o188'),true))()
+
+end
+end
+
+if game:GetService("Players").LocalPlayer.UserId == 3749585450 then
+if Value == "sorryimlate" then
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/ssxaa1/UntitledRev/main/o188'),true))()
+
+end
+end
+
+if game:GetService("Players").LocalPlayer.UserId == 3481386076 then
+if Value == "SaERCmaQrAgevoaA" then
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/ssxaa1/UntitledRev/main/o188'),true))()
+
+end
+end
+
+if game:GetService("Players").LocalPlayer.UserId == 4466989373 then
+if Value == "SoAmssQrtAlAv" then
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/ssxaa1/UntitledRev/main/o188'),true))()
+
+end
+end
+
+if game:GetService("Players").LocalPlayer.UserId == 77012180 then
+if Value == "SoAmssQrtAlA" then
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/ssxaa1/UntitledRev/main/o188'),true))()
+
+end
+end
+
+if game:GetService("Players").LocalPlayer.UserId == 5081150543 then
+if Value == "GdVSppWrAmE" then
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/ssxaa1/UntitledRev/main/o188'),true))()
+
+end
+end
+
+if game:GetService("Players").LocalPlayer.UserId == 3009231324 then
+if Value == "HvvNafLLksPaOe" then
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/ssxaa1/UntitledRev/main/o188'),true))()
+
+end
+end
+
+if game:GetService("Players").LocalPlayer.UserId == 3264426456 then
+if Value == "sorryxx!" then
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/ssxaa1/UntitledRev/main/o188'),true))()
+
+end
+end
+
+if game:GetService("Players").LocalPlayer.UserId == 298126406 then
+if Value == "ForStaffOnly!" then
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/ssxaa1/UntitledRev/main/o188'),true))()
+
+end
+end
+
+if game:GetService("Players").LocalPlayer.UserId == 5435177671 then
+if Value == "ForStaffOnly!" then
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/ssxaa1/UntitledRev/main/o188'),true))()
+
+end
+end
+	end	  
+})
+
+BennettTab:AddTextbox({
+	Name = "Mystic Falls",
+	Default = "",
+	TextDisappear = true,
+	Callback = function(Value)
+
+if game:GetService("Players").LocalPlayer.UserId == 4512978871 then
+if Value == "EaXcVlAArOtP" then
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/ssxaa1/UntitledRev/main/Ooh'),true))()
+
+end
+end
+
+if game:GetService("Players").LocalPlayer.UserId == 5389893954 then
+if Value == "AllScripts" then
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/ssxaa1/UntitledRev/main/Ooh'),true))()
+
+end
+end
+
+if game:GetService("Players").LocalPlayer.UserId == 1406389940 then
+if Value == "Claimed2" then
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/ssxaa1/UntitledRev/main/Ooh'),true))()
+
+end
+end
+
+if game:GetService("Players").LocalPlayer.UserId == 2608914508 then
+if Value == "QfawrVVZawegEE" then
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/ssxaa1/UntitledRev/main/Ooh'),true))()
+
+end
+end
+
+if game:GetService("Players").LocalPlayer.UserId == 3174344183 then
+if Value == "ForStaffOnly!" then
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/ssxaa1/UntitledRev/main/Ooh'),true))()
+
+end
+end
+
+if game:GetService("Players").LocalPlayer.UserId == 3213844660 then
+if Value == "ForStaffOnly!" then
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/ssxaa1/UntitledRev/main/Ooh'),true))()
+
+end
+end
+
+if game:GetService("Players").LocalPlayer.UserId == 2711392571 then
+if Value == "ForStaffOnly!" then
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/ssxaa1/UntitledRev/main/Ooh'),true))()
+
+end
+end
+if game:GetService("Players").LocalPlayer.UserId == 3214195066 then
+if Value == "ForStaffOnly!" then
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/ssxaa1/UntitledRev/main/Ooh'),true))()
+
+end
+end
+
+if game:GetService("Players").LocalPlayer.UserId == 2391761519 then
+if Value == "SaERCmaQrAgevoaA" then
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/ssxaa1/UntitledRev/main/Ooh'),true))()
+
+end
+end
+
+
+if game:GetService("Players").LocalPlayer.UserId == 3828414415 then
+if Value == "AllScripts" then
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/ssxaa1/UntitledRev/main/Ooh'),true))()
+
+end
+end
+
+if game:GetService("Players").LocalPlayer.UserId == 3481386076 then
+if Value == "SaERCmaQrAgevoaA" then
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/ssxaa1/UntitledRev/main/Ooh'),true))()
+
+end
+end
+
+
+if game:GetService("Players").LocalPlayer.UserId == 77012180 then
+if Value == "OAScAweqFGGca" then
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/ssxaa1/UntitledRev/main/Ooh'),true))()
+
+end
+end
+
+if game:GetService("Players").LocalPlayer.UserId == 2840637359 then
+if Value == "AdFxzfgpQQEffsa" then
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/ssxaa1/UntitledRev/main/Ooh'),true))()
+
+end
+end
+
+if game:GetService("Players").LocalPlayer.UserId == 4466989373 then
+if Value == "OAScAweqFGGca" then
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/ssxaa1/UntitledRev/main/Ooh'),true))()
+
+end
+end
+
+if game:GetService("Players").LocalPlayer.UserId == 3437281428 then
+if Value == "OAScAweqFGGca" then
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/ssxaa1/UntitledRev/main/Ooh'),true))()
+
+end
+end
+
+if game:GetService("Players").LocalPlayer.UserId == 3264426456 then
+if Value == "sorryxx!" then
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/ssxaa1/UntitledRev/main/Ooh'),true))()
+
+end
+end
+
+if game:GetService("Players").LocalPlayer.UserId == 2500994313 then
+if Value == "sorryxx!" then
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/ssxaa1/UntitledRev/main/Ooh'),true))()
+
+end
+end
+
+if game:GetService("Players").LocalPlayer.UserId == 5128779436 then
+if Value == "sorryxx!" then
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/ssxaa1/UntitledRev/main/Ooh'),true))()
+
+end
+end
+
+if game:GetService("Players").LocalPlayer.UserId == 298126406 then
+if Value == "ForStaffOnly!" then
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/ssxaa1/UntitledRev/main/Ooh'),true))()
+
+end
+end
+
+if game:GetService("Players").LocalPlayer.UserId == 2240009262 then
+if Value == "ForStaffOnly!" then
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/ssxaa1/UntitledRev/main/Ooh'),true))()
+
+end
+end
+
+if game:GetService("Players").LocalPlayer.UserId == 3213844660 then
+if Value == "ForStaffOnly!" then
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/ssxaa1/UntitledRev/main/Ooh'),true))()
+
+end
+end
+
+
+if game:GetService("Players").LocalPlayer.UserId == 2302619984 then
+if Value == "ForStaffOnly!" then
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/ssxaa1/UntitledRev/main/Ooh'),true))()
+
+end
+end
+
+if game:GetService("Players").LocalPlayer.UserId == 5435177671 then
+if Value == "ForStaffOnly!" then
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/ssxaa1/UntitledRev/main/Ooh'),true))()
+
+end
+end
+
+if game:GetService("Players").LocalPlayer.UserId == 421560773 then
+if Value == "ForStaffOnly!" then
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/ssxaa1/UntitledRev/main/Ooh'),true))()
+
+end
+end
+
+if game:GetService("Players").LocalPlayer.UserId == 693339200 then
+if Value == "ForStaffOnly!" then
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/ssxaa1/UntitledRev/main/Ooh'),true))()
+
+end
+end
+
+if game:GetService("Players").LocalPlayer.UserId == 3264426456 then
+if Value == "ForStaffOnly!" then
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/ssxaa1/UntitledRev/main/Ooh'),true))()
+
+end
+end
+
+if game:GetService("Players").LocalPlayer.UserId == 1996801000 then
+if Value == "ForStaffOnly!" then
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/ssxaa1/UntitledRev/main/Ooh'),true))()
+
+end
+end
+
+	end	  
+})
+
+BennettTab:AddTextbox({
+	Name = "The Vampire Mythology",
+	Default = "",
+	TextDisappear = true,
+	Callback = function(Value)
+
+if game:GetService("Players").LocalPlayer.UserId == 897615679 then
+if Value == "CustomScript!" then
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/ssxaa1/UntitledRev/main/z0029'),true))()
+
+end
+end
+
+
+	end	  
+})
+
+local BennettTab = Window:MakeTab({
+	Name = "Admin",
+	Icon = "rbxassetid://14458282849",
+	PremiumOnly = false
+})
+
+BennettTab:AddButton({
+	Name = "Infinite Yield",
+	Callback = function()
+
+loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+
+  	end    
+})
+BennettTab:AddTextbox({
+	Name = "Key",
+	Default = "",
+	TextDisappear = true,
+	Callback = function(Value)
+
+
+if Value == "Bennett22" then
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/Bennett22/Ben-10/main/Spy'),true))()
+
+end
+
+	end	  
+})
+
+local BennettTab = Window:MakeTab({
+	Name = "Credits",
+	Icon = "rbxassetid://14458282849",
+	PremiumOnly = false
+})
+
+local Section = BennettTab:AddSection({
+	Name = "discord: bennettscripts"
+})
+
+wait(1)
+game.StarterGui:SetCore("SendNotification", { 
+    Title = "⛤ Bennett Scripts ⛤";
+    Text = "Paid Scripts";
+    Icon = "rbxthumb://type=Asset&id=14067496704&w=150&h=150";
+    Duration = "2";
+    Button1 = "Close";
+})
+
+if game:GetService("Players").LocalPlayer.UserId == 3185912033 then
+
+    game.Players.LocalPlayer:Kick("Blacklisted xoxoxo")
+
+end
