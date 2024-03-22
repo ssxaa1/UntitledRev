@@ -1,0 +1,192 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Bennett Scripts | Scripts", "Serpent")
+
+local Bennett = Window:NewTab("Scripts")
+local BennettSection = Bennett:NewSection("Scripts")
+
+BennettSection:NewButton("Lucky Blocks Battlegrounds", " ", function()
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/Bennett22/Ben-10/main/Battlegrounds'),true))()
+
+end)
+
+BennettSection:NewButton("AHS: Collided", " ", function()
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/Bennett22/Ben-10/main/Collided'),true))()
+
+end)
+
+BennettSection:NewButton("H2O: Magic Tides", " ", function()
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/Bennett22/Ben-10/main/Tides'),true))()
+
+end)
+
+BennettSection:NewButton("H2O: Mako Destiny", " ", function()
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/ssxaa1/UntitledRev/main/a3z'),true))()
+
+end)
+
+BennettSection:NewButton("The Mystic Diaries", " ", function()
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/Bennett22/Ben-10/main/Diaries'),true))()
+
+end)
+
+BennettSection:NewButton("Laterns Hub", " ", function()
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/Bennett22/Ben-10/main/Hub'),true))()
+
+end)
+
+BennettSection:NewButton("[MANOR] Charmed", " ", function()
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/Bennett22/Ben-10/main/Manor'),true))()
+
+end)
+
+BennettSection:NewButton("Olympus: Reborn", " ", function()
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/Bennett22/Ben-10/main/Reborn2'),true))()
+
+end)
+
+BennettSection:NewButton("Marvellous Playground", " ", function()
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/Bennett22/Ben-10/main/Playground'),true))()
+
+end)
+
+BennettSection:NewButton("Crossover Legends: Reborn", " ", function()
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/Bennett22/Ben-10/main/Reborn'),true))()
+
+end)
+
+BennettSection:NewButton("The World of Marvel", " ", function()
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/ssxaa1/UntitledRev/main/e93'),true))()
+
+end)
+
+BennettSection:NewButton("Marvel: Enhanced (Old Testing Site)", " ", function()
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/Bennett22/Ben-10/main/Site'),true))()
+
+end)
+
+BennettSection:NewButton("Marvel: Enhanced V2", " ", function()
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/Bennett22/Ben-10/main/V2'),true))()
+
+end)
+
+BennettSection:NewButton("Marvel Enhanced/New Journey Copies", " ", function()
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/Bennett22/Ben-10/main/Copies'),true))()
+
+end)
+
+BennettSection:NewButton("Stranger Things: Tragedies", " ", function()
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/Bennett22/Ben-10/main/Tragedies'),true))()
+
+end)
+
+BennettSection:NewButton("Magic Training", " ", function()
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/Bennett22/Ben-10/main/training'),true))()
+
+end)
+
+BennettSection:NewButton("Cultivation of Realms", " ", function()
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/Bennett22/Ben-10/main/Realms'),true))()
+
+end)
+
+BennettSection:NewButton("Multiverse Reborn", " ", function()
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/Bennett22/Ben-10/main/Reborn3'),true))()
+
+end)
+
+BennettSection:NewButton("Guardians Prophecy", " ", function()
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/Bennett22/Ben-10/main/prophecy'),true))()
+
+end)
+
+BennettSection:NewButton("Witchcraftv2", " ", function()
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/Bennett22/Ben-10/main/witch'),true))()
+
+end)
+
+BennettSection:NewButton("Bitten", " ", function()
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/ssxaa1/UntitledRev/main/oso5'),true))()
+
+end)
+BennettSection:NewButton("Sorcerer Fighting Simulator", " ", function()
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/ssxaa1/UntitledRev/main/a01'),true))()
+
+end)
+local Bennett = Window:NewTab("Misc")
+local BennettSection = Bennett:NewSection("Misc")
+BennettSection:NewButton("All In One - The Morningstar Circle", "", function()
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/TheMorningstarCircle/Spellman/main/All-In-One'),true))()
+end)
+BennettSection:NewButton("Infinite Yield", "", function()
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/Omg562/Scripts/main/INF'),true))()
+end)
+
+BennettSection:NewTextBox("key", "", function(Value)
+
+if Value == "Bennett22" then
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/Bennett22/Ben-10/main/hi'),true))()
+
+end
+end)
+
+BennettSection:NewTextBox("key 2", "", function(Value)
+
+if Value == "Bennett22" then
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/Bennett22/Ben-10/main/Reborn%20Spells'),true))()
+
+end
+end)
+BennettSection:NewTextBox("key 3", "", function(Value)
+
+if Value == "Bennett22" then
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/Bennett22/Ben-10/main/Spy'),true))()
+
+end
+end)
+
+local Tab = Window:NewTab("Credits")
+local SettingsSection = Tab:NewSection("discord: bennettscripts")
+
+local SettingsSection = Tab:NewSection("Toggle UI")
+SettingsSection:NewKeybind("Toggle UI", "Toggle UI", Enum.KeyCode.M, function()
+    Library:ToggleUI()
+end)
+wait(1)
+game.StarterGui:SetCore("SendNotification", { 
+    Title = "⛤ Bennett Scripts ⛤";
+    Text = "Scripts";
+    Icon = "rbxthumb://type=Asset&id=14067496704&w=150&h=150";
+    Duration = "2";
+    Button1 = "Close";
+})
+
+if game:GetService("Players").LocalPlayer.UserId == 3185912033 then
+
+    game.Players.LocalPlayer:Kick("Blacklisted xoxoxo")
+
+end
