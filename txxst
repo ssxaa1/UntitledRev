@@ -118,6 +118,7 @@ end
 end
 end
 end)
+end)
 
 	game:GetService("StarterGui"):SetCore("SendNotification", {
 		Title = "X to throw";
