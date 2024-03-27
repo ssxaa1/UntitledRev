@@ -8,9 +8,9 @@ local Bennett = Window:NewTab("Cstm stuff")
 local BennettSection = Bennett:NewSection("only 4 me xx")
 BennettSection:NewToggle("Keybinds On/Off", "", function(state)
     if state == true then
-        game.workspace["Dahlia Keybinds"].Archivable = true
+        game.workspace["Cstm Keybinds"].Archivable = true
     else
-        game.workspace["Dahlia Keybinds"].Archivable = false
+        game.workspace["Cstm Keybinds"].Archivable = false
     end
 end)
 
@@ -30,7 +30,7 @@ wait(0.4)
 
 local args = {
     [1] = "HexThrow",
-    [2] = Mouse.Hit.p,
+    [2] = CFrame.new(Mouse.Hit.x, mouse.Hit.y + 0.1, Mouse.Hit.z),
     [3] = game.Players.LocalPlayer.Character.LeftHand.CFrame
 }
 
@@ -161,9 +161,7 @@ local args = {
     [2] = {
         ["Shield"] = game:GetService("Players").LocalPlayer.Character.Shield,
         ["Effects"] = {
-            [1] = game:GetService("Players").LocalPlayer.Character.Shield,
-            [2] = game:GetService("Players").LocalPlayer.Character.LeftHand.TKEffectHands,
-            [3] = game:GetService("Players").LocalPlayer.Character.RightHand.TKEffectHands
+            [1] = game:GetService("Players").LocalPlayer.Character.Shield
         }
     }
 }
@@ -204,7 +202,7 @@ local args = {
 
 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("WandaAbilities"):InvokeServer(unpack(args))
 wait(0.4)
-      game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Mouse.Hit.p
+      game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Mouse.Hit.x, mouse.Hit.y + 0.1, Mouse.Hit.z)
 
 wait(0.7)
 
