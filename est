@@ -255,6 +255,56 @@ game.workspace[plr.name].Animate.walk.WalkAnim.AnimationId = "rbxassetid://10921
 
 end)
 
+local Bennett = Window:NewTab("Target")
+local BennettSection = Bennett:NewSection("Remover")
+BennettSection:NewTextBox("Kick Player", "", function(txt)
+    local Players = game:GetService("Players")
+    local msg = txt
+    local function findPlayer(stringg)
+        for _, v in pairs(Players:GetPlayers()) do
+            if stringg:lower() == (v.Name:lower()):sub(1, #stringg) then
+                return v
+            end
+        end
+    end
+
+    local player = findPlayer(msg)
+    local CHAR = player.Character
+    
+local args = {
+    [1] = "StopSpeed",
+    [2] = {
+        [1] = game.Players[player.Name..""]
+    }
+}
+
+game:GetService("ReplicatedStorage").Remotes.QuicksilverAbilities:InvokeServer(unpack(args))
+
+end)
+BennettSection:NewTextBox("Remove Player", "", function(txt)
+    local Players = game:GetService("Players")
+    local msg = txt
+    local function findPlayer(stringg)
+        for _, v in pairs(Players:GetPlayers()) do
+            if stringg:lower() == (v.Name:lower()):sub(1, #stringg) then
+                return v
+            end
+        end
+    end
+
+    local player = findPlayer(msg)
+    local CHAR = player.Character
+    
+local args = {
+    [1] = "StopSpeed",
+    [2] = {
+        [1] = player.Character
+    }
+}
+
+game:GetService("ReplicatedStorage").Remotes.QuicksilverAbilities:InvokeServer(unpack(args))
+
+end)
 local Main = Window:NewTab("Admin")
 local MainSection = Main:NewSection("")
 MainSection:NewButton("Infinite Yield", "", function()
