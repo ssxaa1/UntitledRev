@@ -155,32 +155,30 @@ game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Wanda
         if key == 'x' then
         if mouse.Target then
         if clicktpon then
-
+k:Stop()
 local args = {
     [1] = "ShieldEnd",
     [2] = {
         ["Shield"] = game:GetService("Players").LocalPlayer.Character.Shield,
         ["Effects"] = {
-            [1] = game:GetService("Players").LocalPlayer.Character.Shield
+            [1] = game:GetService("Players").LocalPlayer.Character.Shield,
+            [2] = game:GetService("Players").LocalPlayer.Character.LeftHand.TKEffectHands,
+            [3] = game:GetService("Players").LocalPlayer.Character.RightHand.TKEffectHands
         }
     }
 }
 
 game:GetService("ReplicatedStorage").Remotes.WandaAbilities:InvokeServer(unpack(args))
-k:Stop()
 
 
         end
         end
         end
         end)
-
-
 	game:GetService("StarterGui"):SetCore("SendNotification", {
 		Title = "X to unshield";
 		Text = ""
 	})
-
     end
 end)
 
