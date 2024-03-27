@@ -1,8 +1,230 @@
-
+local MKeybinds = Instance.new("Folder",workspace)
+MKeybinds.Name = "Cstm Keybinds"
+wait(0.5)
+game.workspace["Cstm Keybinds"].Archivable = false
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 local Window = Library.CreateLib("Bennett Scripts | Cstm Enhanced", "GrapeTheme")
 local Bennett = Window:NewTab("Cstm stuff")
 local BennettSection = Bennett:NewSection("only 4 me xx")
+BennettSection:NewToggle("Keybinds On/Off", "", function(state)
+    if state == true then
+        game.workspace["Dahlia Keybinds"].Archivable = true
+    else
+        game.workspace["Dahlia Keybinds"].Archivable = false
+    end
+end)
+
+BennettSection:NewKeybind("Wanda Blast", "",Enum.KeyCode.One, function()
+    if game.workspace["Cstm Keybinds"].Archivable == true then
+    if IsTyping then return end
+    local Mouse = game.Players.LocalPlayer:GetMouse()
+
+	local AnimationId = "6107999782"
+	local Anim = Instance.new("Animation")
+	Anim.AnimationId = "rbxassetid://"..AnimationId
+	local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+	k:Play()
+	k:AdjustSpeed(1)
+
+wait(0.4)
+
+local args = {
+    [1] = "HexThrow",
+    [2] = Mouse.Hit.p,
+    [3] = game.Players.LocalPlayer.Character.LeftHand.CFrame
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("WandaAbilities"):InvokeServer(unpack(args))
+
+    end
+end)
+
+BennettSection:NewKeybind("Telekinesis", "",Enum.KeyCode.Two, function()
+    if game.workspace["Cstm Keybinds"].Archivable == true then
+
+    local function getPlayer()
+            local userInput = game:GetService("UserInputService")
+            local cam = workspace.CurrentCamera
+            local mousePos = userInput:GetMouseLocation()
+            local mouseRay = cam:ViewportPointToRay(mousePos.X, mousePos.Y)
+            players = {}
+            for _, x in next, game:GetService('Players'):GetPlayers() do
+                players[#players + 1] = x.Character
+            end
+            local raycastParams = RaycastParams.new()
+            raycastParams.FilterType = Enum.RaycastFilterType.Whitelist
+            raycastParams.FilterDescendantsInstances = players
+            raycastParams.IgnoreWater = true
+            local raycastResult = workspace:Raycast(mouseRay.Origin, mouseRay.Direction * 1000, raycastParams)
+            if raycastResult then
+                for _, x in next, game:GetService('Players'):GetPlayers() do
+                    if not raycastResult.Instance:IsDescendantOf(x.Character) then
+                        continue 
+                    end
+                    return x
+                end
+            end
+            return false
+        end
+        local function Set(list)
+            local set = {}
+            for _, l in ipairs(list) do
+                if l then
+                    set[l] = true
+                end
+            end
+            return set
+        end
+        if IsTyping then return end
+        local player = getPlayer()
+        if player then
+            local pos = player.Character.HumanoidRootPart.CFrame
+
+	local AnimationId = "6107965647"
+	local Anim = Instance.new("Animation")
+	Anim.AnimationId = "rbxassetid://"..AnimationId
+	local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+	k:Play()
+	k:AdjustSpeed(1)
+
+local args = {
+    [1] = "HexTKStart",
+    [2] = player.Character.Humanoid
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("WandaAbilities"):InvokeServer(unpack(args))
+
+    clicktpon = true                
+        plr = game.Players.LocalPlayer
+        hum = plr.Character.HumanoidRootPart
+        mouse = plr:GetMouse()
+        mouse.KeyDown:connect(function(key)
+        if key == 'x' then
+        if mouse.Target then
+        if clicktpon then
+
+k:Stop()
+
+local args = {
+    [1] = "HexTKEnd",
+    [2] = player.Character.HumanoidRootPart.BodyPosition,
+    [3] = Vector3.new(-10196.259765625, 552.8869018554688, -437.88311767578125, -0.23110653460025787, -0.8689502477645874, -0.4376241862773895, 0.8339816331863403, 0.05471969395875931, -0.549072265625, 0.5010632872581482, -0.4918648600578308, 0.7120426893234253),
+    [4] = player.Character.Humanoid
+}
+
+game:GetService("ReplicatedStorage").Remotes.WandaAbilities:InvokeServer(unpack(args))
+
+end
+end
+end
+end)
+
+	game:GetService("StarterGui"):SetCore("SendNotification", {
+		Title = "X to throw";
+		Text = ""
+	})
+           				
+        end
+    end
+end)
+
+BennettSection:NewKeybind("Shield", "",Enum.KeyCode.Three, function()
+    if game.workspace["Cstm Keybinds"].Archivable == true then
+    if IsTyping then return end
+    local Mouse = game.Players.LocalPlayer:GetMouse()
+
+	local AnimationId = "6107966757"
+	local Anim = Instance.new("Animation")
+	Anim.AnimationId = "rbxassetid://"..AnimationId
+	local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+	k:Play()
+	k:AdjustSpeed(1)
+
+local args = {
+    [1] = "ShieldStart",
+    [2] = game.Players.LocalPlayer.Character.LeftHand.CFrame
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("WandaAbilities"):InvokeServer(unpack(args))
+
+    clicktpon = true                
+        plr = game.Players.LocalPlayer
+        hum = plr.Character.HumanoidRootPart
+        mouse = plr:GetMouse()
+        mouse.KeyDown:connect(function(key)
+        if key == 'x' then
+        if mouse.Target then
+        if clicktpon then
+
+local args = {
+    [1] = "ShieldEnd",
+    [2] = {
+        ["Shield"] = game:GetService("Players").LocalPlayer.Character.Shield,
+        ["Effects"] = {
+            [1] = game:GetService("Players").LocalPlayer.Character.Shield,
+            [2] = game:GetService("Players").LocalPlayer.Character.LeftHand.TKEffectHands,
+            [3] = game:GetService("Players").LocalPlayer.Character.RightHand.TKEffectHands
+        }
+    }
+}
+
+game:GetService("ReplicatedStorage").Remotes.WandaAbilities:InvokeServer(unpack(args))
+k:Stop()
+
+
+        end
+        end
+        end
+        end)
+        end)
+
+
+	game:GetService("StarterGui"):SetCore("SendNotification", {
+		Title = "X to unshield";
+		Text = ""
+	})
+
+    end
+end)
+
+BennettSection:NewKeybind("Teleportation", "",Enum.KeyCode.Q, function()
+    if game.workspace["Cstm Keybinds"].Archivable == true then
+    if IsTyping then return end
+    local Mouse = game.Players.LocalPlayer:GetMouse()
+
+	local AnimationId = "6152805806"
+	local Anim = Instance.new("Animation")
+	Anim.AnimationId = "rbxassetid://"..AnimationId
+	local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+	k:Play()
+	k:AdjustSpeed(1)
+
+local args = {
+    [1] = "HoverStart"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("WandaAbilities"):InvokeServer(unpack(args))
+wait(0.4)
+      game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Mouse.Hit.p
+
+wait(0.7)
+
+k:Stop()
+
+local args = {
+    [1] = "HoverEnd",
+    [2] = {
+        [1] = game:GetService("Players").LocalPlayer.Character.LeftHand.Hover,
+        [2] = game:GetService("Players").LocalPlayer.Character.RightHand.Hover,
+        [3] = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.TKSound
+    }
+}
+
+game:GetService("ReplicatedStorage").Remotes.WandaAbilities:InvokeServer(unpack(args))
+
+    end
+end)
+
 BennettSection:NewButton("Enable Character Selection", "", function()
 game.Players.LocalPlayer.PlayerGui.CharacterSelection.Enabled = true
 end)
