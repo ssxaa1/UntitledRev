@@ -1,4 +1,61 @@
+
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Bennett Scripts | Cstm Enhanced", "GrapeTheme")
+local Bennett = Window:NewTab("Cstm stuff")
+local BennettSection = Bennett:NewSection("only 4 me xx")
+BennettSection:NewButton("Enable Character Selection", "", function()
+game.Players.LocalPlayer.PlayerGui.CharacterSelection.Enabled = true
+end)
+BennettSection:NewButton("Disable Character Selection", "", function()
+game.Players.LocalPlayer.PlayerGui.CharacterSelection.Enabled = false
+end)
+BennettSection:NewButton("Get stats", "", function()
     local plr = game.Players.LocalPlayer
 
 local backup = game.Workspace:FindFirstChild("Stats", true):Clone()
 backup.Parent = game.Players.LocalPlayer.Character
+end)
+
+
+BennettSection:NewButton("Get Anims", "", function()
+    local plr = game.Players.LocalPlayer
+local backup = game.Workspace:FindFirstChild("Animate",true):Clone()
+backup.Parent = plr.Character
+
+end)
+
+BennettSection:NewButton("toy anim pack", "", function()
+
+local plr = game.Players.LocalPlayer
+
+game.workspace[plr.name].Animate.climb.ClimbAnim.AnimationId = "rbxassetid://10921300839"
+game.workspace[plr.name].Animate.fall.FallAnim.AnimationId = "rbxassetid://10921307241"
+game.workspace[plr.name].Animate.idle.Animation1.AnimationId = "rbxassetid://10921301576"
+game.workspace[plr.name].Animate.idle.Animation2.AnimationId = "rbxassetid://10921302207"
+game.workspace[plr.name].Animate.jump.JumpAnim.AnimationId = "rbxassetid://10921308158"
+game.workspace[plr.name].Animate.run.RunAnim.AnimationId = "rbxassetid://10921306285"
+game.workspace[plr.name].Animate.walk.WalkAnim.AnimationId = "rbxassetid://10921312010"
+
+end)
+
+local Main = Window:NewTab("Admin")
+local MainSection = Main:NewSection("")
+MainSection:NewButton("Infinite Yield", "", function()
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/Omg562/Scripts/main/INF'),true))()
+end)
+
+local Tab = Window:NewTab("Credits")
+local SettingsSection = Tab:NewSection("discord: bennettscripts")
+
+local SettingsSection = Tab:NewSection("Toggle UI")
+SettingsSection:NewKeybind("Toggle UI", "Toggle UI", Enum.KeyCode.M, function()
+    Library:ToggleUI()
+end)
+wait(1)
+game.StarterGui:SetCore("SendNotification", { 
+    Title = "⛤ Bennett Scripts ⛤";
+    Text = "Cstm Enhanced";
+    Icon = "rbxthumb://type=Asset&id=14067496704&w=150&h=150";
+    Duration = "2";
+    Button1 = "Close";
+})
